@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pnCountryPlots" prefHeight="621.0" prefWidth="569.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.CountryPlotsController">
+   <children>
+      <Pane fx:id="pnExportShareDiag" layoutX="6.0" layoutY="88.0" prefHeight="523.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+         <children>
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Направления экспорта продукции">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnCountryImpotyPlot" layoutX="6.0" layoutY="61.0" prefHeight="459.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Button fx:id="btnBackFromExportDiag" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSaveCountryExportDiag" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <PieChart fx:id="pltCountryExportShare" layoutX="105.0" layoutY="53.0" prefHeight="293.0" prefWidth="343.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnCountryImportPlotPrompt" layoutX="7.0" layoutY="54.0" prefHeight="467.0" prefWidth="549.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграммы импорта и экспорта продукции отражают структуру экспорта страны по данным за выбранный год. Информация представлена в виде круговых диаграмм. Для просмотра необходимо выбрать страну и год в выпадающих списках." wrappingWidth="484.9046459197998" />
+                  <ComboBox fx:id="cmbChooseCountry11" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="btnShowCommonCountryTable11" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать график" />
+                  <ComboBox fx:id="cmbChooseYear" layoutX="275.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnCommonCountryPlot" layoutX="-4.0" layoutY="78.0" prefHeight="537.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+         <children>
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="График импорта и экспорта продукции">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnCountryCommonPlot" layoutX="6.0" layoutY="61.0" prefHeight="471.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Button fx:id="btnBackFromCommonPlot" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSaveCountryCommonPlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <AreaChart fx:id="countryImportExportPlot" layoutX="27.0" layoutY="14.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+               </children>
+            </Pane>
+            <Pane fx:id="pnCountryCommonPlotPrompt" layoutX="7.0" layoutY="55.0" prefHeight="471.0" prefWidth="549.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="График истории импорта и экспорта страны отражает  динамику изменения объемов экспорта и импорта выбранной страны за последние 10 лет. Информация представлена в виде графика. Для просморта необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
+                  <ComboBox fx:id="cmbChooseCountry2" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="btnShowCommonCountryTable2" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>

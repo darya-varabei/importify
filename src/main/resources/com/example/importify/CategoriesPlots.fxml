@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="pnCatPlots" prefHeight="625.0" prefWidth="569.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsPlotsController">
+   <children>
+      <Pane fx:id="pnCatWorldShareBase" layoutX="6.0" layoutY="88.0" prefHeight="532.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+         <children>
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Общемировой график экспорта">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnCatWorldSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="473.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+               <children>
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общемировой график экспорта отображает историю показателей суммарного экспорта по категории за последние 10 лет. Данные представлены в виде графика. Для просмотра информации необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
+                  <ComboBox fx:id="cmbChooseCat" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="btnShowCommonCountryTable111" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnCatWorldShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Button fx:id="btnBackFromCatWorldShare" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSaveCatWorldShare" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <AreaChart fx:id="pltWorldShare" layoutX="27.0" layoutY="14.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnCatWorldexportShare" layoutX="-4.0" layoutY="78.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+         <children>
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в экспорте по категории">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnCatWorldExportSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+               <children>
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом экспорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
+                  <ComboBox fx:id="cmbChooseCountry21" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="btnShowCommonCountryTable21" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <ComboBox fx:id="cmbChooseCountry" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnCatWorldExportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+               <children>
+                  <Button fx:id="btnBackFromPlot" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSavePlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <PieChart fx:id="pltCatExportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnCatWorldImportShare" layoutX="6.0" layoutY="88.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+         <children>
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в импорте по категории">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane fx:id="pnCatWorldimportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+               <children>
+                  <Button fx:id="btnBackFromPlot1" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSavePlot1" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <PieChart fx:id="pltCatImportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnCatWorldImportSharePrompt1" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+               <children>
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом импорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
+                  <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Button fx:id="btnShowDiag" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <ComboBox fx:id="cmbChooseCountry2" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
