@@ -7,10 +7,10 @@
    <children>
       <fx:include source="categoryTables.fxml" layoutY="0" layoutX="20" />
       <fx:include source="CategoriesPlots.fxml" layoutY="0" layoutX="600" />
-      <Button fx:id="btnShowConstImportTable" layoutX="28.0" layoutY="13.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Статистика импорта" />
-      <Button fx:id="btnShowConstExportTable" layoutX="228.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика экспорта" />
-      <Button fx:id="btnShowCommonExportPlot" layoutX="634.0" layoutY="12.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общемировой экспорт" />
-      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте" />
-      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте" />
+      <Button fx:id="btnShowConstImportTable" layoutX="28.0" layoutY="13.0" onAction="#showConstImportTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Статистика импорта" />
+      <Button fx:id="btnShowConstExportTable" layoutX="228.0" layoutY="14.0" onAction="#showConstExportTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика экспорта" />
+      <Button fx:id="btnShowCommonExportPlot" layoutX="634.0" layoutY="12.0" onAction="#showCommonExportPlotPane" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общемировой экспорт" />
+      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" onAction="#showCountryShareExportPane" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте" />
+      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" onAction="#showCountryShareImportPane" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте" />
    </children>
 </Pane>

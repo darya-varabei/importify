@@ -20,4 +20,28 @@ public class CountryController {
 
     @FXML
     private Button btnShowShare;
+
+    @FXML
+    public void showCommonTablePane() {
+        btnShowCommonTable.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowCountryCatTable.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showCountryCatTablePane() {
+        btnShowCountryCatTable.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowCommonTable.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showCommonPlotPane() {
+        btnShowCommonPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowShare.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showSharePane() {
+        btnShowShare.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowCommonPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
 }

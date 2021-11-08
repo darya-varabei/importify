@@ -7,9 +7,9 @@
    <children>
       <fx:include source="countryTables.fxml" layoutY="0" layoutX="20" />
       <fx:include source="countryPlots.fxml" layoutY="0" layoutX="600" />
-      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям" />
-      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям" />
+      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" onAction="#showCommonTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
+      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" onAction="#showCountryCatTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям" />
+      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" onAction="#showCommonPlotPane" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
+      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" onAction="#showSharePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям" />
    </children>
 </Pane>

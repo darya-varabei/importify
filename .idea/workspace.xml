@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="" />
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/Categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/Categories.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countries.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/mainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/mainScreen.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +28,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1zJKnG9hFFvldrosG1JZ7F1bTZf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,6 +44,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mainsheet.css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -93,12 +107,25 @@
       <workItem from="1636149339572" duration="4094000" />
       <workItem from="1636190122495" duration="3955000" />
       <workItem from="1636208615788" duration="10466000" />
-      <workItem from="1636267155258" duration="3473000" />
+      <workItem from="1636267155258" duration="5250000" />
+      <workItem from="1636380584362" duration="4117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

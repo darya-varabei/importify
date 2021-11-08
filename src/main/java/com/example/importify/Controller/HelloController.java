@@ -2,6 +2,7 @@ package com.example.importify.Controller;
 
 import java.io.IOException;
 
+import animatefx.animation.ZoomIn;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,4 +55,38 @@ public class HelloController {
         stage.show();
     }
 
+    @FXML
+    public void showCountryView(ActionEvent event) {
+        btnCountries.setUnderline(true);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showConstituentsView() {
+        btnCategories.setUnderline(true);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showUsersView() {
+        btnUsers.setUnderline(true);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+    }
+
+    @FXML
+    public void showSettingsView() {
+
+    }
 }
