@@ -1,5 +1,6 @@
 package com.example.importify.Controller;
 
+import animatefx.animation.ZoomIn;
 import javafx.fxml.FXML;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
@@ -8,6 +9,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 
 public class CountryPlotsController {
+
+    @FXML
+    private CountryController controller;
+
     @FXML
     private Pane pnCountryPlots;
 
@@ -61,4 +66,18 @@ public class CountryPlotsController {
 
     @FXML
     private Button btnShowCommonCountryTable2;
+
+    public void setSampleController(CountryController controller) {
+        this.controller = controller;
+    }
+
+    void showCommonPlot() {
+        new ZoomIn(pnCommonCountryPlot).play();
+        pnCommonCountryPlot.toFront();
+    }
+
+    void showSharePlot() {
+        new ZoomIn(pnExportShareDiag).play();
+        pnExportShareDiag.toFront();
+    }
 }

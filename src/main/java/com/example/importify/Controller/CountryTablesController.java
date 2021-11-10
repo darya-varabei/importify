@@ -1,5 +1,6 @@
 package com.example.importify.Controller;
 
+import animatefx.animation.ZoomIn;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -7,6 +8,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
 public class CountryTablesController {
+
+    @FXML
+    private CountryController controller;
     @FXML
     private Pane pnCountryTables;
 
@@ -57,4 +61,18 @@ public class CountryTablesController {
 
     @FXML
     private Button btnShowCommonCountryTable;
+
+    public void setSampleController(CountryController controller) {
+        this.controller = controller;
+    }
+
+    void showCommonTable() {
+        new ZoomIn(pnCommonCountryTable).play();
+        pnCommonCountryTable.toFront();
+    }
+
+    void showCatTable() {
+        new ZoomIn(pnCatCountryTable).play();
+        pnCatCountryTable.toFront();
+    }
 }
