@@ -6,29 +6,28 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="tableUsers" layoutX="18.0" layoutY="19.0" prefHeight="618.0" prefWidth="646.0">
+      <TableView fx:id="tableUsers" layoutX="18.0" layoutY="19.0" prefHeight="547.0" prefWidth="646.0">
         <columns>
           <TableColumn prefWidth="75.0" text="id" />
           <TableColumn prefWidth="124.57804107666016" text="Логин" />
-            <TableColumn prefWidth="189.0520782470703" text="Последний вжод в аккаунт" />
+            <TableColumn prefWidth="189.0520782470703" text="Последний вход в аккаунт" />
             <TableColumn prefWidth="122.67117309570312" text="Страна" />
             <TableColumn prefWidth="133.328857421875" text="Роль" />
         </columns>
       </TableView>
-      <Button fx:id="btnAddUsers" layoutX="44.0" layoutY="688.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
+      <Button fx:id="btnAddUsers" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdateUser" layoutX="229.0" layoutY="688.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
+      <Button fx:id="btnUpdateUser" layoutX="223.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteUser" layoutX="415.0" layoutY="688.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
+      <Button fx:id="btnDeleteUser" layoutX="409.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
