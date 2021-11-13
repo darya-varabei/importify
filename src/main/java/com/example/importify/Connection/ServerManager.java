@@ -31,7 +31,7 @@ public class ServerManager {
         }
     }
 
-    public void sendString(UserRegistration text) {
+    public void sendString(String text) {
         try {
             sendMessage.writeObject(text);
         } catch (IOException e) {

@@ -152,10 +152,10 @@ public class LoginController implements Initializable{
             var isEnter = (boolean)serverManager.readObject();
         });
 
-        btnSignUp.setOnAction(actionEvent -> {
+        /*btnSignUp.setOnAction(actionEvent -> {
             serverManager.sendString(new UserRegistration(txtFieldEmail.getText(), txtFieldLogin11.getText(), txtFieldPass1.getText()));
             var isRegister = (boolean)serverManager.readObject();
-        });
+        });*/
     }
 
     @FXML

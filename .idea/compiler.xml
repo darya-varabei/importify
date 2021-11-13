@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="importify" />
+        <module name="server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="importify" target="16" />
+      <module name="server" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
