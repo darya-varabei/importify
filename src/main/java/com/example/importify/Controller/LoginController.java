@@ -1,6 +1,10 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
+import com.example.importify.Connection.ServerManager;
+import com.example.importify.Model.UserEntry;
+import com.example.importify.Model.UserRegistration;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -112,10 +116,12 @@ public class LoginController implements Initializable{
 
     private Scene secondScene;
 
-    Socket clientSocket = null;
-    OutputStream coos = null;
-    InputStream cois = null;
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private Socket clientSocket = null;
+    private OutputStream coos = null;
+    private InputStream cois = null;
+    private Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private ServerManager serverManager;
+
 
     public void setSecondScene(Scene scene) {
         secondScene = scene;
@@ -135,7 +141,21 @@ public class LoginController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        bConnect.setOnAction(actionEvent -> {
+            var client = new Client();
+            client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+            serverManager = client.interactionsWithServer;
+        });
 
+        btnSignIn.setOnAction(actionEvent -> {
+            serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+            var isEnter = (boolean)serverManager.readObject();
+        });
+
+        btnSignUp.setOnAction(actionEvent -> {
+            serverManager.sendString(new UserRegistration(txtFieldEmail.getText(), txtFieldLogin11.getText(), txtFieldPass1.getText()));
+            var isRegister = (boolean)serverManager.readObject();
+        });
     }
 
     @FXML

@@ -156,7 +156,7 @@
                                     <Font name="SF Compact Text Regular" size="14.0" />
                                  </font>
                               </Button>
-                              <TextField fx:id="eip" layoutX="152.0" layoutY="241.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите адрес" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
+                              <TextField fx:id="eip" layoutX="152.0" layoutY="241.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите порт" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
                                  <font>
                                     <Font name="SF Compact Text Regular" size="14.0" />
                                  </font>

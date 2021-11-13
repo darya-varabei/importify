@@ -1,5 +1,7 @@
 package com.example.importify.Connection;
 
+import com.example.importify.Model.UserRegistration;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -7,13 +9,13 @@ import java.net.Socket;
 
 public class ServerManager {
     private ObjectOutputStream sendMessage;
-    private ObjectInputStream acceptMessage;
+    private ObjectInputStream readMessage;
 
 
     public ServerManager(Socket clientSocket) {
         try {
             sendMessage = new ObjectOutputStream(clientSocket.getOutputStream());
-            acceptMessage = new ObjectInputStream(clientSocket.getInputStream());
+            readMessage = new ObjectInputStream(clientSocket.getInputStream());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -21,7 +23,7 @@ public class ServerManager {
 
     }
 
-    public void send(Object object) {
+    public void sendObject(Object object) {
         try {
             sendMessage.writeObject(object);
         } catch (IOException e) {
@@ -29,11 +31,33 @@ public class ServerManager {
         }
     }
 
-    public void send(String text) {
+    public void sendString(UserRegistration text) {
         try {
             sendMessage.writeObject(text);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Object readObject()
+    {
+        try {
+            return readMessage.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String readString()
+    {
+        try {
+            return (String)readMessage.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }
