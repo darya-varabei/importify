@@ -32,7 +32,7 @@
          </font>
       </Button>
       <Line endX="794.92138671875" endY="7.62939453125E-6" layoutX="185.0" layoutY="81.0" startX="-160.51739501953125" startY="7.62939453125E-6" stroke="#e4e4e7" style="-fx-fill: E4E4E7;" />
-      <Label fx:id="lblUsername" layoutX="653.0" layoutY="43.0" text="\@chubasha">
+      <Label fx:id="lblUsername" layoutX="653.0" layoutY="43.0" text="\@artem_gck">
          <font>
             <Font name="SF Compact Text Regular" size="14.0" />
          </font>

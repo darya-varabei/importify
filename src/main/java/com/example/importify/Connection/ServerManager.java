@@ -1,7 +1,5 @@
 package com.example.importify.Connection;
 
-import com.example.importify.Model.UserRegistration;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
