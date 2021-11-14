@@ -1,22 +1,26 @@
 package com.example.importify.Model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class User implements Serializable {
 
-    private int id;
+    private int codeUser;
     private UserEntry userEntry;
-    private int role;
+    private String email;
     private Country country;
+    private String codeCountry;
+    private LocalDate dateLastAutorization;
+    private LocalDate dateLastExit;
 
     public User(){}
 
-    public int getId() {
-        return id;
+    public int getCodeUser() {
+        return codeUser;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCodeUser(int codeUser) {
+        this.codeUser = codeUser;
     }
 
     public UserEntry getUserEntry() {
@@ -25,14 +29,6 @@ public class User implements Serializable {
 
     public void setUserEntry(UserEntry userEntry) {
         this.userEntry = userEntry;
-    }
-
-    public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
     }
 
     public Country getCountry() {
