@@ -17,17 +17,17 @@
             <TableColumn prefWidth="133.328857421875" text="Роль" />
         </columns>
       </TableView>
-      <Button fx:id="btnAddUsers" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
+      <Button fx:id="btnAddUsers" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdateUser" layoutX="223.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
+      <Button fx:id="btnUpdateUser" layoutX="223.0" layoutY="602.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteUser" layoutX="409.0" layoutY="602.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
+      <Button fx:id="btnDeleteUser" layoutX="409.0" layoutY="602.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>

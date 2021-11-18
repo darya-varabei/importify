@@ -1,5 +1,6 @@
 package com.example.importify.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
@@ -20,5 +21,20 @@ public class UsersController {
 
     @FXML
     private Button btnDeleteUser;
+
+    @FXML
+    void addUser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void deleteUser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void updateUser(ActionEvent event) {
+
+    }
 
 }
