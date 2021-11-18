@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class UserEntry implements Serializable {
     private String login;
     private String password;
+    private short role;
 
     public UserEntry(String login, String password){
         this.login = login;
