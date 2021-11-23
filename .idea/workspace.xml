@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: imitation authorization">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: user action buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsPlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsPlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +138,7 @@
       <workItem from="1636757594613" duration="4159000" />
       <workItem from="1636785868614" duration="70000" />
       <workItem from="1636791172909" duration="14850000" />
+      <workItem from="1637689581033" duration="6429000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>

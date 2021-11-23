@@ -1,14 +1,22 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 
-public class ConstituentsPlotsController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ConstituentsPlotsController implements Initializable {
 
     @FXML
     private ConstituentsController controller;
@@ -23,7 +31,7 @@ public class ConstituentsPlotsController {
     private Pane pnCatWorldSharePrompt;
 
     @FXML
-    private ComboBox<?> cmbChooseCat;
+    private ComboBox<String> cmbChooseCat;
 
     @FXML
     private Button btnShowCommonCountryTable111;
@@ -92,10 +100,38 @@ public class ConstituentsPlotsController {
     private Button btnShowDiag;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry2;
+    private ComboBox<String> cmbChooseCountry2;
 
     public void setSampleController(ConstituentsController controller) {
         this.controller = controller;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        cmbChooseCat = new ComboBox<>();
+        cmbChooseCat.getItems().add("Italy");
+        cmbChooseCat.getItems().add("Spain");
+        cmbChooseCat.getItems().add("Sweden");
+        cmbChooseCat.getItems().add("Ireland");
+        cmbChooseCat.getItems().add("Denmark");
+
+        cmbChooseCountry2 = new ComboBox<>();
+        cmbChooseCountry2.getItems().add("Italy");
+        cmbChooseCountry2.getItems().add("Spain");
+        cmbChooseCountry2.getItems().add("Sweden");
+        cmbChooseCountry2.getItems().add("Ireland");
+        cmbChooseCountry2.getItems().add("Denmark");
+//        ObservableList<String> langs = FXCollections.observableArrayList("Java", "JavaScript", "C#", "Python");
+//       // ComboBox<String> langsComboBox = new ComboBox<String>(langs);
+//        cmbChooseCat.setValue("Java"); // устанавливаем выбранный элемент по умолчанию
+//
+//        Label lbl = new Label();
+//
+//        // получаем выбранный элемент
+//        cmbChooseCat.setOnAction(event -> lbl.setText(cmbChooseCat.getValue()));
+//
+//        FlowPane root = new FlowPane(10, 10, cmbChooseCat, lbl);
     }
 
     void showWorldSharePlot() {

@@ -154,23 +154,23 @@ public class LoginController implements Initializable{
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-        serverManager.sendString("Authorization");
-        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-        User user;
-
-        if ((user = (User)serverManager.readObject()) != null) {
+//        serverManager.sendString("Authorization");
+//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+//        User user;
+//
+//        if ((user = (User)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-        }
+     //   }
     }
 
     @FXML
     private void connect(ActionEvent event) {
-        var client = new Client();
-        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-        serverManager = client.interactionsWithServer;
-
-        if (serverManager != null) {
+//        var client = new Client();
+//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+//        serverManager = client.interactionsWithServer;
+//
+//        if (serverManager != null) {
             if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
@@ -179,7 +179,7 @@ public class LoginController implements Initializable{
                 new ZoomIn(pnSignUp).play();
                 pnSignUp.toFront();
             }
-        }
+       // }
     }
 
 //    @FXML
