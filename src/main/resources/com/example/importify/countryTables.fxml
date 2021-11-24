@@ -44,7 +44,7 @@
                <children>
                   <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица импорта и экспорта по  категорям отображает показатели импорта и экспорта страны  по отдельности на каждой категории. Данные предтставлены в виде таблицы. Для просмотра данных необходимо выбрать страну в выпадающем меню" wrappingWidth="484.9046459197998" />
                   <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button fx:id="btnShowCatCountryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <Button fx:id="btnShowCatCountryTable" disable="true" layoutX="35.0" layoutY="262.0" onAction="#showCatCountryTable" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                </children>
             </Pane>
          </children>
@@ -82,7 +82,7 @@
                <children>
                   <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сводная таблица импорта и экспорта страны позволяет отследить показатели сумм стоимости всех экспортированных и импортированных товаров за последние 10 лет.  Данные представляются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке" wrappingWidth="484.9046459197998" />
                   <ComboBox fx:id="cmbChooseCountry" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button fx:id="btnShowCommonCountryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <Button fx:id="btnShowCommonCountryTable" disable="true" layoutX="35.0" layoutY="262.0" onAction="#showCommonCountryTable" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                </children>
             </Pane>
          </children>

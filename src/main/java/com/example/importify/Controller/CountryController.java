@@ -3,13 +3,14 @@ package com.example.importify.Controller;
 import animatefx.animation.ZoomIn;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CountryController {
+public class CountryController implements Initializable {
 
     @FXML private CountryTablesController countryTablesController;
     @FXML private CountryPlotsController countryPlotsController;

@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: user action buttons">
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: full navigation for country plots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsPlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsPlotsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsTablesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/Categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/Categories.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryTables.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryTables.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +143,9 @@
       <workItem from="1636757594613" duration="4159000" />
       <workItem from="1636785868614" duration="70000" />
       <workItem from="1636791172909" duration="14850000" />
-      <workItem from="1637689581033" duration="6429000" />
+      <workItem from="1637689581033" duration="9592000" />
+      <workItem from="1637706464704" duration="1070000" />
+      <workItem from="1637782355427" duration="2764000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>
@@ -175,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636894606974</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add: full navigation for country plots">
+      <created>1637697900895</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637697900895</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +227,8 @@
     <MESSAGE value="add: send registration, login and connection info to server" />
     <MESSAGE value="add: server and connection with client" />
     <MESSAGE value="add: imitation authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: imitation authorization" />
+    <MESSAGE value="add: full navigation for country plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: full navigation for country plots" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

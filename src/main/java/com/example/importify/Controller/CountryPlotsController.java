@@ -109,22 +109,27 @@ public class CountryPlotsController implements Initializable {
     }
 
     @FXML
-    private void showCommonCountryPlot() {
+    public void showCommonCountryPlot() {
         showCommonPlot();
     }
 
     @FXML
-    private void showShareCountryPlot() {
+    public void showShareCountryPlot() {
         showShareDiag();
     }
-
-    void showCommonPlot() {
+    @FXML
+    void showCommonCountryChart() {
         new ZoomIn(pnCountryCommonPlot).play();
         pnCountryCommonPlot.toFront();
     }
 
+    void showCommonPlot() {
+        new ZoomIn(pnCommonCountryPlot).play();
+        pnCommonCountryPlot.toFront();
+    }
+
     void showSharePlot() {
-        new ZoomIn(pnCountryImpotyPlot).play();
+        new ZoomIn(pnExportShareDiag).play();
         pnExportShareDiag.toFront();
     }
 

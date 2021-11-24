@@ -122,16 +122,6 @@ public class ConstituentsPlotsController implements Initializable {
         cmbChooseCountry2.getItems().add("Sweden");
         cmbChooseCountry2.getItems().add("Ireland");
         cmbChooseCountry2.getItems().add("Denmark");
-//        ObservableList<String> langs = FXCollections.observableArrayList("Java", "JavaScript", "C#", "Python");
-//       // ComboBox<String> langsComboBox = new ComboBox<String>(langs);
-//        cmbChooseCat.setValue("Java"); // устанавливаем выбранный элемент по умолчанию
-//
-//        Label lbl = new Label();
-//
-//        // получаем выбранный элемент
-//        cmbChooseCat.setOnAction(event -> lbl.setText(cmbChooseCat.getValue()));
-//
-//        FlowPane root = new FlowPane(10, 10, cmbChooseCat, lbl);
     }
 
     void showWorldSharePlot() {
@@ -139,7 +129,7 @@ public class ConstituentsPlotsController implements Initializable {
         pnCatWorldShareBase.toFront();
     }
 
-    void showWorldexportShare() {
+    void showWorldExportShare() {
         new ZoomIn(pnCatWorldexportShare).play();
         pnCatWorldexportShare.toFront();
     }

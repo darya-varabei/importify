@@ -1,13 +1,15 @@
 package com.example.importify.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ConstituentsController {
+public class ConstituentsController implements Initializable {
+
     @FXML private ConstituentsTablesController constituentsTablesController;
     @FXML private ConstituentsPlotsController constituentsPlotsController;
 
@@ -30,8 +32,8 @@ public class ConstituentsController {
     private Button btnShowCountryShareImportPlot;
 
     public void initialize(URL url, ResourceBundle rb){
-        constituentsTablesController.setSampleController(this);
-        constituentsPlotsController.setSampleController(this);
+//        constituentsTablesController.setSampleController(this);
+//        constituentsPlotsController.setSampleController(this);
     }
 
     @FXML
@@ -61,7 +63,7 @@ public class ConstituentsController {
         btnShowCountryShareExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowCommonExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
         btnShowCountryShareImportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsPlotsController.showWorldexportShare();
+        constituentsPlotsController.showWorldExportShare();
     }
 
     @FXML

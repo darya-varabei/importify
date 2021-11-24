@@ -1,6 +1,7 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,6 +16,7 @@ public class CountryTablesController implements Initializable {
 
     @FXML
     private CountryController controller;
+
     @FXML
     private Pane pnCountryTables;
 
@@ -73,29 +75,26 @@ public class CountryTablesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //cmbChooseCountry1 = new ComboBox<>();
         cmbChooseCountry1.getItems().add("Italy");
         cmbChooseCountry1.getItems().add("Spain");
         cmbChooseCountry1.getItems().add("Sweden");
         cmbChooseCountry1.getItems().add("Ireland");
         cmbChooseCountry1.getItems().add("Denmark");
-
-        //cmbChooseCountry = new ComboBox<>();
+        cmbChooseCountry1.setOnAction(e -> enableCatPane());
         cmbChooseCountry.getItems().add("Italy");
         cmbChooseCountry.getItems().add("Spain");
         cmbChooseCountry.getItems().add("Sweden");
         cmbChooseCountry.getItems().add("Ireland");
         cmbChooseCountry.getItems().add("Denmark");
-//        ObservableList<String> langs = FXCollections.observableArrayList("Java", "JavaScript", "C#", "Python");
-//       // ComboBox<String> langsComboBox = new ComboBox<String>(langs);
-//        cmbChooseCat.setValue("Java"); // устанавливаем выбранный элемент по умолчанию
-//
-//        Label lbl = new Label();
-//
-//        // получаем выбранный элемент
-//        cmbChooseCat.setOnAction(event -> lbl.setText(cmbChooseCat.getValue()));
-//
-//        FlowPane root = new FlowPane(10, 10, cmbChooseCat, lbl);
+        cmbChooseCountry.setOnAction(e -> enableCommonPane());
+    }
+
+    private void enableCatPane() {
+        btnShowCatCountryTable.setDisable(false);
+    }
+
+    private void enableCommonPane() {
+        btnShowCommonCountryTable.setDisable(false);
     }
 
     void showCommonTable() {
@@ -106,5 +105,15 @@ public class CountryTablesController implements Initializable {
     void showCatTable() {
         new ZoomIn(pnCatCountryTable).play();
         pnCatCountryTable.toFront();
+    }
+
+    public void showCatCountryTable(ActionEvent actionEvent) {
+        new ZoomIn(pnCountryCatTable).play();
+        pnCountryCatTable.toFront();
+    }
+
+    public void showCommonCountryTable(ActionEvent actionEvent) {
+        new ZoomIn(pnCountryCommonTable).play();
+        pnCountryCommonTable.toFront();
     }
 }

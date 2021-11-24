@@ -8,8 +8,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
 public class ConstituentsTablesController {
+
     @FXML
     private ConstituentsController controller;
+
     @FXML
     private Pane pnCatTables;
 

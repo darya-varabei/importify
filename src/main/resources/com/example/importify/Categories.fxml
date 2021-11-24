@@ -5,8 +5,12 @@
 
 <Pane fx:id="pnCategories" prefHeight="682.0" prefWidth="1196.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsController">
    <children>
-      <fx:include source="categoryTables.fxml" layoutY="0" layoutX="20" />
-      <fx:include source="CategoriesPlots.fxml" layoutY="0" layoutX="600" />
+      <Pane fx:id="pnCategoryTables" prefHeight="609.0" prefWidth="584.0">
+      <fx:include source="categoryTables.fxml" layoutY="0" layoutX="20" fx:id="categoryTables"/>
+      </Pane>
+      <Pane fx:id="pnCategoryPlots" prefHeight="609.0" prefWidth="584.0">
+      <fx:include source="CategoriesPlots.fxml" layoutY="0" layoutX="600" fx:id="categoriesPlots"/>
+      </Pane>
       <Button fx:id="btnShowConstImportTable" layoutX="28.0" layoutY="13.0" onAction="#showConstImportTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Статистика импорта" />
       <Button fx:id="btnShowConstExportTable" layoutX="228.0" layoutY="14.0" onAction="#showConstExportTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика экспорта" />
       <Button fx:id="btnShowCommonExportPlot" layoutX="634.0" layoutY="12.0" onAction="#showCommonExportPlotPane" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общемировой экспорт" />

@@ -2,11 +2,15 @@ package com.example.importify.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
-public class UsersController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class UsersController implements Initializable {
     @FXML
     private Pane pnUsers;
 
@@ -37,4 +41,8 @@ public class UsersController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
