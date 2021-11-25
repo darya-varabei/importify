@@ -10,6 +10,7 @@ public class UserEntry implements Serializable {
     public UserEntry(String login, String password){
         this.login = login;
         this.password = password;
+        this.role = "";
     }
 
     public String getLogin() {
@@ -28,12 +29,7 @@ public class UserEntry implements Serializable {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
-    }
+    public String getRole() { return role; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
+    public void setRole(String role) { this.role = role; }
 }

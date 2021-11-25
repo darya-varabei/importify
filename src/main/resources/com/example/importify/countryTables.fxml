@@ -51,7 +51,7 @@
       </Pane>
       <Pane fx:id="pnCommonCountryTable" layoutX="7.0" layoutY="77.0" prefHeight="529.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
          <children>
-            <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Сводная таблица импорта и экспорта продукции">
+            <Label layoutX="34.0" layoutY="26.0" prefHeight="27.0" prefWidth="450.0" style="-fx-text-fill: #354385;" text="Сводная таблица импорта и экспорта продукции">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
