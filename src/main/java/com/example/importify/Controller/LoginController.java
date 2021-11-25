@@ -166,7 +166,7 @@ public class LoginController implements Initializable{
     public void EnterMainScreen(ActionEvent event) {
         serverManager.sendString("Authorization");
         serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-        User user;
+        User user = User.getInstance();
 
         if ((user = (User)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();

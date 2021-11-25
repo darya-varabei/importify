@@ -24,7 +24,7 @@
                      <columns>
                         <TableColumn fx:id="year" prefWidth="137.0" text="Год" />
                         <TableColumn fx:id="categoryColumn" prefWidth="137.0" text="Категория" />
-                        <TableColumn fx:id="import" prefWidth="137.0" text="Экспорт" />
+                        <TableColumn fx:id="importC" prefWidth="137.0" text="Экспорт" />
                         <TableColumn fx:id="export" prefWidth="137.0" text="Импорт" />
                      </columns>
                   </TableView>

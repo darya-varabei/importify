@@ -1,9 +1,13 @@
 package com.example.importify.Connection;
 
+import com.example.importify.Model.CountryConstituent;
+import com.example.importify.Model.CountryImportExport;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.LinkedList;
 
 public class ServerManager {
     private ObjectOutputStream sendMessage;
@@ -56,6 +60,26 @@ public class ServerManager {
             e.printStackTrace();
         }
 
+        return null;
+    }
+
+    public LinkedList<CountryImportExport> getCountryImportExport() {
+        sendString("countryTable");
+        try {
+            return (LinkedList<CountryImportExport>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<CountryConstituent> getCountryConstituent() {
+        sendString("countryTable2");
+        try {
+            return (LinkedList<CountryConstituent>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
 import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
 import javafx.collections.FXCollections;
@@ -46,6 +47,18 @@ public class CountryTablesController implements Initializable {
 
     @FXML
     private TableView<CountryConstituent> commonCountryTable1;
+
+    @FXML
+    private TableColumn<CountryConstituent, Integer> year;
+
+    @FXML
+    private TableColumn<CountryConstituent, Double> importC;
+
+    @FXML
+    private TableColumn<CountryConstituent, Double> export;
+
+    @FXML
+    private TableColumn<CountryConstituent, String> categoryColumn;
 
     @FXML
     private Button btnBackFromCatTable;
@@ -125,6 +138,7 @@ public class CountryTablesController implements Initializable {
     void showCatTable() {
         new ZoomIn(pnCatCountryTable).play();
         pnCatCountryTable.toFront();
+        setupCatTable();
     }
 
     public void showCatCountryTable(ActionEvent actionEvent) {
@@ -149,32 +163,23 @@ public class CountryTablesController implements Initializable {
     }
 
     public void setupCommonTable() {
+
+        ObservableList<CountryImportExport> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport());
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
         importColumn.setCellValueFactory(new PropertyValueFactory<>("importValue"));
         netExportColumn.setCellValueFactory(new PropertyValueFactory<>("netExportValue"));
-
-        CountryImportExport case1 = new CountryImportExport(2009, 342.43, 2009.0, 12456.9);
-        CountryImportExport case2 = new CountryImportExport(2010, 243.5, 2009.5, 12456.9);
-        CountryImportExport case3 = new CountryImportExport(2011, 2434.5, 2009.3, 12456.9);
-        CountryImportExport case4 = new CountryImportExport(2012, 563.5, 2009.6, 12456.9);
-        CountryImportExport case5 = new CountryImportExport(2013, 2567.6, 2009.2, 12456.9);
-        dataList.addAll(case1, case2, case3, case4, case5);
-        commonCountryTable.setItems(dataList);
+        commonCountryTable.setItems(data);
     }
 
     public void setupCatTable() {
-        yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
-        exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
-        importColumn.setCellValueFactory(new PropertyValueFactory<>("importValue"));
-        netExportColumn.setCellValueFactory(new PropertyValueFactory<>("netExportValue"));
-
-        CountryImportExport case1 = new CountryImportExport(2009, 342.43, 2009.0, 12456.9);
-        CountryImportExport case2 = new CountryImportExport(2010, 243.5, 2009.5, 12456.9);
-        CountryImportExport case3 = new CountryImportExport(2011, 2434.5, 2009.3, 12456.9);
-        CountryImportExport case4 = new CountryImportExport(2012, 563.5, 2009.6, 12456.9);
-        CountryImportExport case5 = new CountryImportExport(2013, 2567.6, 2009.2, 12456.9);
-        dataList.addAll(case1, case2, case3, case4, case5);
-        commonCountryTable.setItems(dataList);
+        ObservableList<CountryConstituent> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent());
+        year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        export.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
+        importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+        commonCountryTable1.setItems(data);
     }
 }

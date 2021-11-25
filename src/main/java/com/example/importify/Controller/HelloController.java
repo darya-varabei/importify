@@ -55,7 +55,7 @@ public class HelloController implements Initializable {
     @FXML
     private Pane pnUsers;
 
-    private User user;
+    private User user = User.getInstance();
 
     @FXML
     public void showCountryView(ActionEvent event) {

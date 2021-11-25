@@ -35,7 +35,7 @@ public class SettingsController implements Initializable {
     @FXML
     private Button btnAddMessage;
 
-    private User user;
+    private User user = User.getInstance();
 
     private Scene fxmlLoader;
 

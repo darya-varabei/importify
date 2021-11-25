@@ -47,7 +47,7 @@ public class User implements Serializable {
         this.country = country;
     }
 
-    public static User getInstance(String value) {
+    public static User getInstance() {
         if (user == null) {
             user = new User();
         }
