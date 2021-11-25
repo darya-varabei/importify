@@ -5,6 +5,7 @@ import com.example.importify.Connection.Client;
 import com.example.importify.Connection.ServerManager;
 import com.example.importify.Model.User;
 import com.example.importify.Model.UserEntry;
+import com.example.importify.Model.UserRegister;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -91,6 +92,9 @@ public class LoginController implements Initializable{
     private Label lblPassword1;
 
     @FXML
+    private Label lblInvalidConnection;
+
+    @FXML
     private Label lblLogin1;
 
     @FXML
@@ -104,6 +108,21 @@ public class LoginController implements Initializable{
 
     @FXML
     private Label lblPasswordRep;
+
+    @FXML
+    private Label lblPasswordDoNotMatch;
+
+    @FXML
+    private Label lblLoginAlreadyExists;
+
+    @FXML
+    private Label lblEmailAlreadyExists;
+
+    @FXML
+    private Label lblInvalidRegEntry;
+
+    @FXML
+    private Label lblInvalidLoginEntry;
 
     @FXML
     private Button bConnect;
@@ -145,36 +164,50 @@ public class LoginController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
-
-
-        /*btnSignUp.setOnAction(actionEvent -> {
-            serverManager.sendString(new UserRegistration(txtFieldEmail.getText(), txtFieldLogin11.getText(), txtFieldPass1.getText()));
-            var isRegister = (boolean)serverManager.readObject();
-        });*/
     }
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-//        serverManager.sendString("Authorization");
-//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-//        User user;
-//
-//        if ((user = (User)serverManager.readObject()) != null) {
+        serverManager.sendString("Authorization");
+        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+        User user;
+
+        if ((user = (User)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-     //   }
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void registUser(ActionEvent event) {
+        serverManager.sendString("Registration");
+        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText()));
+        User user;
+
+        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
+            lblPasswordDoNotMatch.setVisible(true);
+        }
+
+        if ((user = (User)serverManager.readObject()) != null) {
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            primaryStage.setScene(secondScene);
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
     }
 
     @FXML
     private void connect(ActionEvent event) {
-//        var client = new Client();
-//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-//        serverManager = client.interactionsWithServer;
-//
-//        if (serverManager != null) {
+        var client = new Client();
+        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+        serverManager = client.interactionsWithServer;
+
+        if (serverManager != null) {
+            lblInvalidConnection.setVisible(false);
             if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
@@ -183,39 +216,38 @@ public class LoginController implements Initializable{
                 new ZoomIn(pnSignUp).play();
                 pnSignUp.toFront();
             }
-       // }
+        }
+        else {
+            lblInvalidConnection.setVisible(true);
+        }
     }
 
-//    @FXML
-//    void ClickConnect(ActionEvent event)
-//    {
-//        alert.setTitle("Информация");
-//        alert.setHeaderText(null);
-//        alert.setContentText("Подключение выполнено успешно");
-//
-//        String port = ePort.getText();
-//
-//        try
-//        {
-//            clientSocket = new Socket(eip.getText(), Integer.parseInt(port));//установление //соединения между локальной машиной и указанным портом узла сети
-//            cois = clientSocket.getInputStream();//создание //потока ввода
-//            coos = clientSocket.getOutputStream();//создание //потока вывода
-//            bConnect.setDisable(true);
-//            bDisconnect.setDisable(false);
-//            bSend.setDisable(false);
-//            eString1.setDisable(false);
-//            ePort.setDisable(true);
-//            eip.setDisable(true);
-//        }
-//
-//        catch(Exception e)
-//        {
-//            e.printStackTrace();//выполнение метода исключения е
-//            alert.setTitle("Ошибка");
-//            alert.setContentText(e.getMessage());
-//        }
-//
-//        alert.showAndWait();
-//    }
+    @FXML
+    void ClickConnect(ActionEvent event)
+    {
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Подключение выполнено успешно");
+
+        String port = eip1.getText();
+
+        try
+        {
+            clientSocket = new Socket(eip.getText(), Integer.parseInt(port));
+            cois = clientSocket.getInputStream();
+            coos = clientSocket.getOutputStream();
+            bConnect.setDisable(true);
+            eip.setDisable(true);
+        }
+
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
+        }
+
+        alert.showAndWait();
+    }
 
 }
