@@ -13,6 +13,9 @@
       <Pane fx:id="pnUsers" layoutY="2.0" prefHeight="782.0" prefWidth="1221.0">
          <fx:include fx:id="usersPane" layoutX="5" layoutY="100" source="users.fxml" />
       </Pane>
+      <Pane fx:id="pnSettings" layoutY="2.0" prefHeight="782.0" prefWidth="1221.0">
+         <fx:include fx:id="settingsPane" layoutX="5" layoutY="0" source="settingsView.fxml" />
+      </Pane>
       <Pane fx:id="pnCountry">
          <fx:include fx:id="countriesPane" layoutX="5" layoutY="100" source="countries.fxml" />
       </Pane>

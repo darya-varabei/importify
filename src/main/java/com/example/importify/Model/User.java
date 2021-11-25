@@ -10,7 +10,7 @@ public class User implements Serializable {
     private String email;
     private Country country;
     private String codeCountry;
-    private LocalDate dateLastAutorization;
+    private String dateLastAutorization;
     private LocalDate dateLastExit;
 
     public User(){}

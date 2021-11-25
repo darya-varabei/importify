@@ -37,6 +37,12 @@ public class CountryController implements Initializable {
     private Button btnShowShare;
 
     public void initialize(URL url, ResourceBundle rb){
+        new ZoomIn(pnCountryTables).play();
+        pnCountryTables.toFront();
+        btnShowCommonPlot.toFront();
+        btnShowShare.toFront();
+        btnShowCommonTable.toFront();
+        btnShowCountryCatTable.toFront();
         countryTablesController.setSampleController(this);
         countryPlotsController.setSampleController(this);
     }

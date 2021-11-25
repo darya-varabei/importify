@@ -22,18 +22,18 @@
                <children>
                   <TableView fx:id="commonCountryTable1" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
                      <columns>
-                        <TableColumn prefWidth="137.0" text="Год" />
-                        <TableColumn prefWidth="137.0" text="Импорт" />
-                        <TableColumn prefWidth="137.0" text="Экспорт" />
-                        <TableColumn prefWidth="137.0" text="Чистый экспорт" />
+                        <TableColumn fx:id="year" prefWidth="137.0" text="Год" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="137.0" text="Категория" />
+                        <TableColumn fx:id="import" prefWidth="137.0" text="Экспорт" />
+                        <TableColumn fx:id="export" prefWidth="137.0" text="Импорт" />
                      </columns>
                   </TableView>
-                  <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                  <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromCatTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                      <font>
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSaveCountryCatTable" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                  <Button fx:id="btnSaveCountryCatTable" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" onAction="#backFromCatTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -44,7 +44,7 @@
                <children>
                   <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица импорта и экспорта по  категорям отображает показатели импорта и экспорта страны  по отдельности на каждой категории. Данные предтставлены в виде таблицы. Для просмотра данных необходимо выбрать страну в выпадающем меню" wrappingWidth="484.9046459197998" />
                   <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button fx:id="btnShowCatCountryTable" disable="true" layoutX="35.0" layoutY="262.0" onAction="#showCatCountryTable" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <Button fx:id="btnShowCatCountryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showCatCountryTable" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                </children>
             </Pane>
          </children>
@@ -60,13 +60,13 @@
                <children>
                   <TableView fx:id="commonCountryTable" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
                      <columns>
-                        <TableColumn prefWidth="137.0" text="Год" />
-                        <TableColumn prefWidth="137.0" text="Импорт" />
-                        <TableColumn prefWidth="137.0" text="Экспорт" />
-                        <TableColumn prefWidth="137.0" text="Чистый экспорт" />
+                        <TableColumn fx:id="yearColumn" prefWidth="137.0" text="Год" />
+                        <TableColumn fx:id="importColumn" prefWidth="137.0" text="Импорт" />
+                        <TableColumn fx:id="exportColumn" prefWidth="137.0" text="Экспорт" />
+                        <TableColumn fx:id="netExportColumn" prefWidth="137.0" text="Чистый экспорт" />
                      </columns>
                   </TableView>
-                  <Button fx:id="btnBackFromCommonTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                  <Button fx:id="btnBackFromCommonTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" onAction="#backFromCommonTable" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -82,7 +82,7 @@
                <children>
                   <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сводная таблица импорта и экспорта страны позволяет отследить показатели сумм стоимости всех экспортированных и импортированных товаров за последние 10 лет.  Данные представляются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке" wrappingWidth="484.9046459197998" />
                   <ComboBox fx:id="cmbChooseCountry" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите страну" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                  <Button fx:id="btnShowCommonCountryTable" disable="true" layoutX="35.0" layoutY="262.0" onAction="#showCommonCountryTable" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                  <Button fx:id="btnShowCommonCountryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showCommonCountryTable" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                </children>
             </Pane>
          </children>

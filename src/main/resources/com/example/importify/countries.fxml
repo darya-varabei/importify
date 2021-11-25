@@ -6,14 +6,14 @@
 <Pane fx:id="pnCountries" prefHeight="682.0" prefWidth="1196.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.CountryController">
    <children>
       <Pane fx:id="pnCountryTables" prefHeight="609.0" prefWidth="584.0">
-      <fx:include source="countryTables.fxml" layoutY="0" layoutX="20" fx:id="countryTables"/>
+      <fx:include fx:id="countryTables" layoutX="20" layoutY="0" source="countryTables.fxml" />
       </Pane>
-      <Pane fx:id="pnCountryPlots" prefHeight="609.0" prefWidth="584.0">
-      <fx:include source="countryPlots.fxml" layoutY="0" layoutX="600" fx:id="countryPlots"/>
+      <Pane fx:id="pnCountryPlots" prefHeight="68.0" prefWidth="584.0">
+      <fx:include fx:id="countryPlots" layoutX="600" layoutY="0" source="countryPlots.fxml" />
       </Pane>
-      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" onAction="#showCommonTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" onAction="#showCountryCatTablePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям" />
-      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" onAction="#showCommonPlotPane" mnemonicParsing="false" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" onAction="#showSharePane" mnemonicParsing="false" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям" />
+      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCommonTablePane" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
+      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCountryCatTablePane" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям" />
+      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" mnemonicParsing="false" onAction="#showCommonPlotPane" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
+      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" mnemonicParsing="false" onAction="#showSharePane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям" />
    </children>
 </Pane>

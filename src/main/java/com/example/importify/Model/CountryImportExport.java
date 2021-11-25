@@ -8,7 +8,12 @@ public class CountryImportExport implements Serializable {
     private double importValue;
     private double netExportValue;
 
-    public CountryImportExport(){}
+    public CountryImportExport(int year, double exportValue, double importValue, double netExportValue){
+        this.year = year;
+        this.exportValue = exportValue;
+        this.importValue = importValue;
+        this.netExportValue = netExportValue;
+    }
 
     public int getYear() {
         return year;

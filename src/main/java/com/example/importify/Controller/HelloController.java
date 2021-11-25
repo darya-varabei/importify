@@ -43,6 +43,9 @@ public class HelloController {
     private Pane pnCountry;
 
     @FXML
+    private Pane pnSettings;
+
+    @FXML
     private Pane pnConstituents;
 
     @FXML
@@ -79,7 +82,7 @@ public class HelloController {
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();;
-
+        btnSettings.toFront();
     }
 
     @FXML
@@ -97,7 +100,7 @@ public class HelloController {
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();;
-
+        btnSettings.toFront();
     }
 
     @FXML
@@ -115,10 +118,24 @@ public class HelloController {
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();;
+        btnSettings.toFront();
     }
 
     @FXML
     public void showSettingsView() {
+        btnUsers.setUnderline(true);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
 
+        new ZoomIn(pnSettings).play();
+        pnSettings.toFront();
+        btnUsers.toFront();
+        btnCountries.toFront();
+        btnCategories.toFront();
+        btnSettings.toFront();
+        lblUsername.toFront();
     }
 }

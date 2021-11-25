@@ -13,11 +13,11 @@
        </Pane>
       <TableView fx:id="tableUsers" layoutX="18.0" layoutY="19.0" prefHeight="547.0" prefWidth="646.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="id" />
-          <TableColumn prefWidth="124.57804107666016" text="Логин" />
-            <TableColumn prefWidth="189.0520782470703" text="Последний вход в аккаунт" />
-            <TableColumn prefWidth="122.67117309570312" text="Страна" />
-            <TableColumn prefWidth="133.328857421875" text="Роль" />
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="loginColumn" prefWidth="124.57804107666016" text="Логин" />
+            <TableColumn fx:id="lastAccessColumn" prefWidth="189.0520782470703" text="Последний вход в аккаунт" />
+            <TableColumn fx:id="countryColumn" prefWidth="122.67117309570312" text="Страна" />
+            <TableColumn fx:id="roleColumn" prefWidth="133.328857421875" text="Роль" />
         </columns>
       </TableView>
       <Button fx:id="btnAddUsers" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
