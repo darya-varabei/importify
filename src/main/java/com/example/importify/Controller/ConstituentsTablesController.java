@@ -1,9 +1,12 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Model.CountryImportExport;
+import com.example.importify.Model.ExportImportConstituents;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
@@ -22,7 +25,16 @@ public class ConstituentsTablesController {
     private Pane pnCountryCommonTable1;
 
     @FXML
-    private TableView<?> commonCountryTable1;
+    private TableView<ExportImportConstituents> tableCategoryImport;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, Integer> yearColumn;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, String> countryColumn;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, Double> importColumn;
 
     @FXML
     private Button btnBackFromCatTable;
@@ -34,7 +46,7 @@ public class ConstituentsTablesController {
     private Pane pnCatImportPrompt;
 
     @FXML
-    private ComboBox<?> cmbChooseCat;
+    private ComboBox<String> cmbChooseCat;
 
     @FXML
     private Button btnShowImportCat;
@@ -46,7 +58,16 @@ public class ConstituentsTablesController {
     private Pane pnCategoryExportTable;
 
     @FXML
-    private TableView<?> tableCategoryExport;
+    private TableView<ExportImportConstituents> tableCategoryExport;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, Integer> year;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, String> country;
+
+    @FXML
+    private TableColumn<ExportImportConstituents, Double> exportColumn;
 
     @FXML
     private Button btnBackFromExportTable;
@@ -58,7 +79,7 @@ public class ConstituentsTablesController {
     private Pane pnCategoryExportTablePrompt;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry;
+    private ComboBox<String> cmbChooseCountry;
 
     @FXML
     private Button btnShowCommonCategoryTable;

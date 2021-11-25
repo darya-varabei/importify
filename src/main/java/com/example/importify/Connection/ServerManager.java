@@ -82,4 +82,14 @@ public class ServerManager {
         }
         return null;
     }
+
+    public LinkedList<CountryConstituent> getConstituentValue() {
+        sendString("constituentTable");
+        try {
+            return (LinkedList<CountryConstituent>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

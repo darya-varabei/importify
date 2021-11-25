@@ -22,8 +22,6 @@ public class UsersController implements Initializable {
     @FXML
     private Pane pnUsers;
 
-    //@FXML private UpdateUsersController updateUsersController;
-
     @FXML
     private TableColumn<User, Integer> idColumn;
 
