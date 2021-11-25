@@ -141,36 +141,27 @@ public class LoginController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
-
-
-        /*btnSignUp.setOnAction(actionEvent -> {
-            serverManager.sendString(new UserRegistration(txtFieldEmail.getText(), txtFieldLogin11.getText(), txtFieldPass1.getText()));
-            var isRegister = (boolean)serverManager.readObject();
-        });*/
     }
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-//        serverManager.sendString("Authorization");
-//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-//        User user;
-//
-//        if ((user = (User)serverManager.readObject()) != null) {
+        serverManager.sendString("Authorization");
+        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+        User user;
+
+        if ((user = (User)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-     //   }
+        }
     }
 
     @FXML
     private void connect(ActionEvent event) {
-//        var client = new Client();
-//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-//        serverManager = client.interactionsWithServer;
-//
-//        if (serverManager != null) {
+        var client = new Client();
+        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+        serverManager = client.interactionsWithServer;
+
+        if (serverManager != null) {
             if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
@@ -179,39 +170,35 @@ public class LoginController implements Initializable{
                 new ZoomIn(pnSignUp).play();
                 pnSignUp.toFront();
             }
-       // }
+        }
     }
 
-//    @FXML
-//    void ClickConnect(ActionEvent event)
-//    {
-//        alert.setTitle("Информация");
-//        alert.setHeaderText(null);
-//        alert.setContentText("Подключение выполнено успешно");
-//
-//        String port = ePort.getText();
-//
-//        try
-//        {
-//            clientSocket = new Socket(eip.getText(), Integer.parseInt(port));//установление //соединения между локальной машиной и указанным портом узла сети
-//            cois = clientSocket.getInputStream();//создание //потока ввода
-//            coos = clientSocket.getOutputStream();//создание //потока вывода
-//            bConnect.setDisable(true);
-//            bDisconnect.setDisable(false);
-//            bSend.setDisable(false);
-//            eString1.setDisable(false);
-//            ePort.setDisable(true);
-//            eip.setDisable(true);
-//        }
-//
-//        catch(Exception e)
-//        {
-//            e.printStackTrace();//выполнение метода исключения е
-//            alert.setTitle("Ошибка");
-//            alert.setContentText(e.getMessage());
-//        }
-//
-//        alert.showAndWait();
-//    }
+    @FXML
+    void ClickConnect(ActionEvent event)
+    {
+        alert.setTitle("Информация");
+        alert.setHeaderText(null);
+        alert.setContentText("Подключение выполнено успешно");
+
+        String port = eip1.getText();
+
+        try
+        {
+            clientSocket = new Socket(eip.getText(), Integer.parseInt(port));
+            cois = clientSocket.getInputStream();
+            coos = clientSocket.getOutputStream();
+            bConnect.setDisable(true);
+            eip.setDisable(true);
+        }
+
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            alert.setTitle("Ошибка");
+            alert.setContentText(e.getMessage());
+        }
+
+        alert.showAndWait();
+    }
 
 }

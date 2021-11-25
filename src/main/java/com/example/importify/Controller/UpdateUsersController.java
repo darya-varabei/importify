@@ -9,6 +9,8 @@ import javafx.scene.layout.Pane;
 
 public class UpdateUsersController {
 
+    @FXML private UsersController usersController;
+
     @FXML
     private Pane pnUpdateUser;
 
@@ -26,5 +28,13 @@ public class UpdateUsersController {
 
     @FXML
     private Button btnSaveUser;
+
+    public void setSampleController(UsersController controller) {
+        this.usersController = controller;
+    }
+
+    public void setFieldUsername(String username) {
+        fieldUsername.setText(username);
+    }
 
 }

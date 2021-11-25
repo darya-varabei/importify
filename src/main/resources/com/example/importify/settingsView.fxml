@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1217.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" fx:controller="com.example.importify.Controller.SettingsController" prefWidth="1217.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="57.0" layoutY="210.0" text="Имя пользователя">
          <font>
@@ -37,7 +37,7 @@
       </Label>
       <ComboBox fx:id="cmbChooseCountry" layoutX="265.0" layoutY="304.0" prefWidth="150.0" promptText="Беларусь" style="-fx-background-color: 0; -fx-border-color: 354385; -fx-border-width: 2;" />
       <ListView fx:id="listMessages" layoutX="523.0" layoutY="127.0" prefHeight="546.0" prefWidth="650.0" />
-      <Button fx:id="btnExit" layoutX="65.0" layoutY="666.0" mnemonicParsing="false" style="-fx-background-color: #dc2d2d;" text="Выход из аккаунта" textFill="#fafafa">
+      <Button fx:id="btnExit" layoutX="65.0" layoutY="666.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #dc2d2d;" text="Выход из аккаунта" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font>

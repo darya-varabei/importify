@@ -8,8 +8,7 @@ public class User implements Serializable {
     private int codeUser;
     private UserEntry userEntry;
     private String email;
-    private Country country;
-    private String codeCountry;
+    private String country;
     private String dateLastAutorization;
     private LocalDate dateLastExit;
 
@@ -31,11 +30,19 @@ public class User implements Serializable {
         this.userEntry = userEntry;
     }
 
-    public Country getCountry() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 }

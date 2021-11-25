@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: full navigation for country plots">
+      <change afterPath="$PROJECT_DIR$/../importify-server/importify-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryPlotsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UpdateUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UpdateUsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/CountryImportExport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/CountryImportExport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countries.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryPlots.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryTables.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/countryTables.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/mainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/mainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/settingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/settingsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/updateUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/updateUsers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/updateUsers.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +31,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -105,7 +105,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="server.MainServer" />
-      <module name="server" />
+      <module name="importify-server" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,7 +150,8 @@
       <workItem from="1637689581033" duration="9592000" />
       <workItem from="1637706464704" duration="1070000" />
       <workItem from="1637782355427" duration="7489000" />
-      <workItem from="1637828629404" duration="2933000" />
+      <workItem from="1637828629404" duration="3416000" />
+      <workItem from="1637861764118" duration="9350000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>
@@ -201,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637785470991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add: full navigation for country plots">
+      <created>1637831665145</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637831665145</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
