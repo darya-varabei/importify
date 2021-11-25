@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class User implements Serializable {
 
+    private static User user;
     private int codeUser;
     private UserEntry userEntry;
     private String email;
@@ -44,5 +45,12 @@ public class User implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public static User getInstance(String value) {
+        if (user == null) {
+            user = new User();
+        }
+        return user;
     }
 }

@@ -1,14 +1,19 @@
 package com.example.importify.Controller;
 
+import com.example.importify.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class SettingsController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class SettingsController implements Initializable {
     @FXML
     private Pane pnUsers;
 
@@ -19,7 +24,7 @@ public class SettingsController {
     private Label lblUserRole;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry;
+    private ComboBox<String> cmbChooseCountry;
 
     @FXML
     private ListView<?> listMessages;
@@ -29,6 +34,9 @@ public class SettingsController {
 
     @FXML
     private Button btnAddMessage;
+
+    private User user;
+
     private Scene fxmlLoader;
 
     public void setSecondScene(Scene scene) {
@@ -41,5 +49,12 @@ public class SettingsController {
     private void exit(ActionEvent event) {
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(fxmlLoader);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        lblUsername.setText(user.getUserEntry().getLogin());
+        lblUserRole.setText(user.getUserEntry().getRole());
+        cmbChooseCountry.setValue(user.getCountry());
     }
 }

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: server configuration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/hello-view.fxml" afterDir="false" />
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: registration setup">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +138,7 @@
       <workItem from="1637706464704" duration="1070000" />
       <workItem from="1637782355427" duration="7489000" />
       <workItem from="1637828629404" duration="3416000" />
-      <workItem from="1637861764118" duration="13092000" />
+      <workItem from="1637861764118" duration="13889000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637872589872</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add: registration setup">
+      <created>1637876500738</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637876500738</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +250,8 @@
     <MESSAGE value="add: imitation authorization" />
     <MESSAGE value="add: full navigation for country plots" />
     <MESSAGE value="add: server configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: server configuration" />
+    <MESSAGE value="add: registration setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: registration setup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
