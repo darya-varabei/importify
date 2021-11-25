@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: country tables data">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="fix: constituent table columns">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Connection/ServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Connection/ServerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsTablesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/categoryTables.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/categoryTables.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637877323734</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix: constituent table columns">
+      <created>1637880888685</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637880888685</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +266,8 @@
     <MESSAGE value="add: registration setup" />
     <MESSAGE value="add: user singleton" />
     <MESSAGE value="add: country tables data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: country tables data" />
+    <MESSAGE value="fix: constituent table columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: constituent table columns" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

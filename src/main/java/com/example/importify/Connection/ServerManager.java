@@ -63,8 +63,18 @@ public class ServerManager {
         return null;
     }
 
-    public LinkedList<CountryImportExport> getCountryImportExport() {
-        sendString("countryTable");
+    public LinkedList<String> getStrings(String code) {
+        sendString(code);
+        try {
+            return (LinkedList<String>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<CountryImportExport> getCountryImportExport(String country) {
+        sendString("countryTable + " + country);
         try {
             return (LinkedList<CountryImportExport>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
@@ -73,8 +83,8 @@ public class ServerManager {
         return null;
     }
 
-    public LinkedList<CountryConstituent> getCountryConstituent() {
-        sendString("countryTable2");
+    public LinkedList<CountryConstituent> getCountryConstituent(String country) {
+        sendString("countryTable2 + " + country);
         try {
             return (LinkedList<CountryConstituent>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {

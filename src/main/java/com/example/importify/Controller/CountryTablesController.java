@@ -165,7 +165,7 @@ public class CountryTablesController implements Initializable {
     public void setupCommonTable() {
 
         ObservableList<CountryImportExport> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport());
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry.getValue()));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
         importColumn.setCellValueFactory(new PropertyValueFactory<>("importValue"));
@@ -175,7 +175,7 @@ public class CountryTablesController implements Initializable {
 
     public void setupCatTable() {
         ObservableList<CountryConstituent> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent());
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         export.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
         importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
