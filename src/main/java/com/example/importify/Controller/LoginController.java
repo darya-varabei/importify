@@ -5,6 +5,7 @@ import com.example.importify.Connection.Client;
 import com.example.importify.Connection.ServerManager;
 import com.example.importify.Model.User;
 import com.example.importify.Model.UserEntry;
+import com.example.importify.Model.UserRegister;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -91,6 +92,9 @@ public class LoginController implements Initializable{
     private Label lblPassword1;
 
     @FXML
+    private Label lblInvalidConnection;
+
+    @FXML
     private Label lblLogin1;
 
     @FXML
@@ -104,6 +108,21 @@ public class LoginController implements Initializable{
 
     @FXML
     private Label lblPasswordRep;
+
+    @FXML
+    private Label lblPasswordDoNotMatch;
+
+    @FXML
+    private Label lblLoginAlreadyExists;
+
+    @FXML
+    private Label lblEmailAlreadyExists;
+
+    @FXML
+    private Label lblInvalidRegEntry;
+
+    @FXML
+    private Label lblInvalidLoginEntry;
 
     @FXML
     private Button bConnect;
@@ -153,6 +172,28 @@ public class LoginController implements Initializable{
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
+    }
+
+    @FXML
+    public void registUser(ActionEvent event) {
+        serverManager.sendString("Registration");
+        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText()));
+        User user;
+
+        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
+            lblPasswordDoNotMatch.setVisible(true);
+        }
+
+        if ((user = (User)serverManager.readObject()) != null) {
+            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            primaryStage.setScene(secondScene);
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
     }
 
     @FXML
@@ -162,6 +203,7 @@ public class LoginController implements Initializable{
         serverManager = client.interactionsWithServer;
 
         if (serverManager != null) {
+            lblInvalidConnection.setVisible(false);
             if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
@@ -170,6 +212,9 @@ public class LoginController implements Initializable{
                 new ZoomIn(pnSignUp).play();
                 pnSignUp.toFront();
             }
+        }
+        else {
+            lblInvalidConnection.setVisible(true);
         }
     }
 
