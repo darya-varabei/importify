@@ -5,11 +5,12 @@ import java.io.Serializable;
 public class UserEntry implements Serializable {
     private String login;
     private String password;
-    private short role;
+    private byte role;
 
-    public UserEntry(String login, String password){
+    public UserEntry(String login, String password, byte role){
         this.login = login;
         this.password = password;
+        this.role = role;
     }
 
     public String getLogin() {
@@ -28,4 +29,7 @@ public class UserEntry implements Serializable {
         this.password = password;
     }
 
+    public byte getRole() { return role; }
+
+    public void setRole(byte role) { this.role = role; }
 }

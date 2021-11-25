@@ -10,7 +10,7 @@ public class User implements Serializable {
     private String email;
     private Country country;
     private String codeCountry;
-    private String dateLastAutorization;
+    private LocalDate dateLastAutorization;
     private LocalDate dateLastExit;
 
     public User(){}
@@ -37,5 +37,37 @@ public class User implements Serializable {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCodeCountry() {
+        return codeCountry;
+    }
+
+    public void setCodeCountry(String codeCountry) {
+        this.codeCountry = codeCountry;
+    }
+
+    public LocalDate getDateLastExit() {
+        return dateLastExit;
+    }
+
+    public void setDateLastExit(LocalDate dateLastExit) {
+        this.dateLastExit = dateLastExit;
+    }
+
+    public LocalDate getDateLastAutorization() {
+        return dateLastAutorization;
+    }
+
+    public void setDateLastAutorization(LocalDate dateLastAutorization) {
+        this.dateLastAutorization = dateLastAutorization;
     }
 }

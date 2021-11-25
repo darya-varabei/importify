@@ -129,6 +129,10 @@ public class LoginController implements Initializable{
 
     @FXML
     private void handleAuthorizationAction(ActionEvent event) {
+//        serverManager.sendString("Registration");
+//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+//        User user;
+
         if (event.getSource().equals(btnSignIn)) {
             new ZoomIn(pnSignIn).play();
             pnSignIn.toFront();
