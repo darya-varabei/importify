@@ -27,7 +27,7 @@
                         <TableColumn fx:id="importColumn" prefWidth="137.0" text="Импорт" />
                      </columns>
                   </TableView>
-                  <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                  <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromImportTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                      <font>
                         <Font size="12.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <TableColumn fx:id="exportColumn" prefWidth="137.0" text="Экспорт" />
                      </columns>
                   </TableView>
-                  <Button fx:id="btnBackFromExportTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                  <Button fx:id="btnBackFromExportTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromExportTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                      <font>
                         <Font size="12.0" />
                      </font>

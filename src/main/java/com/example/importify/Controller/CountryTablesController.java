@@ -107,18 +107,19 @@ public class CountryTablesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        cmbChooseCountry1.getItems().add("Italy");
-        cmbChooseCountry1.getItems().add("Spain");
-        cmbChooseCountry1.getItems().add("Sweden");
-        cmbChooseCountry1.getItems().add("Ireland");
-        cmbChooseCountry1.getItems().add("Denmark");
-        cmbChooseCountry1.setOnAction(e -> enableCatPane());
-        cmbChooseCountry.getItems().add("Italy");
-        cmbChooseCountry.getItems().add("Spain");
-        cmbChooseCountry.getItems().add("Sweden");
-        cmbChooseCountry.getItems().add("Ireland");
-        cmbChooseCountry.getItems().add("Denmark");
-        cmbChooseCountry.setOnAction(e -> enableCommonPane());
+//        cmbChooseCountry1.getItems().add("Italy");
+//        cmbChooseCountry1.getItems().add("Spain");
+//        cmbChooseCountry1.getItems().add("Sweden");
+//        cmbChooseCountry1.getItems().add("Ireland");
+//        cmbChooseCountry1.getItems().add("Denmark");
+//        cmbChooseCountry1.setOnAction(e -> enableCatPane());
+//        cmbChooseCountry.getItems().add("Italy");
+//        cmbChooseCountry.getItems().add("Spain");
+//        cmbChooseCountry.getItems().add("Sweden");
+//        cmbChooseCountry.getItems().add("Ireland");
+//        cmbChooseCountry.getItems().add("Denmark");
+//        cmbChooseCountry.setOnAction(e -> enableCommonPane());
+        setupComboBox();
     }
 
     private void enableCatPane() {
@@ -181,5 +182,14 @@ public class CountryTablesController implements Initializable {
         importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         commonCountryTable1.setItems(data);
+    }
+
+    private void setupComboBox() {
+        ObservableList<String> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
+        cmbChooseCountry.setItems(data);
+        cmbChooseCountry1.setItems(data);
+        cmbChooseCountry.setOnAction(e -> enableCommonPane());
+        cmbChooseCountry1.setOnAction(e -> enableCatPane());
     }
 }

@@ -1,16 +1,23 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
 import com.example.importify.Model.CountryImportExport;
 import com.example.importify.Model.ExportImportConstituents;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 
-public class ConstituentsTablesController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ConstituentsTablesController implements Initializable {
 
     @FXML
     private ConstituentsController controller;
@@ -88,6 +95,18 @@ public class ConstituentsTablesController {
         this.controller = controller;
     }
 
+   @FXML
+   private void backFromImportTable() {
+       new ZoomIn(pnCatImportPrompt).play();
+       pnCatImportPrompt.toFront();
+   }
+
+   @FXML
+   private void backFromExportTable() {
+       new ZoomIn(pnCategoryExportTablePrompt).play();
+       pnCategoryExportTablePrompt.toFront();
+   }
+
     void showExportTable() {
         new ZoomIn(pnCatExportTable).play();
         pnCatExportTable.toFront();
@@ -96,5 +115,27 @@ public class ConstituentsTablesController {
     void showImportTable() {
         new ZoomIn(pnCatImportTable).play();
         pnCatImportTable.toFront();
+    }
+
+    private void enableExportTable() {
+        btnShowCommonCategoryTable.setDisable(false);
+    }
+
+    private void enableImportTable() {
+        btnShowImportCat.setDisable(false);
+    }
+
+    private void setupComboBox() {
+        ObservableList<String> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("constituents"));
+        cmbChooseCountry.setItems(data);
+        cmbChooseCat.setItems(data);
+        cmbChooseCountry.setOnAction(e -> enableExportTable());
+        cmbChooseCat.setOnAction(e -> enableImportTable());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setupComboBox();
     }
 }

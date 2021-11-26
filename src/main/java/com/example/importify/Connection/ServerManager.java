@@ -73,6 +73,16 @@ public class ServerManager {
         return null;
     }
 
+    public LinkedList<Integer> getYears() {
+        sendString("years");
+        try {
+            return (LinkedList<Integer>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public LinkedList<CountryImportExport> getCountryImportExport(String country) {
         sendString("countryTable + " + country);
         try {

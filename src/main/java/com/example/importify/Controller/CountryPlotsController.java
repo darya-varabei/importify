@@ -1,6 +1,9 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
@@ -78,6 +81,7 @@ public class CountryPlotsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        setupComboBox();
         cmbChooseYear.getItems().add(2009);
         cmbChooseYear.getItems().add(2010);
         cmbChooseYear.getItems().add(2011);
@@ -150,5 +154,18 @@ public class CountryPlotsController implements Initializable {
     void backFromCommonPlot() {
         new ZoomIn(pnCountryCommonPlotPrompt).play();
         pnCountryCommonPlotPrompt.toFront();
+    }
+
+    private void setupComboBox() {
+        ObservableList<String> data;
+        ObservableList<Integer> years;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
+        years = FXCollections.observableArrayList(Client.interactionsWithServer.getYears());
+        cmbChooseCountry11.setItems(data);
+        cmbChooseCountry2.setItems(data);
+        cmbChooseYear.setItems(years);
+        cmbChooseYear.setOnAction(e -> enableSharePlot());
+        cmbChooseCountry11.setOnAction(e -> enableSharePlot());
+        cmbChooseCountry2.setOnAction(e -> enableCommonPlot());
     }
 }
