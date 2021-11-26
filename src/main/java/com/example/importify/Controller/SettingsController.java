@@ -53,8 +53,8 @@ public class SettingsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblUsername.setText(user.getUserEntry().getLogin());
-        lblUserRole.setText(user.getUserEntry().getRole());
-        cmbChooseCountry.setValue(user.getCountry().getName());
+//        lblUsername.setText(user.getUserEntry().getLogin());
+//        lblUserRole.setText(user.getUserEntry().getRole());
+//        cmbChooseCountry.setValue(user.getCountry().getName());
     }
 }

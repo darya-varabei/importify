@@ -159,13 +159,15 @@ public class CountryPlotsController implements Initializable {
     private void setupComboBox() {
         ObservableList<String> data;
         ObservableList<Integer> years;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
-        years = FXCollections.observableArrayList(Client.interactionsWithServer.getYears());
-        cmbChooseCountry11.setItems(data);
-        cmbChooseCountry2.setItems(data);
-        cmbChooseYear.setItems(years);
-        cmbChooseYear.setOnAction(e -> enableSharePlot());
-        cmbChooseCountry11.setOnAction(e -> enableSharePlot());
-        cmbChooseCountry2.setOnAction(e -> enableCommonPlot());
+        if (Client.interactionsWithServer != null) {
+            data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
+            years = FXCollections.observableArrayList(Client.interactionsWithServer.getYears());
+            cmbChooseCountry11.setItems(data);
+            cmbChooseCountry2.setItems(data);
+            cmbChooseYear.setItems(years);
+            cmbChooseYear.setOnAction(e -> enableSharePlot());
+            cmbChooseCountry11.setOnAction(e -> enableSharePlot());
+            cmbChooseCountry2.setOnAction(e -> enableCommonPlot());
+        }
     }
 }

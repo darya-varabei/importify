@@ -186,10 +186,12 @@ public class CountryTablesController implements Initializable {
 
     private void setupComboBox() {
         ObservableList<String> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
-        cmbChooseCountry.setItems(data);
-        cmbChooseCountry1.setItems(data);
-        cmbChooseCountry.setOnAction(e -> enableCommonPane());
-        cmbChooseCountry1.setOnAction(e -> enableCatPane());
+        if (Client.interactionsWithServer != null) {
+            data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
+            cmbChooseCountry.setItems(data);
+            cmbChooseCountry1.setItems(data);
+            cmbChooseCountry.setOnAction(e -> enableCommonPane());
+            cmbChooseCountry1.setOnAction(e -> enableCatPane());
+        }
     }
 }

@@ -131,9 +131,11 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (user.getUserEntry().getRole() == "Пользователь") {
-            btnUsers.setDisable(true);
-            btnUsers.setVisible(false);
+        if (user.getUserEntry() != null) {
+            if (user.getUserEntry().getRole() == "Пользователь") {
+                btnUsers.setDisable(true);
+                btnUsers.setVisible(false);
+            }
         }
     }
 }
