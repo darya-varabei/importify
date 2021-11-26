@@ -127,7 +127,8 @@ public class ConstituentsTablesController implements Initializable {
 
     private void setupComboBox() {
         ObservableList<String> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("constituents"));
+        Client client = new Client();
+        data = FXCollections.observableArrayList(client.interactionsWithServer.getStrings("constituents"));
         cmbChooseCountry.setItems(data);
         cmbChooseCat.setItems(data);
         cmbChooseCountry.setOnAction(e -> enableExportTable());

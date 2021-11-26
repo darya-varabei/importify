@@ -35,8 +35,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-//        Client client = new Client();
-//        client.connectToServer();
+        //Client client = new Client();
+       // client.connectToServer();
         launch(args);
     }
 }

@@ -9,7 +9,7 @@ public class User implements Serializable {
     private int codeUser;
     private UserEntry userEntry;
     private String email;
-    private String country;
+    private Country country;
     private String dateLastAutorization;
     private LocalDate dateLastExit;
 
@@ -39,11 +39,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 

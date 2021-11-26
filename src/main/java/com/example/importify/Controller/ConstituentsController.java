@@ -32,8 +32,8 @@ public class ConstituentsController implements Initializable {
     private Button btnShowCountryShareImportPlot;
 
     public void initialize(URL url, ResourceBundle rb){
-//        constituentsTablesController.setSampleController(this);
-//        constituentsPlotsController.setSampleController(this);
+        constituentsTablesController.setSampleController(this);
+        constituentsPlotsController.setSampleController(this);
     }
 
     @FXML

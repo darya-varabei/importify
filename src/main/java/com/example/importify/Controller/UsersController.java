@@ -104,7 +104,7 @@ public class UsersController implements Initializable {
             fieldUsername.setText(user.getUserEntry().getLogin());
             fieldEmail.setText(user.getEmail());
             fieldPassword.setText(user.getUserEntry().getPassword());
-            cmbCountry.setValue(user.getCountry());
+            cmbCountry.setValue(user.getCountry().getName());
             cmbRole.setValue(user.getUserEntry().getRole());
         }
     }

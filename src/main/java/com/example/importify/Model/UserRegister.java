@@ -4,10 +4,12 @@ import java.io.Serializable;
 
 public class UserRegister extends UserEntry {
     private String passwordRep;
+    private String email;
 
-    public UserRegister(String txtFieldLoginText, String text, String passwordRep) {
-        super();
+    public UserRegister(String login, String password, String passwordRep, String email) {
+        super(login, password);
        this.passwordRep = passwordRep;
+       this.email = email;
     }
 
     public String getRepPassword() {
@@ -16,5 +18,13 @@ public class UserRegister extends UserEntry {
 
     public void setRepPassword(String passwordRep) {
         this.passwordRep = passwordRep;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
