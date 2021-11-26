@@ -142,7 +142,7 @@ public class CountryTablesController implements Initializable {
         setupCatTable();
     }
 
-    public void showCatCountryTable(ActionEvent actionEvent) {
+    public void showCatCountryTable() {
         new ZoomIn(pnCountryCatTable).play();
         pnCountryCatTable.toFront();
     }

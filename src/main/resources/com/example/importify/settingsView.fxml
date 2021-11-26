@@ -42,7 +42,7 @@
             <Font name="SF Compact Text Regular" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnAddMessage" layoutX="65.0" layoutY="601.0" mnemonicParsing="false" style="-fx-background-color: #354385;" text="Добавить сообщение" textFill="#fafafa">
+      <Button fx:id="btnAddMessage" layoutX="65.0" layoutY="601.0" mnemonicParsing="false" onAction="#addMessage" style="-fx-background-color: #354385;" text="Добавить сообщение" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font>

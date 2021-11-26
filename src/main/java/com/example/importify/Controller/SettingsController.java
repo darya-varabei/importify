@@ -1,6 +1,11 @@
 package com.example.importify.Controller;
 
+import com.example.importify.Connection.Client;
+import com.example.importify.Model.CountryImportExport;
+import com.example.importify.Model.ErrorMessage;
 import com.example.importify.Model.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,7 +32,7 @@ public class SettingsController implements Initializable {
     private ComboBox<String> cmbChooseCountry;
 
     @FXML
-    private ListView<?> listMessages;
+    private ListView<String> listMessages;
 
     @FXML
     private Button btnExit;
@@ -42,8 +47,11 @@ public class SettingsController implements Initializable {
     public void setSecondScene(Scene scene) {
         fxmlLoader = scene;
     }
+
     @FXML
     private TextArea fieldAddMessage;
+
+    Client client = new Client();
 
     @FXML
     private void exit(ActionEvent event) {
@@ -51,8 +59,30 @@ public class SettingsController implements Initializable {
         primaryStage.setScene(fxmlLoader);
     }
 
+    @FXML
+    private void addMessage() {
+        if (fieldAddMessage.getText() != "") {
+            listMessages.getItems().add(fieldAddMessage.getText());
+            listMessages.refresh();
+        }
+    }
+
+    @FXML
+    private void getMessages() {
+        if (client.interactionsWithServer != null) {
+            ObservableList<String> data;
+            data = FXCollections.observableArrayList(Client.interactionsWithServer.getUserMessages());
+            listMessages.setItems(data);
+            listMessages.refresh();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if (user.getUserEntry() == null) {
+            listMessages.setVisible(false);
+        }
+        getMessages();
 //        lblUsername.setText(user.getUserEntry().getLogin());
 //        lblUserRole.setText(user.getUserEntry().getRole());
 //        cmbChooseCountry.setValue(user.getCountry().getName());

@@ -40,14 +40,18 @@ public class ConstituentsController implements Initializable {
     public void showConstImportTablePane() {
         btnShowConstImportTable.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowConstExportTable.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsTablesController.showImportTable();
+        if (this.constituentsPlotsController != null) {
+            constituentsTablesController.showImportTable();
+        }
     }
 
     @FXML
     public void showConstExportTablePane() {
         btnShowConstExportTable.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowConstImportTable.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsTablesController.showExportTable();
+        if (this.constituentsPlotsController != null) {
+            constituentsTablesController.showExportTable();
+        }
     }
 
     @FXML
@@ -55,7 +59,9 @@ public class ConstituentsController implements Initializable {
         btnShowCommonExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowCountryShareExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
         btnShowCountryShareImportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsPlotsController.showWorldSharePlot();
+        if (this.constituentsPlotsController != null) {
+            constituentsPlotsController.showWorldSharePlot();
+        }
     }
 
     @FXML
@@ -63,7 +69,9 @@ public class ConstituentsController implements Initializable {
         btnShowCountryShareExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowCommonExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
         btnShowCountryShareImportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsPlotsController.showWorldExportShare();
+        if (this.constituentsPlotsController != null) {
+            constituentsPlotsController.showWorldExportShare();
+        }
     }
 
     @FXML
@@ -71,6 +79,8 @@ public class ConstituentsController implements Initializable {
         btnShowCountryShareImportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
         btnShowCountryShareExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
         btnShowCommonExportPlot.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-        constituentsPlotsController.showWorldImportShare();
+        if (this.constituentsPlotsController != null) {
+            constituentsPlotsController.showWorldImportShare();
+        }
     }
 }

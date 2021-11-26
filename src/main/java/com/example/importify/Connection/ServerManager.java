@@ -2,6 +2,7 @@ package com.example.importify.Connection;
 
 import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
+import com.example.importify.Model.ErrorMessage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -41,8 +42,7 @@ public class ServerManager {
         }
     }
 
-    public Object readObject()
-    {
+    public Object readObject() {
         try {
             return readMessage.readObject();
         } catch (Exception e) {
@@ -52,8 +52,7 @@ public class ServerManager {
         return null;
     }
 
-    public String readString()
-    {
+    public String readString() {
         try {
             return (String)readMessage.readObject();
         } catch (Exception e) {
@@ -103,8 +102,28 @@ public class ServerManager {
         return null;
     }
 
-    public LinkedList<CountryConstituent> getConstituentValue() {
-        sendString("constituentTable");
+    public LinkedList<CountryConstituent> getConstituentValue(String constituent) {
+        sendString(constituent);
+        try {
+            return (LinkedList<CountryConstituent>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<String> getUserMessages() {
+        sendString("errors");
+        try {
+            return (LinkedList<String>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<CountryConstituent> getConstituentAndYearValue(String constituent, Integer year) {
+        sendString(constituent + year);
         try {
             return (LinkedList<CountryConstituent>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
