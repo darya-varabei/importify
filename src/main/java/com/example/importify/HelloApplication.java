@@ -19,14 +19,8 @@ public class HelloApplication extends Application {
         FXMLLoader secondPage = new FXMLLoader(HelloApplication.class.getResource("mainScreen.fxml"));
         Scene secondScene = new Scene(secondPage.load(), 1216, 790);
 
- //       FXMLLoader settingPage = new FXMLLoader(HelloApplication.class.getResource("settingView.fxml"));
-        //Scene settingScene = new Scene(settingPage.load(), 1216, 790);
-
         LoginController firstPaneController = fxmlLoader.getController();
         firstPaneController.setSecondScene(secondScene);
-//
-//        SettingsController settingsController = settingPage.getController();
-//        settingsController.setSecondScene(scene);
 
         stage.setScene(scene);
         stage.show();
@@ -35,8 +29,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        //Client client = new Client();
-       // client.connectToServer();
         launch(args);
     }
 }

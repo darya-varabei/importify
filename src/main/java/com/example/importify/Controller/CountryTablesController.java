@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class CountryTablesController implements Initializable {
 
+    private Client client;
+
     @FXML
     private CountryController controller;
 
@@ -106,19 +108,10 @@ public class CountryTablesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-//        cmbChooseCountry1.getItems().add("Italy");
-//        cmbChooseCountry1.getItems().add("Spain");
-//        cmbChooseCountry1.getItems().add("Sweden");
-//        cmbChooseCountry1.getItems().add("Ireland");
-//        cmbChooseCountry1.getItems().add("Denmark");
+//        cmbChooseCountry1.getItems().addAll(client.interactionsWithServer.getStrings("countries"));
 //        cmbChooseCountry1.setOnAction(e -> enableCatPane());
-//        cmbChooseCountry.getItems().add("Italy");
-//        cmbChooseCountry.getItems().add("Spain");
-//        cmbChooseCountry.getItems().add("Sweden");
-//        cmbChooseCountry.getItems().add("Ireland");
-//        cmbChooseCountry.getItems().add("Denmark");
-//        cmbChooseCountry.setOnAction(e -> enableCommonPane());
+//        cmbChooseCountry.getItems().addAll(client.interactionsWithServer.getStrings("countries"));
+//        cmbChooseCountry1.setOnAction(e -> enableCommonPane());
         setupComboBox();
     }
 

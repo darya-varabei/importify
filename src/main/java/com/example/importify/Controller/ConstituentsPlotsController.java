@@ -1,6 +1,7 @@
 package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,8 +10,6 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
@@ -55,13 +54,13 @@ public class ConstituentsPlotsController implements Initializable {
     private Pane pnCatWorldExportSharePrompt;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry21;
+    private ComboBox<String> cmbChooseCountry21;
 
     @FXML
     private Button btnShowCommonCountryTable21;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry;
+    private ComboBox<Integer> cmbChooseCountry;
 
     @FXML
     private Pane pnCatWorldExportShare;
@@ -94,13 +93,13 @@ public class ConstituentsPlotsController implements Initializable {
     private Pane pnCatWorldImportSharePrompt1;
 
     @FXML
-    private ComboBox<?> cmbChooseCountry1;
+    private ComboBox<String> cmbChooseCountry1;
 
     @FXML
     private Button btnShowDiag;
 
     @FXML
-    private ComboBox<String> cmbChooseCountry2;
+    private ComboBox<Integer> cmbChooseCountry2;
 
     public void setSampleController(ConstituentsController controller) {
         this.controller = controller;
@@ -108,20 +107,7 @@ public class ConstituentsPlotsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        cmbChooseCat = new ComboBox<>();
-        cmbChooseCat.getItems().add("Italy");
-        cmbChooseCat.getItems().add("Spain");
-        cmbChooseCat.getItems().add("Sweden");
-        cmbChooseCat.getItems().add("Ireland");
-        cmbChooseCat.getItems().add("Denmark");
-
-        cmbChooseCountry2 = new ComboBox<>();
-        cmbChooseCountry2.getItems().add("Italy");
-        cmbChooseCountry2.getItems().add("Spain");
-        cmbChooseCountry2.getItems().add("Sweden");
-        cmbChooseCountry2.getItems().add("Ireland");
-        cmbChooseCountry2.getItems().add("Denmark");
+        setupComboBoxes();
     }
 
     void showWorldSharePlot() {
@@ -137,5 +123,42 @@ public class ConstituentsPlotsController implements Initializable {
     void showWorldImportShare() {
         new ZoomIn(pnCatWorldImportShare).play();
         pnCatWorldImportShare.toFront();
+    }
+
+    private void enableWorldSharePlot() {
+       btnShowCommonCountryTable111.setDisable(false);
+    }
+
+    private void enableWorldExportSharePlot() {
+        if (cmbChooseCountry21.getValue() != "Выберите категорию" && cmbChooseCountry.getValue() != 0) {
+            btnShowCommonCountryTable21.setDisable(false);
+        }
+    }
+
+    private void enableWorldImportSharePlot() {
+        if (cmbChooseCountry1.getValue() != "Выберите категорию" && cmbChooseCountry2.getValue() != 0) {
+            btnShowDiag.setDisable(false);
+        }
+    }
+
+    private void setupComboBoxes() {
+
+        ObservableList<Integer> year;
+        ObservableList<String> category;
+        if (Client.interactionsWithServer != null) {
+
+            category = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("categories"));
+            year = FXCollections.observableArrayList(Client.interactionsWithServer.getYears());
+            cmbChooseCountry1.setItems(category);
+            cmbChooseCountry2.setItems(year);
+            cmbChooseCountry.setItems(year);
+            cmbChooseCountry21.setItems(category);
+            cmbChooseCat.setItems(category);
+            cmbChooseCat.setOnAction(e -> enableWorldSharePlot());
+            cmbChooseCountry1.setOnAction(e -> enableWorldImportSharePlot());
+            cmbChooseCountry2.setOnAction(e -> enableWorldImportSharePlot());
+            cmbChooseCountry.setOnAction(e -> enableWorldExportSharePlot());
+            cmbChooseCountry21.setOnAction(e -> enableWorldExportSharePlot());
+        }
     }
 }

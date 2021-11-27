@@ -117,6 +117,14 @@ public class ConstituentsTablesController implements Initializable {
         pnCatImportTable.toFront();
     }
 
+    void setupImportTable() {
+
+    }
+
+    void setupExportTable() {
+
+    }
+
     private void enableExportTable() {
         btnShowCommonCategoryTable.setDisable(false);
     }

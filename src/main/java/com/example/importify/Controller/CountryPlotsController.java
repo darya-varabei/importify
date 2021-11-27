@@ -2,6 +2,7 @@ package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
+import com.example.importify.Model.CountryConstituent;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +17,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CountryPlotsController implements Initializable {
+
+    private Client client;
 
     @FXML
     private CountryController controller;
@@ -80,28 +83,7 @@ public class CountryPlotsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         setupComboBox();
-        cmbChooseYear.getItems().add(2009);
-        cmbChooseYear.getItems().add(2010);
-        cmbChooseYear.getItems().add(2011);
-        cmbChooseYear.getItems().add(2012);
-        cmbChooseYear.getItems().add(2013);
-        cmbChooseYear.setOnAction(e -> enableSharePlot());
-
-        cmbChooseCountry2.getItems().add("Italy");
-        cmbChooseCountry2.getItems().add("Spain");
-        cmbChooseCountry2.getItems().add("Sweden");
-        cmbChooseCountry2.getItems().add("Ireland");
-        cmbChooseCountry2.getItems().add("Denmark");
-
-        cmbChooseCountry2.setOnAction(e -> enableCommonPlot());
-        cmbChooseCountry11.getItems().add("Italy");
-        cmbChooseCountry11.getItems().add("Spain");
-        cmbChooseCountry11.getItems().add("Sweden");
-        cmbChooseCountry11.getItems().add("Ireland");
-        cmbChooseCountry11.getItems().add("Denmark");
-        cmbChooseCountry11.setOnAction(e -> enableSharePlot());
     }
 
     private void enableCommonPlot() {
@@ -130,8 +112,20 @@ public class CountryPlotsController implements Initializable {
     }
 
     void showCommonPlot() {
-        new ZoomIn(pnCommonCountryPlot).play();
+       new ZoomIn(pnCommonCountryPlot).play();
         pnCommonCountryPlot.toFront();
+    }
+
+    void setupCommonPlot() {
+
+    }
+
+    void setupSharePlot() {
+
+    }
+
+    void setupShareDiag() {
+
     }
 
     void showSharePlot() {
