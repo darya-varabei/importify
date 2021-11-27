@@ -1,8 +1,6 @@
 package com.example.importify.Connection;
 
-import com.example.importify.Model.CountryConstituent;
-import com.example.importify.Model.CountryImportExport;
-import com.example.importify.Model.ErrorMessage;
+import com.example.importify.Model.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -126,6 +124,46 @@ public class ServerManager {
         sendString(constituent + year);
         try {
             return (LinkedList<CountryConstituent>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<WorldShare> getWorldShare(String constituent, Integer year) {
+        sendString("world " + constituent + " " + year);
+        try {
+            return (LinkedList<WorldShare>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<WorldConstituentExport> getWorldShare(String constituent) {
+        sendString("worldCE " + constituent);
+        try {
+            return (LinkedList<WorldConstituentExport>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<ExportImportConstituents> getConstituent(String constituent) {
+        sendString("EIConstituent " + constituent);
+        try {
+            return (LinkedList<ExportImportConstituents>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedList<UserView> getAllUsers(String constituent) {
+        sendString("AllUsers");
+        try {
+            return (LinkedList<UserView>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
