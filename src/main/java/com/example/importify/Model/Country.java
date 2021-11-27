@@ -3,10 +3,10 @@ package com.example.importify.Model;
 import javafx.scene.image.Image;
 
 public class Country {
-    private String id;
-    private String name;
-    private double area;
-    private int population;
+    protected String id;
+    protected String name;
+    protected double area;
+    protected int population;
 
     public void setId(String id) { this.id = id; }
 

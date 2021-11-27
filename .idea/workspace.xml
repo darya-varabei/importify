@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: setup kostyl">
-      <change beforePath="$PROJECT_DIR$/../importify-server/src/main/java/server/Connection/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../importify-server/src/main/java/server/Connection/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../importify-server/src/main/java/server/Controller/LogicOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../importify-server/src/main/java/server/Controller/LogicOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../importify-server/src/main/java/server/DataBase/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../importify-server/src/main/java/server/DataBase/DBHandler.java" afterDir="false" />
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: data parsing (with restrictive comments)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Connection/ServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Connection/ServerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/ConstituentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/CountryTablesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/settingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/settingsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/importify/users.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,8 @@
       <workItem from="1637905224865" duration="4870000" />
       <workItem from="1637922942219" duration="1272000" />
       <workItem from="1637931788209" duration="1579000" />
-      <workItem from="1637946143579" duration="7038000" />
+      <workItem from="1637946143579" duration="7080000" />
+      <workItem from="1637997902715" duration="9323000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>
@@ -263,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637923392790</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add: data parsing (with restrictive comments)">
+      <created>1637953541919</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637953541919</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +315,8 @@
     <MESSAGE value="add: constituent tables navigation and comboboxes data" />
     <MESSAGE value="add: multiple" />
     <MESSAGE value="add: setup kostyl" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: setup kostyl" />
+    <MESSAGE value="add: data parsing (with restrictive comments)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: data parsing (with restrictive comments)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,9 +3,9 @@ package com.example.importify.Model;
 import java.io.Serializable;
 
 public class UserEntry implements Serializable {
-    private String login;
-    private String password;
-    private String role;
+    protected String login;
+    protected String password;
+    protected String role;
 
     public UserEntry(String login, String password){
         this.login = login;

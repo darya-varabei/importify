@@ -1,7 +1,6 @@
 package com.example.importify.Controller;
 
-import com.example.importify.Model.CountryImportExport;
-import com.example.importify.Model.User;
+import com.example.importify.Model.UserView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,9 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.Date;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class UsersController implements Initializable {
@@ -23,22 +20,22 @@ public class UsersController implements Initializable {
     private Pane pnUsers;
 
     @FXML
-    private TableColumn<User, Integer> idColumn;
+    private TableColumn<UserView, Integer> idColumn;
 
     @FXML
-    private TableColumn<User, String> loginColumn;
+    private TableColumn<UserView, String> loginColumn;
 
     @FXML
-    private TableColumn<User, Date> lastAccessColumn;
+    private TableColumn<UserView, Date> lastAccessColumn;
 
     @FXML
-    private TableColumn<User, String> countryColumn;
+    private TableColumn<UserView, String> countryColumn;
 
     @FXML
-    private TableColumn<User, String> roleColumn;
+    private TableColumn<UserView, String> roleColumn;
 
     @FXML
-    private TableView<User> tableUsers;
+    private TableView<UserView> tableUsers;
 
     @FXML
     private Button btnAddUsers;
@@ -67,21 +64,44 @@ public class UsersController implements Initializable {
     @FXML
     private Button btnSaveUser;
 
-    private final ObservableList<User> dataList = FXCollections.observableArrayList();
+    private final ObservableList<UserView> dataList = FXCollections.observableArrayList();
 
     @FXML
     void addUser(ActionEvent event) {
-
+        String username = fieldUsername.getText();
+        String password = fieldPassword.getText();
+        Integer id = 0;
+        String country = cmbCountry.getValue();
+        String role = cmbRole.getValue();
+        UserView userToAdd = new UserView(username, password, id, "", country, role);
+   dataList.add(userToAdd);
     }
 
     @FXML
     void deleteUser(ActionEvent event) {
+        UserView user = tableUsers.getSelectionModel().getSelectedItem();
+        removeUser(user.getId());
+        tableUsers.refresh();
+    }
 
+    private void removeUser(int id) {
+        dataList.forEach((tab) -> {
+            if (tab.getId() == id) {
+                dataList.remove(tab);
+            }
+        });
     }
 
     @FXML
     void updateUser(ActionEvent event) {
+        UserView user = tableUsers.getSelectionModel().getSelectedItem();
+        user.setLogin(fieldUsername.getText());
+        user.setPassword(fieldPassword.getText());
+        user.setCountry(cmbCountry.getValue());
+        user.setCountry(cmbRole.getValue());
 
+        removeUser(user.getId());
+        dataList.add(user);
     }
 
     @Override
@@ -100,12 +120,12 @@ public class UsersController implements Initializable {
         if (event.getClickCount() == 2) {
             btnAddUsers.setDisable(true);
             btnSaveUser.setDisable(false);
-            User user = tableUsers.getSelectionModel().getSelectedItem();
-            fieldUsername.setText(user.getUserEntry().getLogin());
-            fieldEmail.setText(user.getEmail());
-            fieldPassword.setText(user.getUserEntry().getPassword());
-            cmbCountry.setValue(user.getCountry().getName());
-            cmbRole.setValue(user.getUserEntry().getRole());
+            UserView user = tableUsers.getSelectionModel().getSelectedItem();
+            fieldUsername.setText(user.getLogin());
+            fieldEmail.setText(String.valueOf(user.getId()));
+            fieldPassword.setText(user.getPassword());
+            cmbCountry.setValue(user.getCountry());
+            cmbRole.setValue(user.getRole());
         }
     }
 
@@ -114,8 +134,8 @@ public class UsersController implements Initializable {
         fieldUsername.setText("");
         fieldEmail.setText("");
         fieldPassword.setText("");
-        cmbCountry.setValue("");
-        cmbRole.setValue("");
+        cmbCountry.setValue("Выберите страну");
+        cmbRole.setValue("Выберите роль");
         btnAddUsers.setDisable(false);
     }
 }

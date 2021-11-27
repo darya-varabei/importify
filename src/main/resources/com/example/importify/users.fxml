@@ -11,7 +11,7 @@
 
 <Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.UsersController">
    <children>
-      <TableView fx:id="tableUsers" layoutX="18.0" layoutY="19.0" prefHeight="547.0" prefWidth="646.0">
+      <TableView fx:id="tableUsers" onMouseClicked="#clickItem" layoutX="18.0" layoutY="19.0" prefHeight="547.0" prefWidth="646.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
           <TableColumn fx:id="loginColumn" prefWidth="124.57804107666016" text="Логин" />
