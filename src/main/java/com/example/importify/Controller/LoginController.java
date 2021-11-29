@@ -10,6 +10,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -23,6 +27,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
+//import animatefx.*;
 
 public class LoginController implements Initializable{
 
@@ -143,9 +148,9 @@ public class LoginController implements Initializable{
 
     @FXML
     private void handleAuthorizationAction(ActionEvent event) {
-        serverManager.sendString("Registration");
-        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-        User user;
+//        serverManager.sendString("Registration");
+//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+//        User user;
 
         if (event.getSource().equals(btnSignIn)) {
             new ZoomIn(pnSignIn).play();
@@ -163,36 +168,36 @@ public class LoginController implements Initializable{
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-//        serverManager.sendString("Authorization");
-//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-//        User user = User.getInstance();
-//
-//        if ((user = (User)serverManager.readObject()) != null) {
+        serverManager.sendString("Authorization");
+        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
+        User user = User.getInstance();
+
+        if ((user = (User)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-//        }
-//        else {
-//            lblInvalidLoginEntry.setVisible(true);
-//        }
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
     }
 
     @FXML
     public void registUser(ActionEvent event) {
-//        serverManager.sendString("Registration");
-//        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
-//        UserRegister user;
-//
-//        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
-//            lblPasswordDoNotMatch.setVisible(true);
-//        }
-//
-//        if ((user = (UserRegister)serverManager.readObject()) != null) {
+        serverManager.sendString("Registration");
+        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
+        UserRegister user;
+
+        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
+            lblPasswordDoNotMatch.setVisible(true);
+        }
+
+        if ((user = (UserRegister)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//            primaryStage.setScene(secondScene);
-//        }
-//        else {
-//            lblInvalidLoginEntry.setVisible(true);
-//        }
+            primaryStage.setScene(secondScene);
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
     }
 
     @FXML
@@ -214,7 +219,6 @@ public class LoginController implements Initializable{
         }
         else {
             lblInvalidConnection.setVisible(true);
-            lblInvalidConnection.toFront();
         }
     }
 
@@ -227,7 +231,8 @@ public class LoginController implements Initializable{
 
         String port = eip1.getText();
 
-        try {
+        try
+        {
             clientSocket = new Socket(eip.getText(), Integer.parseInt(port));
             cois = clientSocket.getInputStream();
             coos = clientSocket.getOutputStream();
@@ -235,7 +240,8 @@ public class LoginController implements Initializable{
             eip.setDisable(true);
         }
 
-        catch(Exception e) {
+        catch(Exception e)
+        {
             e.printStackTrace();
             alert.setTitle("Ошибка");
             alert.setContentText(e.getMessage());

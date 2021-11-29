@@ -2,6 +2,7 @@ package com.example.importify.Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class User implements Serializable {
 
@@ -10,8 +11,9 @@ public class User implements Serializable {
     private UserEntry userEntry;
     private String email;
     private Country country;
+    private String codeCountry;
     private String dateLastAutorization;
-    private LocalDate dateLastExit;
+    private String dateLastExit;
 
     public User(){}
 
@@ -52,5 +54,29 @@ public class User implements Serializable {
             user = new User();
         }
         return user;
+    }
+
+    public String getDateLastExit() {
+        return dateLastExit;
+    }
+
+    public void setDateLastExit(String dateLastExit) {
+        this.dateLastExit = dateLastExit;
+    }
+
+    public String getDateLastAutorization() {
+        return dateLastAutorization;
+    }
+
+    public void setDateLastAutorization(String dateLastAutorization) {
+        this.dateLastAutorization = dateLastAutorization;
+    }
+
+    public String getCodeCountry() {
+        return codeCountry;
+    }
+
+    public void setCodeCountry(String codeCountry) {
+        this.codeCountry = codeCountry;
     }
 }

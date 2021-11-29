@@ -2,7 +2,9 @@ package com.example.importify.Model;
 
 import javafx.scene.image.Image;
 
-public class Country {
+import java.io.Serializable;
+
+public class Country implements Serializable {
     protected String id;
     protected String name;
     protected double area;
