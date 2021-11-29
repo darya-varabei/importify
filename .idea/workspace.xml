@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="edit: refactor classes">
+    <list default="true" id="2a992341-9658-498d-ac62-9927d080d079" name="Changes" comment="add: registration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/importify/Model/UserEntry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +137,7 @@
       <workItem from="1638132916621" duration="1419000" />
       <workItem from="1638138608470" duration="1634000" />
       <workItem from="1638144644703" duration="4781000" />
-      <workItem from="1638199672361" duration="5819000" />
+      <workItem from="1638199672361" duration="6650000" />
     </task>
     <task id="LOCAL-00001" summary="add: switch buttons style change on tap">
       <created>1636387124430</created>
@@ -257,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638199599562</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add: registration">
+      <created>1638205605125</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638205605125</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +323,8 @@
     <MESSAGE value="add: constituent tables navigation and comboboxes data" />
     <MESSAGE value="add: multiple" />
     <MESSAGE value="edit: refactor classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit: refactor classes" />
+    <MESSAGE value="add: registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: registration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,7 +347,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/importify/Controller/LoginController.java</url>
           <line>193</line>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -10,7 +10,7 @@ public class UserEntry implements Serializable {
     public UserEntry(String login, String password){
         this.login = login;
         this.password = password;
-        this.role = "";
+        this.role = "User";
     }
 
     public String getLogin() {

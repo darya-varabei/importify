@@ -191,14 +191,12 @@ public class LoginController implements Initializable{
             lblPasswordDoNotMatch.setVisible(true);
         }
 
-        var a = (UserRegister)serverManager.readObject();
-
-        if ((user = a) != null) {
+        if ((user = (UserRegister)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
         else {
-            lblInvalidLoginEntry.setVisible(true);
+            lblInvalidRegEntry.setVisible(true);
         }
     }
 
