@@ -2,6 +2,7 @@ package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
+import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
 import com.example.importify.Model.ExportImportConstituents;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
@@ -110,19 +112,33 @@ public class ConstituentsTablesController implements Initializable {
     void showExportTable() {
         new ZoomIn(pnCatExportTable).play();
         pnCatExportTable.toFront();
+        setupExportTable();
     }
 
     void showImportTable() {
         new ZoomIn(pnCatImportTable).play();
         pnCatImportTable.toFront();
+        setupImportTable();
     }
 
     void setupImportTable() {
 
+        ObservableList<ExportImportConstituents> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
+        yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
+        countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
+        importColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
+        tableCategoryImport.setItems(data);
     }
 
     void setupExportTable() {
 
+        ObservableList<ExportImportConstituents> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
+        year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        exportColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
+        country.setCellValueFactory(new PropertyValueFactory<>("country"));
+        tableCategoryExport.setItems(data);
     }
 
     private void enableExportTable() {
