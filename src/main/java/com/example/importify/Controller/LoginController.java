@@ -184,14 +184,16 @@ public class LoginController implements Initializable{
     @FXML
     public void registUser(ActionEvent event) {
         serverManager.sendString("Registration");
-        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
+        serverManager.sendObject(new UserRegister(txtFieldLogin11.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
         UserRegister user;
 
-        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
+        if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
             lblPasswordDoNotMatch.setVisible(true);
         }
 
-        if ((user = (UserRegister)serverManager.readObject()) != null) {
+        var a = (UserRegister)serverManager.readObject();
+
+        if ((user = a) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
