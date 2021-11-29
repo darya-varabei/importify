@@ -17,7 +17,6 @@ import java.util.ResourceBundle;
 
 public class ConstituentsPlotsController implements Initializable {
 
-    @FXML
     private ConstituentsController controller;
 
     @FXML

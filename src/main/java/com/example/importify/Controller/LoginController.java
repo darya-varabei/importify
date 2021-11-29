@@ -183,26 +183,26 @@ public class LoginController implements Initializable{
 
     @FXML
     public void registUser(ActionEvent event) {
-        serverManager.sendString("Registration");
-        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
-        UserRegister user;
-
-        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
-            lblPasswordDoNotMatch.setVisible(true);
-        }
-
-        if ((user = (UserRegister)serverManager.readObject()) != null) {
+//        serverManager.sendString("Registration");
+//        serverManager.sendObject(new UserRegister(txtFieldLogin.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
+//        UserRegister user;
+//
+//        if (txtFieldPass1.getText() != txtFieldPassRep.getText()) {
+//            lblPasswordDoNotMatch.setVisible(true);
+//        }
+//
+//        if ((user = (UserRegister)serverManager.readObject()) != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-        }
-        else {
-            lblInvalidLoginEntry.setVisible(true);
-        }
+//        }
+//        else {
+//            lblInvalidLoginEntry.setVisible(true);
+//        }
     }
 
     @FXML
     private void connect(ActionEvent event) {
-        var client = new Client();
+       Client client = new Client();
         client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
         serverManager = client.interactionsWithServer;
 

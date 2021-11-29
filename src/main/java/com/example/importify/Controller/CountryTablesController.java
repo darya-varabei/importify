@@ -2,6 +2,7 @@ package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
+import com.example.importify.Connection.ServerManager;
 import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
 import javafx.collections.FXCollections;
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class CountryTablesController implements Initializable {
 
-    private Client client;
+    private Client client = new Client();
 
     @FXML
     private CountryController controller;
@@ -53,8 +54,8 @@ public class CountryTablesController implements Initializable {
     @FXML
     private TableColumn<CountryConstituent, Integer> year;
 
-    @FXML
-    private TableColumn<CountryConstituent, Double> importC;
+//    @FXML
+//    private TableColumn<CountryConstituent, Double> importC;
 
     @FXML
     private TableColumn<CountryConstituent, Double> export;
@@ -101,7 +102,9 @@ public class CountryTablesController implements Initializable {
     @FXML
     private Button btnShowCommonCountryTable;
 
-    private final ObservableList<CountryImportExport> dataList = FXCollections.observableArrayList();
+    private ServerManager serverManager = null;
+
+    //private final ObservableList<CountryImportExport> dataList = FXCollections.observableArrayList();
     public void setSampleController(CountryController controller) {
         this.controller = controller;
     }
@@ -127,12 +130,13 @@ public class CountryTablesController implements Initializable {
         new ZoomIn(pnCommonCountryTable).play();
         pnCommonCountryTable.toFront();
         setupCommonTable();
+        setupComboBox();
     }
 
     void showCatTable() {
         new ZoomIn(pnCatCountryTable).play();
         pnCatCountryTable.toFront();
-        setupCatTable();
+        //setupCatTable();
     }
 
     public void showCatCountryTable() {
@@ -171,16 +175,17 @@ public class CountryTablesController implements Initializable {
         ObservableList<CountryConstituent> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
-        export.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
-        importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
-        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+        export.setCellValueFactory(new PropertyValueFactory<>("value"));
+        //importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("constituent"));
         commonCountryTable1.setItems(data);
     }
 
     private void setupComboBox() {
         ObservableList<String> data;
         if (Client.interactionsWithServer != null) {
-            data = FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries"));
+        serverManager = client.interactionsWithServer;
+            data = FXCollections.observableArrayList(serverManager.getStrings("countries"));
             cmbChooseCountry.setItems(data);
             cmbChooseCountry1.setItems(data);
             cmbChooseCountry.setOnAction(e -> enableCommonPane());

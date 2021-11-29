@@ -12,8 +12,8 @@ import java.util.ResourceBundle;
 
 public class CountryController implements Initializable {
 
-    @FXML private CountryTablesController countryTablesController;
-    @FXML private CountryPlotsController countryPlotsController;
+    @FXML CountryTablesController countryTablesController;
+    @FXML CountryPlotsController countryPlotsController;
 
     @FXML
     private Pane pnCountries;

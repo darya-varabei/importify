@@ -10,8 +10,8 @@ import java.util.ResourceBundle;
 
 public class ConstituentsController implements Initializable {
 
-    @FXML private ConstituentsTablesController constituentsTablesController;
-    @FXML private ConstituentsPlotsController constituentsPlotsController;
+    @FXML ConstituentsTablesController constituentsTablesController;
+    @FXML ConstituentsPlotsController constituentsPlotsController;
 
     @FXML
     private Pane pnCategories;

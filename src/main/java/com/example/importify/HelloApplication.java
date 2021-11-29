@@ -29,6 +29,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        Client client = new Client();
+        //client.connectToServer("127.0.0.1", 4444);
         launch(args);
     }
 }

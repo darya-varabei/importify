@@ -8,7 +8,7 @@ public class Client {
 
     public void connectToServer(String host, int port) {
         try {
-            Socket clientSocket = new Socket(host, port);
+            Socket clientSocket = new Socket("127.0.0.1", 4444);
             interactionsWithServer = new ServerManager(clientSocket);
 
         } catch (IOException e) {
