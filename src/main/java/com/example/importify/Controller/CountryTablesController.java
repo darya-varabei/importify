@@ -104,17 +104,12 @@ public class CountryTablesController implements Initializable {
 
     private ServerManager serverManager = null;
 
-    //private final ObservableList<CountryImportExport> dataList = FXCollections.observableArrayList();
     public void setSampleController(CountryController controller) {
         this.controller = controller;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        cmbChooseCountry1.getItems().addAll(client.interactionsWithServer.getStrings("countries"));
-//        cmbChooseCountry1.setOnAction(e -> enableCatPane());
-//        cmbChooseCountry.getItems().addAll(client.interactionsWithServer.getStrings("countries"));
-//        cmbChooseCountry1.setOnAction(e -> enableCommonPane());
         setupComboBox();
     }
 
@@ -129,19 +124,17 @@ public class CountryTablesController implements Initializable {
     void showCommonTable() {
         new ZoomIn(pnCommonCountryTable).play();
         pnCommonCountryTable.toFront();
-        setupCommonTable();
-        setupComboBox();
     }
 
     void showCatTable() {
         new ZoomIn(pnCatCountryTable).play();
         pnCatCountryTable.toFront();
-        //setupCatTable();
     }
 
     public void showCatCountryTable() {
         new ZoomIn(pnCountryCatTable).play();
         pnCountryCatTable.toFront();
+        setupCatTable();
     }
 
     public void showCommonCountryTable(ActionEvent actionEvent) {
@@ -176,7 +169,6 @@ public class CountryTablesController implements Initializable {
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         export.setCellValueFactory(new PropertyValueFactory<>("value"));
-        //importC.setCellValueFactory(new PropertyValueFactory<>("importValue"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("constituent"));
         commonCountryTable1.setItems(data);
     }
