@@ -120,6 +120,16 @@ public class ServerManager {
         return null;
     }
 
+    public LinkedList<CountryConstituent> getCountryShare(String country, Integer year) {
+        sendString(country + year);
+        try {
+            return (LinkedList<CountryConstituent>) readMessage.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public LinkedList<CountryConstituent> getConstituentAndYearValue(String constituent, Integer year) {
         sendString(constituent + year);
         try {

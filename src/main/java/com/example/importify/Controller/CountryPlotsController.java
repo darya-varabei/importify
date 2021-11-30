@@ -3,12 +3,14 @@ package com.example.importify.Controller;
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
 import com.example.importify.Model.CountryConstituent;
+import com.example.importify.Model.CountryImportExport;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
@@ -116,16 +118,26 @@ public class CountryPlotsController implements Initializable {
         pnCommonCountryPlot.toFront();
     }
 
-    void setupCommonPlot() {
-
-    }
-
-    void setupSharePlot() {
-
-    }
+//    void setupCommonPlot() {
+//        ObservableList<CountryImportExport> data;
+//        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry2.getValue()));
+//        XYChart.Series series = new XYChart.Series();
+//        data.forEach((category) -> {
+//                    series.getData().add(new XYChart<Integer, Double>() {
+//                    })
+//                }
+//        countryImportExportPlot.getData().add(XYChart.Series(data));
+//    }
 
     void setupShareDiag() {
-
+        ObservableList<CountryConstituent> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryShare(cmbChooseCountry2.getValue(), cmbChooseYear.getValue()));
+        ObservableList<PieChart.Data> pieChartData = null;
+        data.forEach((category) -> {
+          pieChartData.add(new PieChart.Data(category.getConstituent(), category.getValue()));
+              }
+      );
+        pltCountryExportShare.setData(pieChartData);
     }
 
     void showSharePlot() {

@@ -108,9 +108,14 @@ public class CountryTablesController implements Initializable {
         this.controller = controller;
     }
 
+    @FXML
+    private void setupData() {
+        setupComboBox();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setupComboBox();
+//        setupComboBox();
     }
 
     private void enableCatPane() {
