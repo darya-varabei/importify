@@ -32,6 +32,15 @@ public class ServerManager {
         }
     }
 
+    public void sendData(String code, Object model) {
+        try {
+            sendString(code);
+            sendMessage.writeObject(model);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void sendString(String text) {
         try {
             sendMessage.writeObject(text);

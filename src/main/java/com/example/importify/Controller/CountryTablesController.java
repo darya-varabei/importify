@@ -3,6 +3,7 @@ package com.example.importify.Controller;
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
 import com.example.importify.Connection.ServerManager;
+import com.example.importify.Model.CountryAdd;
 import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
 import javafx.collections.FXCollections;
@@ -10,11 +11,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
@@ -29,6 +28,9 @@ public class CountryTablesController implements Initializable {
 
     @FXML
     private Pane pnCountryTables;
+
+    @FXML
+    private ComboBox<String> cmbChooseCountryToUpdate;
 
     @FXML
     private Pane pnCatCountryTable;
@@ -94,13 +96,52 @@ public class CountryTablesController implements Initializable {
     private Button btnSaveCountryCommonTable;
 
     @FXML
+    private Button btnShowAddData;
+
+    @FXML
+    private Button btnShowUpdateData;
+
+    @FXML
     private Pane pnCountryCommonTablePrompt;
+
+    @FXML
+    private Pane pnAddCommonData;
 
     @FXML
     private ComboBox<String> cmbChooseCountry;
 
     @FXML
     private Button btnShowCommonCountryTable;
+
+//    @FXML
+//    private AnchorPane pnAddCommonData;
+
+    @FXML
+    private TextField txtNewCountry;
+
+    @FXML
+    private TextField txtImport;
+
+    @FXML
+    private TextField txtExport;
+
+    @FXML
+    private Label lblActivity;
+
+    @FXML
+    private Button btnAddData;
+
+    @FXML
+    private Button btnUpdateData;
+
+    @FXML
+    private Button btnDeleteData;
+
+    @FXML
+    private Label lblInvalidInput;
+
+    @FXML
+    private Button btnClearData;
 
     private ServerManager serverManager = null;
 
@@ -184,9 +225,68 @@ public class CountryTablesController implements Initializable {
         serverManager = client.interactionsWithServer;
             data = FXCollections.observableArrayList(serverManager.getStrings("countries"));
             cmbChooseCountry.setItems(data);
+            cmbChooseCountryToUpdate.setItems(data);
             cmbChooseCountry1.setItems(data);
             cmbChooseCountry.setOnAction(e -> enableCommonPane());
             cmbChooseCountry1.setOnAction(e -> enableCatPane());
         }
+    }
+
+    public void addData() {
+        if (txtNewCountry.getText() != "" && txtImport.getText() != "" && txtExport.getText() != "") {
+            CountryAdd data = new CountryAdd(txtNewCountry.getText(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+        Client.interactionsWithServer.sendData("addCountry", data);
+            lblInvalidInput.setVisible(false);
+    }
+        else {
+            lblInvalidInput.setVisible(true);
+        }
+    }
+
+    public void updateData() {
+        if (cmbChooseCountryToUpdate.getValue() != "Выберите страну" && txtImport.getText() != "" && txtExport.getText() != "") {
+        CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+        Client.interactionsWithServer.sendData("editCountry", data);
+            lblInvalidInput.setVisible(false);
+        }
+        else {
+            lblInvalidInput.setVisible(true);
+        }
+    }
+
+    public void deleteData() {
+        if (cmbChooseCountryToUpdate.getValue() != "Выберите страну" && txtImport.getText() != "" && txtExport.getText() != "") {
+            CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+            Client.interactionsWithServer.sendData("deleteCountry", data);
+            lblInvalidInput.setVisible(false);
+        }
+        else {
+            lblInvalidInput.setVisible(true);
+        }
+    }
+
+    public void showUpdateCommonData() {
+        new ZoomIn(pnAddCommonData).play();
+        pnAddCommonData.toFront();
+    }
+
+    public void showAddData() {
+        txtNewCountry.toFront();
+        txtNewCountry.setVisible(true);
+        btnShowAddData.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowUpdateData.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnAddData.setDisable(false);
+        btnUpdateData.setDisable(true);
+        btnDeleteData.setDisable(true);
+    }
+
+    public void showUpdateData() {
+        cmbChooseCountryToUpdate.toFront();
+        txtNewCountry.setVisible(false);
+        btnShowUpdateData.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnShowAddData.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnAddData.setDisable(true);
+        btnUpdateData.setDisable(false);
+        btnDeleteData.setDisable(false);
     }
 }
