@@ -85,7 +85,7 @@ public class CountryPlotsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setupComboBox();
+
     }
 
     private void enableCommonPlot() {
@@ -94,6 +94,10 @@ public class CountryPlotsController implements Initializable {
 
     private void enableSharePlot() {
         btnShowCommonCountryTable11.setDisable(false);
+    }
+
+    @FXML private void setupData() {
+        setupComboBox();
     }
 
     @FXML

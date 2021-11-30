@@ -36,6 +36,12 @@ public class ConstituentsController implements Initializable {
 //        constituentsPlotsController.setSampleController(this);
     }
 
+//    @FXML
+//    public void setupData() {
+//        constituentsTablesController.setSampleController(this);
+//        constituentsPlotsController.setSampleController(this);
+//    }
+
     @FXML
     public void showConstImportTablePane() {
         btnShowConstImportTable.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");

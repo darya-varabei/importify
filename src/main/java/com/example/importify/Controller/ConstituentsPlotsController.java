@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class ConstituentsPlotsController implements Initializable {
 
-    private ConstituentsController controller;
+   @FXML public ConstituentsController controller;
 
     @FXML
     private Pane pnCatPlots;

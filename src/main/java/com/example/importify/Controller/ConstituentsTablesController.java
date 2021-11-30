@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class ConstituentsTablesController implements Initializable {
 
     @FXML
-    private ConstituentsController controller;
+    public ConstituentsController controller;
 
     @FXML
     private Pane pnCatTables;
