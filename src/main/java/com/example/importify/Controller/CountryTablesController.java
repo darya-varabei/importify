@@ -33,6 +33,9 @@ public class CountryTablesController implements Initializable {
     private ComboBox<String> cmbChooseCountryToUpdate;
 
     @FXML
+    private ComboBox<Integer> cmbChooseYearToUpdate;
+
+    @FXML
     private Pane pnCatCountryTable;
 
     @FXML
@@ -221,12 +224,15 @@ public class CountryTablesController implements Initializable {
 
     private void setupComboBox() {
         ObservableList<String> data;
+        ObservableList<Integer> years;
         if (Client.interactionsWithServer != null) {
         serverManager = client.interactionsWithServer;
             data = FXCollections.observableArrayList(serverManager.getStrings("countries"));
+            years = FXCollections.observableArrayList(serverManager.getYears());
             cmbChooseCountry.setItems(data);
             cmbChooseCountryToUpdate.setItems(data);
             cmbChooseCountry1.setItems(data);
+            cmbChooseYearToUpdate.setItems(years);
             cmbChooseCountry.setOnAction(e -> enableCommonPane());
             cmbChooseCountry1.setOnAction(e -> enableCatPane());
         }
@@ -234,7 +240,7 @@ public class CountryTablesController implements Initializable {
 
     public void addData() {
         if (txtNewCountry.getText() != "" && txtImport.getText() != "" && txtExport.getText() != "") {
-            CountryAdd data = new CountryAdd(txtNewCountry.getText(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+            CountryAdd data = new CountryAdd(txtNewCountry.getText(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
         Client.interactionsWithServer.sendData("addCountry", data);
             lblInvalidInput.setVisible(false);
     }
@@ -245,7 +251,7 @@ public class CountryTablesController implements Initializable {
 
     public void updateData() {
         if (cmbChooseCountryToUpdate.getValue() != "Выберите страну" && txtImport.getText() != "" && txtExport.getText() != "") {
-        CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+        CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
         Client.interactionsWithServer.sendData("editCountry", data);
             lblInvalidInput.setVisible(false);
         }
@@ -256,7 +262,7 @@ public class CountryTablesController implements Initializable {
 
     public void deleteData() {
         if (cmbChooseCountryToUpdate.getValue() != "Выберите страну" && txtImport.getText() != "" && txtExport.getText() != "") {
-            CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
+            CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
             Client.interactionsWithServer.sendData("deleteCountry", data);
             lblInvalidInput.setVisible(false);
         }

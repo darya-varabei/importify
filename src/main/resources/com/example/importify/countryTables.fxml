@@ -12,61 +12,6 @@
 
 <Pane fx:id="pnCountryTables" onMouseEntered="#setupData" prefHeight="609.0" prefWidth="584.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.CountryTablesController">
    <children>
-      <Pane fx:id="pnAddCommonData" layoutX="17.0" layoutY="87.0" prefHeight="519.0" prefWidth="565.0" style="-fx-background-color: #F2F3F7;">
-         <children>
-            <ComboBox fx:id="cmbChooseCountryToUpdate" layoutX="39.0" layoutY="78.0" prefWidth="150.0" promptText="Выберите страну" />
-            <TextField fx:id="txtNewCountry" layoutX="34.0" layoutY="74.0" prefHeight="31.0" prefWidth="261.0" promptText="Введите название страны" />
-            <Label layoutX="49.0" layoutY="147.0" style="-fx-text-fill: #354385;" text="Импорт" />
-            <TextField fx:id="txtImport" layoutX="185.0" layoutY="146.0" prefHeight="26.0" prefWidth="110.0" />
-            <Label layoutX="49.0" layoutY="209.0" style="-fx-text-fill: #354385;" text="Экспорт" />
-            <TextField fx:id="txtExport" layoutX="185.0" layoutY="208.0" prefHeight="26.0" prefWidth="110.0" />
-            <Label layoutX="302.0" layoutY="156.0" style="-fx-text-fill: #354385;" text="\$тыс">
-               <font>
-                  <Font name="SF Compact Text Regular" size="11.0" />
-               </font>
-            </Label>
-            <Label layoutX="302.0" layoutY="218.0" style="-fx-text-fill: #354385;" text="\$тыс">
-               <font>
-                  <Font name="SF Compact Text Regular" size="11.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnAddData" layoutX="100.0" layoutY="320.0" mnemonicParsing="false" onAction="#addData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
-               <font>
-                  <Font name="SF Compact Text Regular" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnUpdateData" layoutX="285.0" layoutY="320.0" mnemonicParsing="false" onAction="#updateData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
-               <font>
-                  <Font name="SF Compact Text Regular" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnDeleteData" layoutX="285.0" layoutY="376.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
-               <font>
-                  <Font name="SF Compact Text Regular" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnClearData" layoutX="100.0" layoutY="376.0" mnemonicParsing="false" onAction="#addData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Очистить ввод" textFill="#fafafa">
-               <font>
-                  <Font name="SF Compact Text Regular" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnShowAddData" graphicTextGap="1.0" layoutX="34.0" layoutY="7.0" mnemonicParsing="false" onAction="#showAddData" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Добавление">
-               <font>
-                  <Font name="SF Compact Text Regular" size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnShowUpdateData" graphicTextGap="1.0" layoutX="182.0" layoutY="7.0" mnemonicParsing="false" onAction="#showUpdateData" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Удаление/Редактирование">
-               <font>
-                  <Font name="SF Compact Text Regular" size="14.0" />
-               </font>
-            </Button>
-            <Label fx:id="lblInvalidInput" layoutX="49.0" layoutY="260.0" text="Неверные данные" textFill="#cb3232" visible="false">
-               <font>
-                  <Font name="SF Compact Text Regular" size="11.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
       <Pane fx:id="pnCatCountryTable" layoutX="17.0" layoutY="87.0" prefHeight="519.0" prefWidth="565.0" style="-fx-background-color: #F2F3F7;">
          <children>
             <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Направления импорта и экспорта">
@@ -142,6 +87,62 @@
                   <Button fx:id="btnUpdateCommonData" layoutX="269.0" layoutY="262.0" mnemonicParsing="false" onAction="#showUpdateCommonData" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: #FAFAFA; -fx-background-radius: 15;" text="Изменить данные" />
                </children>
             </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnAddCommonData" layoutX="17.0" layoutY="87.0" prefHeight="519.0" prefWidth="565.0" style="-fx-background-color: #F2F3F7;">
+         <children>
+            <ComboBox fx:id="cmbChooseYearToUpdate" disable="true" layoutX="315.0" layoutY="77.0" prefWidth="150.0" promptText="Выберите год" />
+            <ComboBox fx:id="cmbChooseCountryToUpdate" layoutX="39.0" layoutY="78.0" prefWidth="150.0" promptText="Выберите страну" />
+            <TextField fx:id="txtNewCountry" layoutX="34.0" layoutY="74.0" prefHeight="31.0" prefWidth="261.0" promptText="Введите название страны" />
+            <Label layoutX="49.0" layoutY="147.0" style="-fx-text-fill: #354385;" text="Импорт" />
+            <TextField fx:id="txtImport" layoutX="185.0" layoutY="146.0" prefHeight="26.0" prefWidth="110.0" />
+            <Label layoutX="49.0" layoutY="209.0" style="-fx-text-fill: #354385;" text="Экспорт" />
+            <TextField fx:id="txtExport" layoutX="185.0" layoutY="208.0" prefHeight="26.0" prefWidth="110.0" />
+            <Label layoutX="302.0" layoutY="156.0" style="-fx-text-fill: #354385;" text="\$тыс">
+               <font>
+                  <Font name="SF Compact Text Regular" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="302.0" layoutY="218.0" style="-fx-text-fill: #354385;" text="\$тыс">
+               <font>
+                  <Font name="SF Compact Text Regular" size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAddData" layoutX="100.0" layoutY="320.0" mnemonicParsing="false" onAction="#addData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Добавить запись" textFill="#fafafa">
+               <font>
+                  <Font name="SF Compact Text Regular" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUpdateData" layoutX="285.0" layoutY="320.0" mnemonicParsing="false" onAction="#updateData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Редактировать запись" textFill="#fafafa">
+               <font>
+                  <Font name="SF Compact Text Regular" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDeleteData" layoutX="285.0" layoutY="376.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Удалить запись" textFill="#fafafa">
+               <font>
+                  <Font name="SF Compact Text Regular" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnClearData" layoutX="100.0" layoutY="376.0" mnemonicParsing="false" onAction="#addData" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Очистить ввод" textFill="#fafafa">
+               <font>
+                  <Font name="SF Compact Text Regular" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnShowAddData" graphicTextGap="1.0" layoutX="34.0" layoutY="7.0" mnemonicParsing="false" onAction="#showAddData" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Добавление">
+               <font>
+                  <Font name="SF Compact Text Regular" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnShowUpdateData" graphicTextGap="1.0" layoutX="182.0" layoutY="7.0" mnemonicParsing="false" onAction="#showUpdateData" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Удаление/Редактирование">
+               <font>
+                  <Font name="SF Compact Text Regular" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblInvalidInput" layoutX="49.0" layoutY="260.0" text="Неверные данные" textFill="#cb3232" visible="false">
+               <font>
+                  <Font name="SF Compact Text Regular" size="11.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
