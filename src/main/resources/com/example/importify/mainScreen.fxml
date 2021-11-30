@@ -11,16 +11,6 @@
 
 <AnchorPane fx:id="anchor" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
    <children>
-      <Pane fx:id="pnUpdates" prefHeight="790.0" prefWidth="25.0" visible="false">
-         <fx:include fx:id="updatesPane" layoutX="605.0" layoutY="0" source="dataUpdate.fxml" />
-         <effect>
-            <DropShadow height="0.0" radius="10.785" width="45.14">
-               <color>
-                  <Color red="0.5835160613059998" green="0.5986232757568359" blue="0.6118420958518982" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Pane>
       <Pane fx:id="pnConstituents" prefHeight="782.0" prefWidth="1201.0">
          <fx:include fx:id="constituentsPane" layoutX="5" layoutY="100" source="Categories.fxml" />
       </Pane>
