@@ -73,6 +73,7 @@ public class SettingsController implements Initializable {
     private void addMessage() {
         if (fieldAddMessage.getText() != "") {
             listMessages.getItems().add(fieldAddMessage.getText());
+            Client.interactionsWithServer.sendData("error", fieldAddMessage.getText());
             listMessages.refresh();
         }
     }
@@ -93,8 +94,8 @@ public class SettingsController implements Initializable {
             listMessages.setVisible(false);
         }
         getMessages();
-//        lblUsername.setText(user.getUserEntry().getLogin());
-//        lblUserRole.setText(user.getUserEntry().getRole());
-//        cmbChooseCountry.setValue(user.getCountry().getName());
+        lblUsername.setText(user.getUserEntry().getLogin());
+        lblUserRole.setText(user.getUserEntry().getRole());
+        cmbChooseCountry.setValue(user.getCountry().getName());
     }
 }

@@ -13,7 +13,7 @@ public class ServerManager {
     private ObjectInputStream readMessage;
 
     public void closeConnection() throws IOException {
-        try{
+        try {
         sendMessage.close();
         readMessage.close();
         } catch (IOException e) {
@@ -30,7 +30,6 @@ public class ServerManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void sendObject(Object object) {
