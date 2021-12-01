@@ -13,12 +13,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CountryTablesController implements Initializable {
@@ -118,9 +116,6 @@ public class CountryTablesController implements Initializable {
     @FXML
     private Button btnShowCommonCountryTable;
 
-//    @FXML
-//    private AnchorPane pnAddCommonData;
-
     @FXML
     private TextField txtNewCountry;
 
@@ -161,7 +156,6 @@ public class CountryTablesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        setupComboBox();
     }
 
     private void enableCatPane() {
@@ -209,14 +203,11 @@ public class CountryTablesController implements Initializable {
         importColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("importValue"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("exportValue"));
         netExportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("netExportValue"));
-
-        //ObservableList<CountryImportExport> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry.getValue()));
         commonCountryTable.setItems(data);
     }
     ObservableList<CountryConstituent> catData;
     public void setupCatTable() {
-       // ObservableList<CountryConstituent> data;
         catData = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         export.setCellValueFactory(new PropertyValueFactory<>("value"));

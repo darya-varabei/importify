@@ -1,9 +1,11 @@
 package com.example.importify.Controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import animatefx.animation.ZoomIn;
+import com.example.importify.Connection.Client;
 import com.example.importify.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -164,8 +166,9 @@ public class HelloController implements Initializable {
         primaryStage.setIconified(true);
     }
 
-    public void closeScene(ActionEvent event) {
+    public void closeScene(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         primaryStage.close();
+        Client.interactionsWithServer.closeConnection();
     }
 }

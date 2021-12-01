@@ -12,6 +12,15 @@ public class ServerManager {
     private ObjectOutputStream sendMessage;
     private ObjectInputStream readMessage;
 
+    public void closeConnection() throws IOException {
+        try{
+        sendMessage.close();
+        readMessage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public ServerManager(Socket clientSocket) {
         try {
