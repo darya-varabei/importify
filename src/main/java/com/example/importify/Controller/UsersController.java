@@ -1,5 +1,7 @@
 package com.example.importify.Controller;
 
+import com.example.importify.Connection.Client;
+import com.example.importify.Model.CountryAdd;
 import com.example.importify.Model.UserView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -73,14 +75,22 @@ public class UsersController implements Initializable {
         Integer id = 0;
         String country = cmbCountry.getValue();
         String role = cmbRole.getValue();
-        UserView userToAdd = new UserView(username, password, id, "", country, role);
-   dataList.add(userToAdd);
+
+        if (username != "" && password != "" && country != "Выберите страну" && role != "Выберите роль") {
+            UserView userToAdd = new UserView(username, password, id, "", country, role);
+            Client.interactionsWithServer.sendData("addCountry", userToAdd);
+            dataList.add(userToAdd);
+            Client.interactionsWithServer.sendData("newUser", userToAdd);
+        }
+        else {
+        }
     }
 
     @FXML
     void deleteUser(ActionEvent event) {
         UserView user = tableUsers.getSelectionModel().getSelectedItem();
         removeUser(user.getId());
+        Client.interactionsWithServer.sendData("deleteUser", String.valueOf(user.getId()));
         tableUsers.refresh();
     }
 
@@ -95,13 +105,16 @@ public class UsersController implements Initializable {
     @FXML
     void updateUser(ActionEvent event) {
         UserView user = tableUsers.getSelectionModel().getSelectedItem();
-        user.setLogin(fieldUsername.getText());
-        user.setPassword(fieldPassword.getText());
-        user.setCountry(cmbCountry.getValue());
-        user.setCountry(cmbRole.getValue());
+        if(user.getLogin() != "" && user.getPassword() != "" && user.getCountry() != "Выберите страну" && user.getRole() != "Выберите роль") {
+            user.setLogin(fieldUsername.getText());
+            user.setPassword(fieldPassword.getText());
+            user.setCountry(cmbCountry.getValue());
+            user.setCountry(cmbRole.getValue());
 
-        removeUser(user.getId());
-        dataList.add(user);
+            removeUser(user.getId());
+            dataList.add(user);
+            Client.interactionsWithServer.sendData("updateUser", user);
+        }
     }
 
     @Override
@@ -137,5 +150,11 @@ public class UsersController implements Initializable {
         cmbCountry.setValue("Выберите страну");
         cmbRole.setValue("Выберите роль");
         btnAddUsers.setDisable(false);
+    }
+
+    public void setupUsers() {
+        ObservableList<UserView> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getAllUsers());
+        tableUsers.setItems(data);
     }
 }

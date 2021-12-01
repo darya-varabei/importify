@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
+<AnchorPane fx:id="anchor" onMouseEntered="#setupAccess" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
    <children>
       <Pane fx:id="pnConstituents" prefHeight="782.0" prefWidth="1201.0">
          <fx:include fx:id="constituentsPane" layoutX="5" layoutY="100" source="Categories.fxml" />

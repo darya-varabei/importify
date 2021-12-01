@@ -1,6 +1,7 @@
 package com.example.importify.Controller;
 
 import com.example.importify.Connection.Client;
+import com.example.importify.Connection.ServerManager;
 import com.example.importify.Model.CountryImportExport;
 import com.example.importify.Model.ErrorMessage;
 import com.example.importify.Model.User;
@@ -41,12 +42,11 @@ public class SettingsController implements Initializable {
     private Button btnAddMessage;
 
     private User user = User.getInstance();
-
-    private Scene fxmlLoader;
-
-    public void setSecondScene(Scene scene) {
-        fxmlLoader = scene;
-    }
+    private ServerManager serverManager = null;
+//    private Scene fxmlLoader;
+//    public void setSecondScene(Scene scene) {
+//        fxmlLoader = scene;
+//    }
 
     @FXML
     private TextArea fieldAddMessage;
@@ -72,9 +72,13 @@ public class SettingsController implements Initializable {
     @FXML
     private void addMessage() {
         if (fieldAddMessage.getText() != "") {
-            listMessages.getItems().add(fieldAddMessage.getText());
+            if (user.getUserEntry() != null) {
+                if (user.getUserEntry().getRole() == "User") {
+                    listMessages.getItems().add(fieldAddMessage.getText());
+                    listMessages.refresh();
+                }
+            }
             Client.interactionsWithServer.sendData("error", fieldAddMessage.getText());
-            listMessages.refresh();
         }
     }
 
@@ -85,6 +89,23 @@ public class SettingsController implements Initializable {
             data = FXCollections.observableArrayList(Client.interactionsWithServer.getUserMessages());
             listMessages.setItems(data);
             listMessages.refresh();
+        }
+    }
+
+    public void setupAccess() {
+        lblUsername.setText(user.getUserEntry().getLogin());
+        lblUserRole.setText(user.getUserEntry().getRole());
+        cmbChooseCountry.setValue(user.getCountry().getName());
+        ObservableList<String> data;
+        if (Client.interactionsWithServer != null) {
+            serverManager = client.interactionsWithServer;
+            data = FXCollections.observableArrayList(serverManager.getStrings("countries"));
+            cmbChooseCountry.setItems(data);
+        }
+        if (user.getUserEntry() != null) {
+            if (user.getUserEntry().getRole() == "User") {
+               listMessages.setVisible(false);
+            }
         }
     }
 

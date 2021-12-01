@@ -126,6 +126,9 @@ public class HelloController implements Initializable {
         btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
 
         new ZoomIn(pnSettings).play();
+        pnCountry.setVisible(false);
+        pnConstituents.setVisible(false);
+        pnUsers.setVisible(false);
         pnSettings.toFront();
         btnUsers.toFront();
         btnCountries.toFront();
@@ -137,7 +140,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (user.getUserEntry() != null) {
-            if (user.getUserEntry().getRole() == "") {
+            if (user.getUserEntry().getRole() == "User") {
 
                 btnUsers.setDisable(true);
                 btnUsers.setVisible(false);
@@ -170,5 +173,15 @@ public class HelloController implements Initializable {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         primaryStage.close();
         Client.interactionsWithServer.closeConnection();
+    }
+
+    public void setupAccess()  {
+        if (user.getUserEntry() != null) {
+            if (user.getUserEntry().getRole() == "User") {
+
+                btnUsers.setDisable(true);
+                btnUsers.setVisible(false);
+            }
+        }
     }
 }

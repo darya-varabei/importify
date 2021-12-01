@@ -190,7 +190,7 @@ public class ServerManager {
         return null;
     }
 
-    public LinkedList<UserView> getAllUsers(String constituent) {
+    public LinkedList<UserView> getAllUsers() {
         sendString("AllUsers");
         try {
             return (LinkedList<UserView>) readMessage.readObject();

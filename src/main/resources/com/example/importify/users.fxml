@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.UsersController">
+<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#setupUsers" prefHeight="684.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.UsersController">
    <children>
-      <TableView fx:id="tableUsers" onMouseClicked="#clickItem" layoutX="18.0" layoutY="19.0" prefHeight="547.0" prefWidth="646.0">
+      <TableView fx:id="tableUsers" layoutX="18.0" layoutY="19.0" onMouseClicked="#clickItem" prefHeight="547.0" prefWidth="646.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
           <TableColumn fx:id="loginColumn" prefWidth="124.57804107666016" text="Логин" />
@@ -48,6 +48,6 @@
       <PasswordField fx:id="fieldPassword" layoutX="770.0" layoutY="208.0" prefHeight="26.0" prefWidth="151.0" promptText="Пароль" />
       <ComboBox fx:id="cmbRole" layoutX="771.0" layoutY="265.0" prefWidth="150.0" promptText="Роль" />
       <ComboBox fx:id="cmbCountry" layoutX="771.0" layoutY="320.0" prefWidth="150.0" promptText="Страна" />
-      <Button fx:id="btnSaveUser" disable="true" layoutX="771.0" layoutY="492.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" onAction="#clearFields" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Очистить" />
+      <Button fx:id="btnSaveUser" disable="true" layoutX="771.0" layoutY="492.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Очистить" />
    </children>
 </Pane>

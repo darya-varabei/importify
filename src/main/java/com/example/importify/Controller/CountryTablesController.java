@@ -6,6 +6,7 @@ import com.example.importify.Connection.ServerManager;
 import com.example.importify.Model.CountryAdd;
 import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
+import com.example.importify.Model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -144,7 +145,7 @@ public class CountryTablesController implements Initializable {
     private Button btnClearData;
 
     private ServerManager serverManager = null;
-
+    private User user = User.getInstance();
     public void setSampleController(CountryController controller) {
         this.controller = controller;
     }
@@ -152,11 +153,16 @@ public class CountryTablesController implements Initializable {
     @FXML
     private void setupData() {
         setupComboBox();
+        if (user != null) {
+            if (user.getUserEntry().getRole() == "User") {
+                btnAddData.setDisable(true);
+                btnAddData.setVisible(false);
+            }
+        }
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     private void enableCatPane() {
         btnShowCatCountryTable.setDisable(false);
@@ -197,6 +203,7 @@ public class CountryTablesController implements Initializable {
         new ZoomIn(pnCountryCatTablePrompt).play();
         pnCountryCatTablePrompt.toFront();
     }
+
     ObservableList<CountryImportExport> data;
     public void setupCommonTable() {
         yearColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Integer>("year"));
@@ -206,6 +213,7 @@ public class CountryTablesController implements Initializable {
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry.getValue()));
         commonCountryTable.setItems(data);
     }
+
     ObservableList<CountryConstituent> catData;
     public void setupCatTable() {
         catData = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
