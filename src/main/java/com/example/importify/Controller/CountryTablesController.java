@@ -324,7 +324,7 @@ public class CountryTablesController implements Initializable {
     public void saveCountryCommonTable() throws Exception {
         Writer writer = null;
         try {
-            File file = new File("C:\\CountryImportExport.csv.");
+            File file = new File("D:\\CountryImportExport.csv");
             writer = new BufferedWriter(new FileWriter(file));
             Writer finalWriter = writer;
             data.forEach((country) -> {
