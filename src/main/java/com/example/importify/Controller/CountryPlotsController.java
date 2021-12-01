@@ -104,6 +104,7 @@ public class CountryPlotsController implements Initializable {
     public void showCommonCountryPlot() {
         new ZoomIn(pnCountryCommonPlot).play();
         pnCountryCommonPlot.toFront();
+        setupCommonPlot();
     }
 
     @FXML
@@ -122,25 +123,27 @@ public class CountryPlotsController implements Initializable {
         pnCommonCountryPlot.toFront();
     }
 
-//    void setupCommonPlot() {
-//        ObservableList<CountryImportExport> data;
-//        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry2.getValue()));
-//        XYChart.Series series = new XYChart.Series();
-//        data.forEach((category) -> {
-//                    series.getData().add(new XYChart<Integer, Double>() {
-//                    })
-//                }
-//        countryImportExportPlot.getData().add(XYChart.Series(data));
-//    }
+    void setupCommonPlot() {
+        ObservableList<CountryImportExport> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry2.getValue()));
+        XYChart.Series seriesImport = new XYChart.Series();
+        XYChart.Series seriesExport = new XYChart.Series();
+        data.forEach((year) -> {
+            seriesExport.getData().add(year.getYear(), year.getExportValue());
+            seriesImport.getData().add(year.getYear(), year.getImportValue());
+        });
+        countryImportExportPlot.getData().add(seriesExport);
+        countryImportExportPlot.getData().add(seriesImport);
+    }
 
     void setupShareDiag() {
         ObservableList<CountryConstituent> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryShare(cmbChooseCountry2.getValue(), cmbChooseYear.getValue()));
         ObservableList<PieChart.Data> pieChartData = null;
         data.forEach((category) -> {
-          pieChartData.add(new PieChart.Data(category.getConstituent(), category.getValue()));
-              }
-      );
+                    pieChartData.add(new PieChart.Data(category.getConstituent(), category.getValue()));
+                }
+        );
         pltCountryExportShare.setData(pieChartData);
     }
 
@@ -151,6 +154,7 @@ public class CountryPlotsController implements Initializable {
 
     void showShareDiag() {
         new ZoomIn(pnCountryImpotyPlot).play();
+        setupShareDiag();
         pnCountryImpotyPlot.toFront();
     }
 
