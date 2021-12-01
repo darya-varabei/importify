@@ -163,4 +163,9 @@ public class HelloController implements Initializable {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         primaryStage.setIconified(true);
     }
+
+    public void closeScene(ActionEvent event) {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        primaryStage.close();
+    }
 }

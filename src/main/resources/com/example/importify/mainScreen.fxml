@@ -52,5 +52,10 @@
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="btnClose" layoutX="1150.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeScene" style="-fx-background-color: 0;" text="х" textFill="#354385">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
