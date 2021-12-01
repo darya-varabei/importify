@@ -14,8 +14,10 @@ public class ServerManager {
 
     public void closeConnection() throws IOException {
         try {
+            sendString("close");
         sendMessage.close();
         readMessage.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

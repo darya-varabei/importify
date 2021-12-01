@@ -125,16 +125,22 @@ public class CountryPlotsController implements Initializable {
     }
 
     void setupCommonPlot() {
+        countryImportExportPlot.getData().removeAll(countryImportExportPlot.getData());
+
         ObservableList<CountryImportExport> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry2.getValue()));
         XYChart.Series seriesImport = new XYChart.Series();
         XYChart.Series seriesExport = new XYChart.Series();
+
+        seriesImport.setName("Import");
+        seriesExport.setName("Export");
+
         data.forEach((year) -> {
-            seriesExport.getData().add(year.getYear(), year.getExportValue());
-            seriesImport.getData().add(year.getYear(), year.getImportValue());
+            seriesExport.getData().add(new XYChart.Data(String.valueOf(year.getYear()), year.getExportValue()));
+            seriesImport.getData().add(new XYChart.Data(String.valueOf(year.getYear()), year.getImportValue()));
         });
-        countryImportExportPlot.getData().add(seriesExport);
-        countryImportExportPlot.getData().add(seriesImport);
+
+        countryImportExportPlot.getData().addAll(seriesImport, seriesExport);
     }
 
     void setupShareDiag() {
