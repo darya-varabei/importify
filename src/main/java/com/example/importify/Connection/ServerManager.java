@@ -90,7 +90,8 @@ public class ServerManager {
     }
 
     public LinkedList<CountryImportExport> getCountryImportExport(String country) {
-        sendString("countryTable + " + country);
+        sendString("countryTable");
+        sendString(country);
         try {
             return (LinkedList<CountryImportExport>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {

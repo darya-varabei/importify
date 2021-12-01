@@ -61,10 +61,10 @@
                <children>
                   <TableView fx:id="commonCountryTable" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
                      <columns>
-                        <TableColumn fx:id="yearColumn" prefWidth="137.0" text="Год" />
-<!--                        <TableColumn fx:id="importColumn" prefWidth="137.0" text="Импорт" />-->
-                        <TableColumn fx:id="exportColumn" prefWidth="137.0" text="Экспорт" />
-                        <TableColumn fx:id="netExportColumn" prefWidth="137.0" text="Чистый экспорт" />
+                        <TableColumn fx:id="yearColumn" editable="false" prefWidth="137.0" sortable="false" text="Год" />
+                        <TableColumn fx:id="importColumn" editable="false" prefWidth="137.0" sortable="false" text="Импорт" />
+                        <TableColumn fx:id="exportColumn" editable="false" prefWidth="137.0" sortable="false" text="Экспорт" />
+                        <TableColumn fx:id="netExportColumn" editable="false" prefWidth="137.0" sortable="false" text="Чистый экспорт" />
                      </columns>
                   </TableView>
                   <Button fx:id="btnBackFromCommonTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromCommonTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">

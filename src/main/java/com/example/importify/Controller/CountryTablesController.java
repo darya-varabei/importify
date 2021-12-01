@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CountryTablesController implements Initializable {
@@ -203,13 +204,13 @@ public class CountryTablesController implements Initializable {
     }
 
     public void setupCommonTable() {
+        yearColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Integer>("year"));
+        importColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("importValue"));
+        exportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("exportValue"));
+        netExportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("netExportValue"));
 
         ObservableList<CountryImportExport> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry.getValue()));
-        yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
-        exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
-        importColumn.setCellValueFactory(new PropertyValueFactory<>("importValue"));
-        netExportColumn.setCellValueFactory(new PropertyValueFactory<>("netExportValue"));
         commonCountryTable.setItems(data);
     }
 
@@ -233,6 +234,7 @@ public class CountryTablesController implements Initializable {
             cmbChooseCountryToUpdate.setItems(data);
             cmbChooseCountry1.setItems(data);
             cmbChooseYearToUpdate.setItems(years);
+            cmbChooseYearToUpdate.setDisable(false);
             cmbChooseCountry.setOnAction(e -> enableCommonPane());
             cmbChooseCountry1.setOnAction(e -> enableCatPane());
         }
