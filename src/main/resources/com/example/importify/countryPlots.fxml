@@ -59,7 +59,7 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnSaveCountryCommonPlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                  <Button fx:id="btnSaveCountryCommonPlot"  onAction="#saveCountryCommonPlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                      <font>
                         <Font size="12.0" />
                      </font>

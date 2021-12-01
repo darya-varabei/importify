@@ -6,6 +6,7 @@ import com.example.importify.Model.CountryConstituent;
 import com.example.importify.Model.CountryImportExport;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
@@ -183,5 +184,8 @@ public class CountryPlotsController implements Initializable {
             cmbChooseCountry11.setOnAction(e -> enableSharePlot());
             cmbChooseCountry2.setOnAction(e -> enableCommonPlot());
         }
+    }
+
+    public void saveCountryCommonPlot(ActionEvent actionEvent) {
     }
 }

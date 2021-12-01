@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -202,25 +203,25 @@ public class CountryTablesController implements Initializable {
         new ZoomIn(pnCountryCatTablePrompt).play();
         pnCountryCatTablePrompt.toFront();
     }
-
+    ObservableList<CountryImportExport> data;
     public void setupCommonTable() {
         yearColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Integer>("year"));
         importColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("importValue"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("exportValue"));
         netExportColumn.setCellValueFactory(new PropertyValueFactory<CountryImportExport, Double>("netExportValue"));
 
-        ObservableList<CountryImportExport> data;
+        //ObservableList<CountryImportExport> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryImportExport(cmbChooseCountry.getValue()));
         commonCountryTable.setItems(data);
     }
-
+    ObservableList<CountryConstituent> catData;
     public void setupCatTable() {
-        ObservableList<CountryConstituent> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
+       // ObservableList<CountryConstituent> data;
+        catData = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryConstituent(cmbChooseCountry1.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         export.setCellValueFactory(new PropertyValueFactory<>("value"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("constituent"));
-        commonCountryTable1.setItems(data);
+        commonCountryTable1.setItems(catData);
     }
 
     private void setupComboBox() {
@@ -296,5 +297,51 @@ public class CountryTablesController implements Initializable {
         btnAddData.setDisable(true);
         btnUpdateData.setDisable(false);
         btnDeleteData.setDisable(false);
+    }
+
+    public void saveCountryCatTable(ActionEvent actionEvent) throws Exception {
+        Writer writer = null;
+        try {
+            File file = new File("C:\\CountryCategory.csv.");
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+            catData.forEach((category) -> {
+                String text = category.getYear() + "," + category.getConstituent() + "," + category.getValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
+    }
+
+    public void saveCountryCommonTable() throws Exception {
+        Writer writer = null;
+        try {
+            File file = new File("C:\\CountryImportExport.csv.");
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+            data.forEach((country) -> {
+                String text = country.getYear() + "," + country.getImportValue() + "," + country.getExportValue() + "," + country.getNetExportValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
     }
 }
