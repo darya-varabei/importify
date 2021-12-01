@@ -69,7 +69,7 @@ public class CountryPlotsController implements Initializable {
     private Button btnSaveCountryCommonPlot;
 
     @FXML
-    private AreaChart<?, ?> countryImportExportPlot;
+    private AreaChart<Integer, Double> countryImportExportPlot;
 
     @FXML
     private Pane pnCountryCommonPlotPrompt;
@@ -130,7 +130,7 @@ public class CountryPlotsController implements Initializable {
         XYChart.Series seriesImport = new XYChart.Series();
         XYChart.Series seriesExport = new XYChart.Series();
         data.forEach((year) -> {
-            seriesExport.getData().add(year.getYear(), year.getExportValue());
+            seriesExport.getData().add(new XYChart.Data(year.getYear(), year.getExportValue()));
             seriesImport.getData().add(year.getYear(), year.getImportValue());
         });
         countryImportExportPlot.getData().add(seriesExport);
@@ -142,7 +142,7 @@ public class CountryPlotsController implements Initializable {
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryShare(cmbChooseCountry2.getValue(), cmbChooseYear.getValue()));
         ObservableList<PieChart.Data> pieChartData = null;
         data.forEach((category) -> {
-                    pieChartData.add(new PieChart.Data(category.getConstituent(), category.getValue()));
+                    pieChartData.addAll(new PieChart.Data(category.getConstituent(), category.getValue()));
                 }
         );
         pltCountryExportShare.setData(pieChartData);

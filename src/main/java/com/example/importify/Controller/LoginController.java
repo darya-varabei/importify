@@ -202,24 +202,24 @@ public class LoginController implements Initializable{
 
     @FXML
     private void connect(ActionEvent event) {
-        var client = new Client();
-        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-        serverManager = client.interactionsWithServer;
-
-        if (serverManager != null) {
-            lblInvalidConnection.setVisible(false);
-            if (event.getSource().equals(btnSignIn)) {
+//        var client = new Client();
+//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+//        serverManager = client.interactionsWithServer;
+//
+//        if (serverManager != null) {
+//            lblInvalidConnection.setVisible(false);
+//            if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
-            }
-            else {
-                new ZoomIn(pnSignUp).play();
-                pnSignUp.toFront();
-            }
-        }
-        else {
-            lblInvalidConnection.setVisible(true);
-        }
+//            }
+//            else {
+//                new ZoomIn(pnSignUp).play();
+//                pnSignUp.toFront();
+//            }
+//        }
+//        else {
+//            lblInvalidConnection.setVisible(true);
+//        }
     }
 
     @FXML
