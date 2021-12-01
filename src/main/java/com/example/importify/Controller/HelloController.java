@@ -8,6 +8,7 @@ import com.example.importify.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -156,5 +157,10 @@ public class HelloController implements Initializable {
             //btnUpdateData.toFront();
             btnUpdateData.setText("Изменить данные");
         }
+    }
+
+    public void hideScene(ActionEvent event) {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        primaryStage.setIconified(true);
     }
 }

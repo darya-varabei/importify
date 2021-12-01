@@ -55,8 +55,18 @@ public class SettingsController implements Initializable {
 
     @FXML
     private void exit(ActionEvent event) {
-        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        primaryStage.setScene(fxmlLoader);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Выход из аккаунта");
+        alert.setHeaderText("Подтверждение");
+        alert.setContentText("Вы уверены, что хотите выйти из аккаунта?");
+        if(alert.showAndWait().get() == ButtonType.OK) {
+            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            primaryStage.close();
+        }
+        else {
+            alert.close();
+        }
     }
 
     @FXML
