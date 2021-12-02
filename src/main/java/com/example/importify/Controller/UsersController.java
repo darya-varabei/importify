@@ -28,7 +28,7 @@ public class UsersController implements Initializable {
     private TableColumn<UserView, String> loginColumn;
 
     @FXML
-    private TableColumn<UserView, Date> lastAccessColumn;
+    private TableColumn<UserView, String> lastAccessColumn;
 
     @FXML
     private TableColumn<UserView, String> countryColumn;
@@ -51,8 +51,8 @@ public class UsersController implements Initializable {
     @FXML
     private TextField fieldUsername;
 
-    @FXML
-    private TextField fieldEmail;
+//    @FXML
+//    private TextField fieldEmail;
 
     @FXML
     private PasswordField fieldPassword;
@@ -78,7 +78,6 @@ public class UsersController implements Initializable {
 
         if (username != "" && password != "" && country != "Выберите страну" && role != "Выберите роль") {
             UserView userToAdd = new UserView(username, password, id, "", country, role);
-            Client.interactionsWithServer.sendData("addCountry", userToAdd);
             dataList.add(userToAdd);
             Client.interactionsWithServer.sendData("newUser", userToAdd);
         }
@@ -119,6 +118,8 @@ public class UsersController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        var data = FXCollections.observableArrayList("User", "Admin");
+        cmbRole.setItems(data);
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         loginColumn.setCellValueFactory(new PropertyValueFactory<>("login"));
@@ -135,7 +136,7 @@ public class UsersController implements Initializable {
             btnSaveUser.setDisable(false);
             UserView user = tableUsers.getSelectionModel().getSelectedItem();
             fieldUsername.setText(user.getLogin());
-            fieldEmail.setText(String.valueOf(user.getId()));
+            //fieldEmail.setText(String.valueOf(user.getId()));
             fieldPassword.setText(user.getPassword());
             cmbCountry.setValue(user.getCountry());
             cmbRole.setValue(user.getRole());
@@ -145,7 +146,7 @@ public class UsersController implements Initializable {
     @FXML
     private void clearFields() {
         fieldUsername.setText("");
-        fieldEmail.setText("");
+        //fieldEmail.setText("");
         fieldPassword.setText("");
         cmbCountry.setValue("Выберите страну");
         cmbRole.setValue("Выберите роль");
@@ -156,5 +157,7 @@ public class UsersController implements Initializable {
         ObservableList<UserView> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getAllUsers());
         tableUsers.setItems(data);
+
+        cmbCountry.setItems(FXCollections.observableArrayList(Client.interactionsWithServer.getStrings("countries")));
     }
 }
