@@ -17,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 public class CountryPlotsController implements Initializable {
@@ -145,13 +146,14 @@ public class CountryPlotsController implements Initializable {
 
     void setupShareDiag() {
         ObservableList<CountryConstituent> data;
-        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryShare(cmbChooseCountry2.getValue(), cmbChooseYear.getValue()));
-        ObservableList<PieChart.Data> pieChartData = null;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCountryShare(cmbChooseCountry11.getValue(), cmbChooseYear.getValue()));
+        var pieChartData = new LinkedList<PieChart.Data>();
+
         data.forEach((category) -> {
                     pieChartData.add(new PieChart.Data(category.getConstituent(), category.getValue()));
                 }
         );
-        pltCountryExportShare.setData(pieChartData);
+        pltCountryExportShare.setData(FXCollections.observableArrayList(pieChartData));
     }
 
     void showSharePlot() {

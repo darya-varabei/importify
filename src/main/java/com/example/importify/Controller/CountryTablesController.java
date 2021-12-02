@@ -301,7 +301,7 @@ public class CountryTablesController implements Initializable {
     public void saveCountryCatTable(ActionEvent actionEvent) throws Exception {
         Writer writer = null;
         try {
-            File file = new File("C:\\CountryCategory.csv.");
+            File file = new File("D:\\CountryCategory.csv");
             writer = new BufferedWriter(new FileWriter(file));
             Writer finalWriter = writer;
             catData.forEach((category) -> {

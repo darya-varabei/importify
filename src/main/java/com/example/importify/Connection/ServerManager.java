@@ -111,7 +111,8 @@ public class ServerManager {
     }
 
     public LinkedList<CountryConstituent> getCountryConstituent(String country) {
-        sendString("countryTable2 + " + country);
+        sendString("countryTable2");
+        sendString(country);
         try {
             return (LinkedList<CountryConstituent>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
@@ -141,7 +142,9 @@ public class ServerManager {
     }
 
     public LinkedList<CountryConstituent> getCountryShare(String country, Integer year) {
-        sendString(country + year);
+        sendString("share");
+        sendString(country);
+        sendString(String.valueOf(year));
         try {
             return (LinkedList<CountryConstituent>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
