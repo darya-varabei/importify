@@ -23,7 +23,6 @@ public class ServerManager {
         }
     }
 
-
     public ServerManager(Socket clientSocket) {
         try {
             sendMessage = new ObjectOutputStream(clientSocket.getOutputStream());

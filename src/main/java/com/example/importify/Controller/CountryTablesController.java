@@ -145,13 +145,15 @@ public class CountryTablesController implements Initializable {
     private Button btnClearData;
 
     private ServerManager serverManager = null;
-    private User user = User.getInstance();
+
     public void setSampleController(CountryController controller) {
         this.controller = controller;
     }
 
     @FXML
     private void setupData() {
+        var user = User.getInstance();
+
         setupComboBox();
         if (user != null) {
             if (user.getUserEntry().getRole() == "User") {
