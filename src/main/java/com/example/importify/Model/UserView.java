@@ -6,7 +6,7 @@ public class UserView extends UserEntry{
     private String country;
 
     public UserView(String login, String password, Integer id, String lastAccessDate, String country, String role) {
-        super(login, password);
+        super(login, password, role);
         this.id = id;
         this.lastAccessDate = lastAccessDate;
         this.country = country;

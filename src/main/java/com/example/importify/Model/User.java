@@ -17,6 +17,22 @@ public class User implements Serializable {
 
     public User(){}
 
+    public User(int codeUser,
+                UserEntry userEntry,
+                String email,
+                Country country,
+                String codeCountry,
+                String dateLastAutorization,
+                String dateLastExit){
+        this.codeUser = codeUser;
+        this.userEntry = userEntry;
+        this.email = email;
+        this.country = country;
+        this.codeCountry = codeCountry;
+        this.dateLastAutorization = dateLastAutorization;
+        this.dateLastExit = dateLastExit;
+    }
+
     public int getCodeUser() {
         return codeUser;
     }
@@ -49,10 +65,26 @@ public class User implements Serializable {
         this.country = country;
     }
 
-    public static User getInstance() {
+    public static User getInstance( int codeUser,
+                                    UserEntry userEntry,
+                                    String email,
+                                    Country country,
+                                    String codeCountry,
+                                    String dateLastAutorization,
+                                    String dateLastExit ) {
         if (user == null) {
-            user = new User();
+            user = new User(codeUser,
+                            userEntry,
+                            email,
+                            country,
+                            codeCountry,
+                            dateLastAutorization,
+                            dateLastExit);
         }
+        return user;
+    }
+
+    public static User getInstance() {
         return user;
     }
 

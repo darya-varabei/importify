@@ -41,7 +41,6 @@ public class SettingsController implements Initializable {
     @FXML
     private Button btnAddMessage;
 
-    private User user = User.getInstance();
     private ServerManager serverManager = null;
 //    private Scene fxmlLoader;
 //    public void setSecondScene(Scene scene) {
@@ -60,9 +59,13 @@ public class SettingsController implements Initializable {
         alert.setHeaderText("Подтверждение");
         alert.setContentText("Вы уверены, что хотите выйти из аккаунта?");
         if(alert.showAndWait().get() == ButtonType.OK) {
-            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            try {
+                Client.interactionsWithServer.closeConnection();
 
-            primaryStage.close();
+                Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                primaryStage.close();
+            }
+            catch (Exception e) {}
         }
         else {
             alert.close();
@@ -71,6 +74,8 @@ public class SettingsController implements Initializable {
 
     @FXML
     private void addMessage() {
+        var user = User.getInstance();
+
         if (fieldAddMessage.getText() != "") {
             if (user.getUserEntry() != null) {
                 if (user.getUserEntry().getRole() == "User") {
@@ -93,6 +98,8 @@ public class SettingsController implements Initializable {
     }
 
     public void setupAccess() {
+        var user = User.getInstance();
+
         lblUsername.setText(user.getUserEntry().getLogin());
         lblUserRole.setText(user.getUserEntry().getRole());
         cmbChooseCountry.setValue(user.getCountry().getName());

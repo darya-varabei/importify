@@ -60,8 +60,6 @@ public class HelloController implements Initializable {
     @FXML
     private Pane pnUsers;
 
-    private User user = User.getInstance();
-
     @FXML
     public void showCountryView(ActionEvent event) {
 
@@ -139,13 +137,6 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (user.getUserEntry() != null) {
-            if (user.getUserEntry().getRole() == "User") {
-
-                btnUsers.setDisable(true);
-                btnUsers.setVisible(false);
-            }
-        }
     }
 
     @FXML
@@ -176,8 +167,10 @@ public class HelloController implements Initializable {
     }
 
     public void setupAccess()  {
+        var user = User.getInstance();
+
         if (user.getUserEntry() != null) {
-            if (user.getUserEntry().getRole() == "User") {
+            if (user.getUserEntry().getRole().equals("User")) {
 
                 btnUsers.setDisable(true);
                 btnUsers.setVisible(false);

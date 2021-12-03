@@ -3,6 +3,7 @@ package com.example.importify.Controller;
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
 import com.example.importify.Connection.ServerManager;
+import com.example.importify.Model.Country;
 import com.example.importify.Model.User;
 import com.example.importify.Model.UserEntry;
 import com.example.importify.Model.UserRegister;
@@ -26,6 +27,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 //import animatefx.*;
 
@@ -169,10 +171,12 @@ public class LoginController implements Initializable{
     @FXML
     public void EnterMainScreen(ActionEvent event) {
         serverManager.sendString("Authorization");
-        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText()));
-        User user = User.getInstance();
+        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
+        var user = (User)serverManager.readObject();
 
-        if ((user = (User)serverManager.readObject()) != null) {
+        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
+
+        if (statUser != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
@@ -185,13 +189,20 @@ public class LoginController implements Initializable{
     public void registUser(ActionEvent event) {
         serverManager.sendString("Registration");
         serverManager.sendObject(new UserRegister(txtFieldLogin11.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
-        UserRegister user;
+        UserRegister user = (UserRegister)serverManager.readObject();
+
+        var usEntry = new UserEntry(user.getLogin(), user.getPassword(), user.getRole());
+        var country = new Country();
+        country.setId("CAN");
+        country.setName("Канада");
+
+        var us = User.getInstance(user.getCodeUser(), usEntry, user.getEmail(), country, "CAN", LocalDate.now().toString(), "");
 
         if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
             lblPasswordDoNotMatch.setVisible(true);
         }
 
-        if ((user = (UserRegister)serverManager.readObject()) != null) {
+        if (user != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
