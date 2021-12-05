@@ -62,52 +62,49 @@ public class HelloController implements Initializable {
 
     @FXML
     public void showCountryView(ActionEvent event) {
+        btnCountries.setUnderline(true);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
 
-            btnCountries.setUnderline(true);
-            btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
-            btnCategories.setUnderline(false);
-            btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-            btnUsers.setUnderline(false);
-            btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-
-            new ZoomIn(pnCountry).play();
-            pnCountry.toFront();
+        new ZoomIn(pnCountry).play();
+        pnCountry.toFront();
         btnUsers.toFront();
         btnCountries.toFront();
-        btnCategories.toFront();;
+        btnCategories.toFront();
         btnSettings.toFront();
     }
 
     @FXML
     public void showConstituentsView() {
+        btnCategories.setUnderline(true);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
 
-            btnCategories.setUnderline(true);
-            btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
-            btnCountries.setUnderline(false);
-            btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-            btnUsers.setUnderline(false);
-            btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-
-            new ZoomIn(pnConstituents).play();
-            pnConstituents.toFront();
+        new ZoomIn(pnConstituents).play();
+        pnConstituents.toFront();
         btnUsers.toFront();
         btnCountries.toFront();
-        btnCategories.toFront();;
+        btnCategories.toFront();
         btnSettings.toFront();
     }
 
     @FXML
     public void showUsersView() {
+        btnUsers.setUnderline(true);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
 
-            btnUsers.setUnderline(true);
-            btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
-            btnCategories.setUnderline(false);
-            btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-            btnCountries.setUnderline(false);
-            btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
-
-            new ZoomIn(pnUsers).play();
-            pnUsers.toFront();
+        new ZoomIn(pnUsers).play();
+        pnUsers.toFront();
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();;

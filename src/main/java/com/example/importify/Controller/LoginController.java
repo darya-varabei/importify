@@ -170,67 +170,84 @@ public class LoginController implements Initializable{
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-//        serverManager.sendString("Authorization");
-//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
-//        var user = (User)serverManager.readObject();
-//
-//        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
-//
-//        if (statUser != null) {
+        serverManager.sendString("Authorization");
+        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
+        var user = (User)serverManager.readObject();
+
+        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
+
+        if (statUser != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-//        }
-//        else {
-//            lblInvalidLoginEntry.setVisible(true);
-//        }
+        }
+        else {
+            lblInvalidLoginEntry.setVisible(true);
+        }
     }
 
     @FXML
     public void registUser(ActionEvent event) {
         serverManager.sendString("Registration");
         serverManager.sendObject(new UserRegister(txtFieldLogin11.getText(), txtFieldPass1.getText(), txtFieldPassRep.getText(), txtFieldEmail.getText()));
-        UserRegister user = (UserRegister)serverManager.readObject();
+        UserRegister user;
+        var recived = serverManager.readObject();
 
-        var usEntry = new UserEntry(user.getLogin(), user.getPassword(), user.getRole());
-        var country = new Country();
-        country.setId("CAN");
-        country.setName("Канада");
+        try {
+            user = (UserRegister)recived;
+            var usEntry = new UserEntry(user.getLogin(), user.getPassword(), user.getRole());
+            var country = new Country();
+            country.setId("CAN");
+            country.setName("Канада");
 
-        var us = User.getInstance(user.getCodeUser(), usEntry, user.getEmail(), country, "CAN", LocalDate.now().toString(), "");
+            var us = User.getInstance(user.getCodeUser(), usEntry, user.getEmail(), country, "CAN", LocalDate.now().toString(), "");
 
-        if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
-            lblPasswordDoNotMatch.setVisible(true);
-        }
+            if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
+                lblPasswordDoNotMatch.setVisible(true);
+            }
 
-        if (user != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-        }
-        else {
+        } catch (Exception e)
+        {
             lblInvalidRegEntry.setVisible(true);
         }
+
+
+
+
+//        if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
+//            lblPasswordDoNotMatch.setVisible(true);
+//        }
+//
+//        if (user != null) {
+//            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//            primaryStage.setScene(secondScene);
+//        }
+//        else {
+//            lblInvalidRegEntry.setVisible(true);
+//        }
     }
 
     @FXML
     private void connect(ActionEvent event) {
-//        var client = new Client();
-//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-//        serverManager = client.interactionsWithServer;
-//
-//        if (serverManager != null) {
-//            lblInvalidConnection.setVisible(false);
-//            if (event.getSource().equals(btnSignIn)) {
+        var client = new Client();
+        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+        serverManager = client.interactionsWithServer;
+
+        if (serverManager != null) {
+            lblInvalidConnection.setVisible(false);
+            if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
-//            }
-//            else {
-//                new ZoomIn(pnSignUp).play();
-//                pnSignUp.toFront();
-//            }
-//        }
-//        else {
-//            lblInvalidConnection.setVisible(true);
-//        }
+            }
+            else {
+                new ZoomIn(pnSignUp).play();
+                pnSignUp.toFront();
+            }
+        }
+        else {
+            lblInvalidConnection.setVisible(true);
+        }
     }
 
     @FXML

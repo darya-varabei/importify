@@ -247,7 +247,7 @@ public class CountryTablesController implements Initializable {
             CountryAdd dataAdd = new CountryAdd(txtNewCountry.getText(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
         Client.interactionsWithServer.sendData("addCountry", dataAdd);
             lblInvalidInput.setVisible(false);
-    }
+        }
         else {
             lblInvalidInput.setVisible(true);
         }
