@@ -1,0 +1,23 @@
+.combo-box{
+    -fx-font-family: "SF Compact Text";
+}
+
+.button{
+    -fx-font-family: "SF Compact Text Medium";
+}
+
+.label{
+    -fx-font-family: "SF Compact Text";
+}
+
+.table-view{
+    -fx-font-family: "SF Compact Text";
+}
+
+.text-field{
+    -fx-font-family: "SF Compact Text";
+}
+
+.text-area{
+    -fx-font-family: "SF Compact Text";
+}

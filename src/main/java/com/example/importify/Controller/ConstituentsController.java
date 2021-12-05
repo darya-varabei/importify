@@ -2,7 +2,7 @@ package com.example.importify.Controller;
 
 import animatefx.animation.ZoomIn;
 import com.example.importify.Connection.Client;
-import com.example.importify.Model.ExportImportConstituents;
+import com.example.importify.Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 public class ConstituentsController implements Initializable {
@@ -128,7 +130,7 @@ public class ConstituentsController implements Initializable {
     private Button btnSaveCatWorldShare;
 
     @FXML
-    private AreaChart<?, ?> pltWorldShare;
+    private AreaChart<WorldShare, ?> pltWorldShare;
 
     @FXML
     private Pane pnCatWorldexportShare;
@@ -174,6 +176,9 @@ public class ConstituentsController implements Initializable {
 
     @FXML
     private Pane pnCatWorldImportSharePrompt1;
+
+    @FXML
+    private Pane pnCatImportTableView;
 
     @FXML
     private ComboBox<String> cmbChooseCountry1;
@@ -272,8 +277,22 @@ public class ConstituentsController implements Initializable {
         }
     }
 
-    private void setupComboBoxes() {
+    @FXML private void showShareDiag() {
+        new ZoomIn(pnCatWorldImportShare).play();
+        pnCatWorldImportShare.toFront();
+    }
 
+    @FXML private void showCatExportPlot() {
+        new ZoomIn(pnCatWorldShare).play();
+        pnCatWorldShare.toFront();
+    }
+
+    private void setupComboBoxes() {
+        btnShowDiag.setDisable(false);
+        btnShowCommonCountryTable21.setDisable(false);
+        btnShowCommonCountryTable111.setDisable(false);
+        btnShowCommonCategoryTable.setDisable(false);
+        btnShowImportCat.setDisable(false);
         ObservableList<Integer> year;
         ObservableList<String> category;
 
@@ -331,21 +350,63 @@ public class ConstituentsController implements Initializable {
     void setupImportTable() {
 
         ObservableList<ExportImportConstituents> data;
+        System.out.println("Import table *********************************");
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
         importColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
-        tableCategoryImport.setItems(data);
+         tableCategoryImport.setItems(data);
     }
 
     void setupExportTable() {
 
         ObservableList<ExportImportConstituents> data;
+        System.out.println("Export table *********************************");
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
         country.setCellValueFactory(new PropertyValueFactory<>("country"));
         tableCategoryExport.setItems(data);
+    }
+
+    void setupWorldShare() {
+        pltWorldShare.getData().removeAll(pltWorldShare.getData());
+
+        ObservableList<WorldConstituentExport> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getWorldConstituentExport(cmbChooseCatWorld.getValue()));
+        XYChart.Series seriesImport = new XYChart.Series();
+
+        seriesImport.setName("Import");
+
+        data.forEach((year) -> {
+            seriesImport.getData().add(new XYChart.Data(String.valueOf(year.getYear()), year.getValue()));
+        });
+
+        pltWorldShare.getData().addAll(seriesImport);
+    }
+
+    void setupImportShare() {
+        ObservableList<CategoryShare> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCategoryShare("import", cmbChooseCountry21.getValue(), cmbChooseYear.getValue()));
+        var pieChartData = new LinkedList<PieChart.Data>();
+
+        data.forEach((category) -> {
+                    pieChartData.add(new PieChart.Data(category.getCategory(), category.getValue()));
+                }
+        );
+        pltCatImportShare.setData(FXCollections.observableArrayList(pieChartData));
+    }
+
+    void setupExportShare() {
+        ObservableList<CategoryShare> data;
+        data = FXCollections.observableArrayList(Client.interactionsWithServer.getCategoryShare("export", cmbChooseCountry21.getValue(), cmbChooseYear.getValue()));
+        var pieChartData = new LinkedList<PieChart.Data>();
+
+        data.forEach((category) -> {
+                    pieChartData.add(new PieChart.Data(category.getCategory(), category.getValue()));
+                }
+        );
+        pltCatExportShare.setData(FXCollections.observableArrayList(pieChartData));
     }
 
     private void enableExportTable() {
@@ -354,5 +415,17 @@ public class ConstituentsController implements Initializable {
 
     private void enableImportTable() {
         btnShowImportCat.setDisable(false);
+    }
+
+    @FXML private void showExportTablePane() {
+        setupExportTable();
+        new ZoomIn(pnCategoryExportTable).play();
+        pnCategoryExportTable.toFront();
+    }
+
+    @FXML private void showImportTablePane() {
+        setupImportTable();
+        new ZoomIn(pnCatImportTableView).play();
+        pnCatImportTableView.toFront();
     }
 }

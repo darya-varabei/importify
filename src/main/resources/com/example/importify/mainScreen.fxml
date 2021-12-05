@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" onMouseEntered="#setupAccess" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
+<AnchorPane fx:id="anchor" stylesheets="@font.css" onMouseEntered="#setupAccess" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
    <children>
       <Pane fx:id="pnConstituents" prefHeight="782.0" prefWidth="1201.0">
          <fx:include fx:id="constituentsPane" layoutX="5" layoutY="100" source="Categories.fxml" />
@@ -23,7 +23,7 @@
       </Pane>
       <Button fx:id="btnHide" layoutX="1100.0" mnemonicParsing="false" onAction="#hideScene" style="-fx-background-color: 0;" text="–" textFill="#354385">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="SF Compact Text Regular" size="26.0" />
          </font>
       </Button>
       <Button fx:id="btnCountries" graphicTextGap="1.0" layoutX="79.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCountryView" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Страны" underline="true">
@@ -54,7 +54,7 @@
       </Button>
       <Button fx:id="btnClose" layoutX="1150.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeScene" style="-fx-background-color: 0;" text="х" textFill="#354385">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="SF Compact Text Regular" size="26.0" />
          </font>
       </Button>
    </children>

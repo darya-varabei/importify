@@ -13,52 +13,139 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pnCategories" prefHeight="682.0" prefWidth="1196.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsController">
+<Pane fx:id="pnCategories" onMouseEntered="#setupData" prefHeight="682.0" prefWidth="1196.0" style="-fx-background-color: F2F3F7;" stylesheets="@font.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsController">
    <children>
-      <Pane fx:id="pnCategoryTables" prefHeight="609.0" prefWidth="584.0">
+      <Pane fx:id="pnCategoryPlots" layoutX="602.0" layoutY="-6.0" prefHeight="609.0" prefWidth="584.0">
          <children>
-            <Pane fx:id="pnCatExportTable" layoutX="7.0" layoutY="77.0" prefHeight="525.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+            <Pane fx:id="pnCatWorldexportShare" layoutX="-4.0" layoutY="78.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
                <children>
-                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Импорт в направлении по странам">
+                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в экспорте по категории">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="SF Compact Text Medium" size="18.0" />
                      </font>
                   </Label>
-                  <Pane fx:id="pnCountryCommonTable1" layoutX="6.0" layoutY="61.0" prefHeight="462.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+                  <Pane fx:id="pnCatWorldExportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                      <children>
-                        <TableView fx:id="tableCategoryImport" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
-                           <columns>
-                              <TableColumn fx:id="yearColumn" prefWidth="137.0" text="Год" />
-                              <TableColumn fx:id="countryColumn" prefWidth="137.0" text="Страна" />
-                              <TableColumn fx:id="importColumn" prefWidth="137.0" text="Импорт" />
-                           </columns>
-                        </TableView>
-                        <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromImportTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                        <Button fx:id="btnBackFromPlot" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                            <font>
-                              <Font size="12.0" />
+                              <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSaveCatTableImport" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSavePlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
-                              <Font size="12.0" />
+                              <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
+                        <PieChart fx:id="pltCatExportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnCatImportPrompt" layoutX="7.0" layoutY="53.0" prefHeight="474.0" prefWidth="559.0" style="-fx-background-color: F2F3F7;">
+                  <Pane fx:id="pnCatWorldExportSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                      <children>
-                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица импорта в направлениях по странам отображает данные по  импорту в выбранном напралении в различных странах. Данные отображаются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
-                        <ComboBox fx:id="cmbChooseCat" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Button fx:id="btnShowImportCat" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом экспорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Text>
+                        <ComboBox fx:id="cmbChooseCategory" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Button fx:id="btnShowCatExportPlot" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showCatExportPlot" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Button>
+                        <ComboBox fx:id="cmbChooseYear" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
                      </children>
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="pnCatImportTable" layoutX="10.0" layoutY="87.0" prefHeight="511.0" prefWidth="572.0" style="-fx-background-color: F2F3F7;">
+            <Pane fx:id="pnCatWorldShareBase" layoutX="6.0" layoutY="88.0" prefHeight="532.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Общемировой график экспорта">
+                     <font>
+                        <Font name="SF Compact Text Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="pnCatWorldShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
+                     <children>
+                        <Button fx:id="btnBackFromCatWorldShare" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSaveCatWorldShare" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                        <AreaChart fx:id="pltWorldShare" layoutX="27.0" layoutY="14.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </AreaChart>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnCatWorldSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="473.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+                     <children>
+                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общемировой график экспорта отображает историю показателей суммарного экспорта по категории за последние 10 лет. Данные представлены в виде графика. Для просмотра информации необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Text>
+                        <ComboBox fx:id="cmbChooseCatWorld" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Button fx:id="btnShowCatExportPlot" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showCatExportPlot" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="pnCatWorldImportShare" layoutX="6.0" layoutY="88.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в импорте по категории">
+                     <font>
+                        <Font name="SF Compact Text Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="pnCatWorldimportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+                     <children>
+                        <Button fx:id="btnBackFromPlot1" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSavePlot1" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                        <PieChart fx:id="pltCatImportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnCatWorldImportSharePrompt1" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+                     <children>
+                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом импорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Text>
+                        <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Button fx:id="btnShowDiag" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showShareDiag" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Button>
+                        <ComboBox fx:id="cmbChooseCountry2" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="pnCategoryTables" prefHeight="609.0" prefWidth="584.0">
+         <children>
+            <Pane fx:id="pnCatExportTable" layoutX="10.0" layoutY="87.0" prefHeight="511.0" prefWidth="572.0" style="-fx-background-color: F2F3F7;">
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Экспорт в направлении по странам">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="SF Compact Text Medium" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCategoryExportTable" layoutX="6.0" layoutY="61.0" prefHeight="453.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
@@ -72,137 +159,96 @@
                         </TableView>
                         <Button fx:id="btnBackFromExportTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromExportTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
                            <font>
-                              <Font size="12.0" />
+                              <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
                         <Button fx:id="btnSaveExportTable" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
-                              <Font size="12.0" />
+                              <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
                      </children>
                   </Pane>
                   <Pane fx:id="pnCategoryExportTablePrompt" layoutX="7.0" layoutY="56.0" prefHeight="453.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                      <children>
-                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица экспорта в направлениях по странам отображает данные по  экспорту в выбранном напралении в различных странах. Данные отображаются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
+                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица экспорта в направлениях по странам отображает данные по  экспорту в выбранном напралении в различных странах. Данные отображаются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Text>
                         <ComboBox fx:id="cmbChooseCountry" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Button fx:id="btnShowCommonCategoryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
+                        <Button fx:id="btnShowCommonCategoryTable" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showExportTablePane" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="pnCatImportTable" layoutX="7.0" layoutY="77.0" prefHeight="525.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
+               <children>
+                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Импорт в направлении по странам">
+                     <font>
+                        <Font name="SF Compact Text Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="pnCatImportTableView" layoutX="6.0" layoutY="61.0" prefHeight="462.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
+                     <children>
+                        <TableView fx:id="tableCategoryImport" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
+                           <columns>
+                              <TableColumn fx:id="yearColumn" prefWidth="137.0" text="Год" />
+                              <TableColumn fx:id="countryColumn" prefWidth="137.0" text="Страна" />
+                              <TableColumn fx:id="importColumn" prefWidth="137.0" text="Импорт" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromImportTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSaveCatTableImport" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnCatImportPrompt" layoutX="7.0" layoutY="53.0" prefHeight="474.0" prefWidth="559.0" style="-fx-background-color: F2F3F7;">
+                     <children>
+                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Таблица импорта в направлениях по странам отображает данные по  импорту в выбранном напралении в различных странах. Данные отображаются в виде таблицы. Для просмотра необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998">
+                           
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Text>
+                        <ComboBox fx:id="cmbChooseCat" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
+                        <Button fx:id="btnShowImportCat" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" onAction="#showImportTablePane" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу">
+                           <font>
+                              <Font name="SF Compact Text Regular" size="13.0" />
+                           </font></Button>
                      </children>
                   </Pane>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="pnCategoryPlots" layoutX="602.0" layoutY="-6.0" prefHeight="609.0" prefWidth="584.0">
-         <children>
-            <Pane fx:id="pnCatWorldShareBase" layoutX="6.0" layoutY="88.0" prefHeight="532.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
-               <children>
-                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Общемировой график экспорта">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Pane fx:id="pnCatWorldSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="473.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
-                     <children>
-                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общемировой график экспорта отображает историю показателей суммарного экспорта по категории за последние 10 лет. Данные представлены в виде графика. Для просмотра информации необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
-                        <ComboBox fx:id="cmbChooseCatWorld" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Button fx:id="btnShowCommonCountryTable111" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnCatWorldShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
-                     <children>
-                        <Button fx:id="btnBackFromCatWorldShare" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnSaveCatWorldShare" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <AreaChart fx:id="pltWorldShare" layoutX="27.0" layoutY="14.0">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                        </AreaChart>
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
-            <Pane fx:id="pnCatWorldexportShare" layoutX="-4.0" layoutY="78.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
-               <children>
-                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в экспорте по категории">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Pane fx:id="pnCatWorldExportSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
-                     <children>
-                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом экспорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
-                        <ComboBox fx:id="cmbChooseCategory" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Button fx:id="btnShowCommonCountryTable21" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
-                        <ComboBox fx:id="cmbChooseYear" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnCatWorldExportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
-                     <children>
-                        <Button fx:id="btnBackFromPlot" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnSavePlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <PieChart fx:id="pltCatExportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
-            <Pane fx:id="pnCatWorldImportShare" layoutX="6.0" layoutY="88.0" prefHeight="540.0" prefWidth="565.0" style="-fx-background-color: F2F3F7;">
-               <children>
-                  <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в импорте по категории">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Pane fx:id="pnCatWorldimportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
-                     <children>
-                        <Button fx:id="btnBackFromPlot1" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="btnSavePlot1" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
-                           <font>
-                              <Font size="12.0" />
-                           </font>
-                        </Button>
-                        <PieChart fx:id="pltCatImportShare" layoutX="59.0" layoutY="34.0" prefHeight="348.0" prefWidth="435.0" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnCatWorldImportSharePrompt1" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
-                     <children>
-                        <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом импорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
-                        <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                        <Button fx:id="btnShowDiag" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
-                        <ComboBox fx:id="cmbChooseCountry2" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
-                     </children>
-                  </Pane>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Button fx:id="btnShowConstImportTable" layoutX="28.0" layoutY="13.0" mnemonicParsing="false" onAction="#showConstImportTablePane" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Статистика импорта" />
-      <Button fx:id="btnShowConstExportTable" layoutX="228.0" layoutY="14.0" mnemonicParsing="false" onAction="#showConstExportTablePane" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика экспорта" />
-      <Button fx:id="btnShowCommonExportPlot" layoutX="634.0" layoutY="12.0" mnemonicParsing="false" onAction="#showCommonExportPlotPane" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общемировой экспорт" />
-      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareExportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте" />
-      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareImportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте" />
+      <Button fx:id="btnShowConstImportTable" layoutX="28.0" layoutY="13.0" mnemonicParsing="false" onAction="#showConstImportTablePane" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Статистика импорта">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowConstExportTable" layoutX="228.0" layoutY="14.0" mnemonicParsing="false" onAction="#showConstExportTablePane" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика экспорта">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowCommonExportPlot" layoutX="634.0" layoutY="12.0" mnemonicParsing="false" onAction="#showCommonExportPlotPane" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общемировой экспорт">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareImportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareExportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
    </children>
 </Pane>
