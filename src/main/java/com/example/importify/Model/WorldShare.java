@@ -12,7 +12,7 @@ public class WorldShare implements Serializable {
         return share;
     }
 
-    public void setId(double share) {
+    public void setShare(double share) {
         this.share = share;
     }
 

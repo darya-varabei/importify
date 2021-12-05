@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pnCatPlots" prefHeight="625.0" prefWidth="569.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsPlotsController">
+<Pane fx:id="pnCatPlots" prefHeight="625.0" prefWidth="569.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@font.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.ConstituentsPlotsController">
    <children>
       <Pane fx:id="pnCatWorldShareBase" layoutX="6.0" layoutY="88.0" prefHeight="532.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
          <children>
@@ -22,7 +22,10 @@
             </Label>
             <Pane fx:id="pnCatWorldSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="473.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                <children>
-                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общемировой график экспорта отображает историю показателей суммарного экспорта по категории за последние 10 лет. Данные представлены в виде графика. Для просмотра информации необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998" />
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общемировой график экспорта отображает историю показателей суммарного экспорта по категории за последние 10 лет. Данные представлены в виде графика. Для просмотра информации необходимо выбрать страну в выпадающем списке." wrappingWidth="484.9046459197998">
+                     <font>
+                        <Font name="SF Compact Text Regular" size="13.0" />
+                     </font></Text>
                   <ComboBox fx:id="cmbChooseCat" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выбрать направление" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Button fx:id="btnShowCommonCountryTable111" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                </children>
@@ -60,7 +63,10 @@
             </Label>
             <Pane fx:id="pnCatWorldExportSharePrompt" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                <children>
-                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом экспорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом экспорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998">
+                     <font>
+                        <Font name="SF Compact Text Regular" size="13.0" />
+                     </font></Text>
                   <ComboBox fx:id="cmbChooseCountry21" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Button fx:id="btnShowCommonCountryTable21" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                   <ComboBox fx:id="cmbChooseCountry" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
@@ -107,7 +113,10 @@
             </Pane>
             <Pane fx:id="pnCatWorldImportSharePrompt1" layoutX="7.0" layoutY="60.0" prefHeight="479.0" prefWidth="549.0" style="-fx-background-color: F2F3F7 F2F3F7;">
                <children>
-                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом импорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998" />
+                  <Text fill="#414348" layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Диаграмма отражает долю стран в общемировом импорте в выбранной категории по состоянию на выбранный год. Для просмотра необходимо выбрать категорию и год в выпадающих списках" wrappingWidth="484.9046459197998">
+                     <font>
+                        <Font name="SF Compact Text Regular" size="13.0" />
+                     </font></Text>
                   <ComboBox fx:id="cmbChooseCountry1" layoutX="29.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите категорию" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />
                   <Button fx:id="btnShowDiag" disable="true" layoutX="35.0" layoutY="262.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 15;" text="Показать таблицу" />
                   <ComboBox fx:id="cmbChooseCountry2" layoutX="269.0" layoutY="121.0" prefHeight="28.0" prefWidth="217.0" promptText="Выберите год" style="-fx-background-color: 0; -fx-border-color: #354385; -fx-background-radius: 10; -fx-border-radius: 10;" />

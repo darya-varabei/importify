@@ -170,19 +170,19 @@ public class LoginController implements Initializable{
 
     @FXML
     public void EnterMainScreen(ActionEvent event) {
-        serverManager.sendString("Authorization");
-        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
-        var user = (User)serverManager.readObject();
-
-        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
-
-        if (statUser != null) {
+//        serverManager.sendString("Authorization");
+//        serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
+//        var user = (User)serverManager.readObject();
+//
+//        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
+//
+//        if (statUser != null) {
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
-        }
-        else {
-            lblInvalidLoginEntry.setVisible(true);
-        }
+//        }
+//        else {
+//            lblInvalidLoginEntry.setVisible(true);
+//        }
     }
 
     @FXML
@@ -213,24 +213,24 @@ public class LoginController implements Initializable{
 
     @FXML
     private void connect(ActionEvent event) {
-        var client = new Client();
-        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
-        serverManager = client.interactionsWithServer;
-
-        if (serverManager != null) {
-            lblInvalidConnection.setVisible(false);
-            if (event.getSource().equals(btnSignIn)) {
+//        var client = new Client();
+//        client.connectToServer(eip1.getText(), Integer.parseInt(eip.getText()));
+//        serverManager = client.interactionsWithServer;
+//
+//        if (serverManager != null) {
+//            lblInvalidConnection.setVisible(false);
+//            if (event.getSource().equals(btnSignIn)) {
                 new ZoomIn(pnSignIn).play();
                 pnSignIn.toFront();
-            }
-            else {
-                new ZoomIn(pnSignUp).play();
-                pnSignUp.toFront();
-            }
-        }
-        else {
-            lblInvalidConnection.setVisible(true);
-        }
+//            }
+//            else {
+//                new ZoomIn(pnSignUp).play();
+//                pnSignUp.toFront();
+//            }
+//        }
+//        else {
+//            lblInvalidConnection.setVisible(true);
+//        }
     }
 
     @FXML

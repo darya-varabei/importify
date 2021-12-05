@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <Pane fx:id="pnCountries" prefHeight="682.0" prefWidth="1196.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.CountryController">
    <children>
@@ -11,9 +12,21 @@
       <Pane fx:id="pnCountryPlots" prefHeight="68.0" prefWidth="584.0">
       <fx:include fx:id="countryPlots" layoutX="600" layoutY="0" source="countryPlots.fxml" />
       </Pane>
-      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCommonTablePane" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCountryCatTablePane" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям" />
-      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" mnemonicParsing="false" onAction="#showCommonPlotPane" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт" />
-      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" mnemonicParsing="false" onAction="#showSharePane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям" />
+      <Button fx:id="btnShowCommonTable" layoutX="46.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCommonTablePane" prefHeight="51.0" prefWidth="179.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowCountryCatTable" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" onAction="#showCountryCatTablePane" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Экспорт и импорт по категориям">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowCommonPlot" layoutX="628.0" layoutY="16.0" mnemonicParsing="false" onAction="#showCommonPlotPane" prefHeight="45.0" prefWidth="175.0" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Общие экспорт и импорт">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnShowShare" layoutX="814.0" layoutY="15.0" mnemonicParsing="false" onAction="#showSharePane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Статистика по категориям">
+         <font>
+            <Font name="SF Compact Text Regular" size="13.0" />
+         </font></Button>
    </children>
 </Pane>
