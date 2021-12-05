@@ -97,17 +97,17 @@ public class ConstituentsTablesController implements Initializable {
         this.controller = controller;
     }
 
-   @FXML
-   private void backFromImportTable() {
-       new ZoomIn(pnCatImportPrompt).play();
-       pnCatImportPrompt.toFront();
-   }
+    @FXML
+    private void backFromImportTable() {
+        new ZoomIn(pnCatImportPrompt).play();
+        pnCatImportPrompt.toFront();
+    }
 
    @FXML
-   private void backFromExportTable() {
-       new ZoomIn(pnCategoryExportTablePrompt).play();
-       pnCategoryExportTablePrompt.toFront();
-   }
+    private void backFromExportTable() {
+        new ZoomIn(pnCategoryExportTablePrompt).play();
+        pnCategoryExportTablePrompt.toFront();
+    }
 
     void showExportTable() {
         new ZoomIn(pnCatExportTable).play();
@@ -127,7 +127,7 @@ public class ConstituentsTablesController implements Initializable {
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
-        importColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
+        importColumn.setCellValueFactory(new PropertyValueFactory<>("importValue"));
         tableCategoryImport.setItems(data);
     }
 
@@ -136,8 +136,8 @@ public class ConstituentsTablesController implements Initializable {
         ObservableList<ExportImportConstituents> data;
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
-        exportColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
         country.setCellValueFactory(new PropertyValueFactory<>("country"));
+        exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
         tableCategoryExport.setItems(data);
     }
 

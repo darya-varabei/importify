@@ -100,7 +100,7 @@ public class SettingsController implements Initializable {
     public void setupAccess() {
         var user = User.getInstance();
 
-        lblUsername.setText(user.getUserEntry().getLogin());
+        lblUsername.setText('@' + user.getUserEntry().getLogin());
         lblUserRole.setText(user.getUserEntry().getRole());
         cmbChooseCountry.setValue(user.getCountry().getName());
         ObservableList<String> data;

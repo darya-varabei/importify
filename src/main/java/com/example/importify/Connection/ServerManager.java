@@ -193,7 +193,8 @@ public class ServerManager {
     }
 
     public LinkedList<ExportImportConstituents> getConstituent(String constituent) {
-        sendString("EIConstituent " + constituent);
+        sendString("EIConstituent");
+        sendString(constituent);
         try {
             return (LinkedList<ExportImportConstituents>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {

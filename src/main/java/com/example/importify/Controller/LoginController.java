@@ -211,21 +211,6 @@ public class LoginController implements Initializable{
         {
             lblInvalidRegEntry.setVisible(true);
         }
-
-
-
-
-//        if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
-//            lblPasswordDoNotMatch.setVisible(true);
-//        }
-//
-//        if (user != null) {
-//            Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//            primaryStage.setScene(secondScene);
-//        }
-//        else {
-//            lblInvalidRegEntry.setVisible(true);
-//        }
     }
 
     @FXML

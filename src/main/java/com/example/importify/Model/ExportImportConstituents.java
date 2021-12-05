@@ -7,6 +7,7 @@ public class ExportImportConstituents implements Serializable {
     private String constituent;
     private double exportValue;
     private double importValue;
+    private String country;
 
     public ExportImportConstituents(){}
 
@@ -38,7 +39,15 @@ public class ExportImportConstituents implements Serializable {
         return constituent;
     }
 
-    public void setRole(String netExportValue) {
+    public void setConstituent(String netExportValue) {
         this.constituent = constituent;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

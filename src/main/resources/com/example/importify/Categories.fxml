@@ -242,11 +242,11 @@
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font></Button>
-      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareImportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте">
+      <Button fx:id="btnShowCountryShareExportPlot" layoutX="820.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareExportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в импорте">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font></Button>
-      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareExportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте">
+      <Button fx:id="btnShowCountryShareImportPlot" layoutX="1006.0" layoutY="11.0" mnemonicParsing="false" onAction="#showCountryShareImportPane" prefHeight="51.0" prefWidth="214.0" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Доля стран в экспорте">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font></Button>

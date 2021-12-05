@@ -289,8 +289,8 @@ public class ConstituentsController implements Initializable {
 
     private void setupComboBoxes() {
         btnShowDiag.setDisable(false);
-        btnShowCommonCountryTable21.setDisable(false);
-        btnShowCommonCountryTable111.setDisable(false);
+        //btnShowCommonCountryTable21.setDisable(false);
+        //btnShowCommonCountryTable111.setDisable(false);
         btnShowCommonCategoryTable.setDisable(false);
         btnShowImportCat.setDisable(false);
         ObservableList<Integer> year;
@@ -306,13 +306,14 @@ public class ConstituentsController implements Initializable {
             cmbChooseCountry1.setItems(category);
             cmbChooseCountry2.setItems(year);
             cmbChooseYear.setItems(year);
-            cmbChooseCountry21.setItems(category);
+
+            //cmbChooseCountry21.setItems(category);
             cmbChooseCat.setItems(category);
             cmbChooseCat.setOnAction(e -> enableWorldSharePlot());
             cmbChooseCountry1.setOnAction(e -> enableWorldImportSharePlot());
             cmbChooseCountry2.setOnAction(e -> enableWorldImportSharePlot());
             cmbChooseCountry.setOnAction(e -> enableWorldExportSharePlot());
-            cmbChooseCountry21.setOnAction(e -> enableWorldExportSharePlot());
+            //cmbChooseCountry21.setOnAction(e -> enableWorldExportSharePlot());
 
             dataCou = FXCollections.observableArrayList(client.interactionsWithServer.getStrings("countries"));
             dataCat = FXCollections.observableArrayList(client.interactionsWithServer.getStrings("categories"));

@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -22,6 +23,7 @@ public class HelloApplication extends Application {
         LoginController firstPaneController = fxmlLoader.getController();
         firstPaneController.setSecondScene(secondScene);
 
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
         new FadeIn(scene.getRoot()).play();
