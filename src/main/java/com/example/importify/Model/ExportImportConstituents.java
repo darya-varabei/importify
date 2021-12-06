@@ -39,7 +39,7 @@ public class ExportImportConstituents implements Serializable {
         return constituent;
     }
 
-    public void setConstituent(String netExportValue) {
+    public void setConstituent(String constituent) {
         this.constituent = constituent;
     }
 

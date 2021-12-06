@@ -173,7 +173,9 @@ public class ServerManager {
     }
 
     public LinkedList<CategoryShare> getCategoryShare(String code, String constituent, Integer year) {
-        sendString("world " + constituent + " " + year);
+        sendString("Share " + code);
+        sendString(constituent);
+        sendString(year.toString());
         try {
             return (LinkedList<CategoryShare>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {
@@ -182,8 +184,9 @@ public class ServerManager {
         return null;
     }
 
-    public LinkedList<WorldConstituentExport> getWorldConstituentExport(String constituent) {
-        sendString("worldCE " + constituent);
+    public LinkedList<WorldConstituentExport> getWorldConstituentExport(String country) {
+        sendString("worldCE");
+        sendString(country);
         try {
             return (LinkedList<WorldConstituentExport>) readMessage.readObject();
         } catch (IOException | ClassNotFoundException e) {

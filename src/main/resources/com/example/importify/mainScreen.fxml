@@ -21,22 +21,22 @@
       <Pane fx:id="pnCountry">
          <fx:include fx:id="countriesPane" layoutX="5" layoutY="100" source="countries.fxml" />
       </Pane>
-      <Button fx:id="btnHide" layoutX="1100.0" mnemonicParsing="false" onAction="#hideScene" style="-fx-background-color: 0;" text="–" textFill="#354385">
+      <Button fx:id="btnHide" layoutX="1100.0" mnemonicParsing="false" onAction="#hideScene" style="-fx-background-color: 0; -fx-cursor: hand;" text="–" textFill="#354385">
          <font>
             <Font name="SF Compact Text Regular" size="26.0" />
          </font>
       </Button>
-      <Button fx:id="btnCountries" graphicTextGap="1.0" layoutX="79.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCountryView" style="-fx-background-color: 0; -fx-text-fill: #354385;" text="Страны" underline="true">
+      <Button fx:id="btnCountries" graphicTextGap="1.0" layoutX="79.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCountryView" onMouseMoved="#movedCountryView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-cursor: hand;" text="Страны" underline="true">
          <font>
             <Font name="SF Compact Text Medium" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnCategories" graphicTextGap="1.0" layoutX="222.0" layoutY="36.0" mnemonicParsing="false" onAction="#showConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Категории">
+      <Button fx:id="btnCategories" graphicTextGap="1.0" layoutX="222.0" layoutY="36.0" mnemonicParsing="false" onAction="#showConstituentsView" onMouseMoved="#movedConstituentsView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Категории">
          <font>
             <Font name="SF Compact Text Regular" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnUsers" graphicTextGap="1.0" layoutX="381.0" layoutY="36.0" mnemonicParsing="false" onAction="#showUsersView" style="-fx-background-color: 0; -fx-text-fill: #72778E;" text="Пользователи">
+      <Button fx:id="btnUsers" graphicTextGap="1.0" layoutX="381.0" layoutY="36.0" mnemonicParsing="false" onAction="#showUsersView" onMouseMoved="#movedUsersView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Пользователи">
          <font>
             <Font name="SF Compact Text Regular" size="18.0" />
          </font>
@@ -47,12 +47,12 @@
             <Font name="SF Compact Text Regular" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnSettings" layoutX="783.0" layoutY="37.0" mnemonicParsing="false" onAction="#showSettingsView" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10;" text="Настройки аккаунта" textFill="#fafafa">
+      <Button fx:id="btnSettings" layoutX="783.0" layoutY="37.0" mnemonicParsing="false" onAction="#showSettingsView" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #354385; -fx-background-radius: 10; -fx-cursor: hand;" text="Настройки аккаунта" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnClose" layoutX="1150.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeScene" style="-fx-background-color: 0;" text="х" textFill="#354385">
+      <Button fx:id="btnClose" layoutX="1150.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeScene" style="-fx-background-color: 0; -fx-cursor: hand;" text="х" textFill="#354385">
          <font>
             <Font name="SF Compact Text Regular" size="26.0" />
          </font>

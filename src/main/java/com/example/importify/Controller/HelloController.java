@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -63,11 +65,11 @@ public class HelloController implements Initializable {
     @FXML
     public void showCountryView(ActionEvent event) {
         btnCountries.setUnderline(true);
-        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCategories.setUnderline(false);
-        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnUsers.setUnderline(false);
-        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
 
         new ZoomIn(pnCountry).play();
         pnCountry.toFront();
@@ -80,11 +82,11 @@ public class HelloController implements Initializable {
     @FXML
     public void showConstituentsView() {
         btnCategories.setUnderline(true);
-        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCountries.setUnderline(false);
-        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnUsers.setUnderline(false);
-        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
 
         new ZoomIn(pnConstituents).play();
         pnConstituents.toFront();
@@ -97,11 +99,11 @@ public class HelloController implements Initializable {
     @FXML
     public void showUsersView() {
         btnUsers.setUnderline(true);
-        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385");
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCategories.setUnderline(false);
-        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCountries.setUnderline(false);
-        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
 
         new ZoomIn(pnUsers).play();
         pnUsers.toFront();
@@ -114,11 +116,11 @@ public class HelloController implements Initializable {
     @FXML
     public void showSettingsView() {
         btnUsers.setUnderline(true);
-        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCategories.setUnderline(false);
-        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
         btnCountries.setUnderline(false);
-        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E");
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
 
         new ZoomIn(pnSettings).play();
         pnCountry.setVisible(false);
@@ -173,5 +175,41 @@ public class HelloController implements Initializable {
                 btnUsers.setVisible(false);
             }
         }
+    }
+
+    public void movedConstituentsView(MouseEvent mouseEvent) {
+        btnCategories.setUnderline(true);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+    }
+
+    public void exidetConstituentsView(MouseEvent mouseEvent) {
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+    }
+
+    public void movedCountryView(MouseEvent mouseEvent) {
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnCountries.setUnderline(true);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnUsers.setUnderline(false);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+    }
+
+    public void movedUsersView(MouseEvent mouseEvent) {
+        btnCategories.setUnderline(false);
+        btnCategories.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnCountries.setUnderline(false);
+        btnCountries.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
+        btnUsers.setUnderline(true);
+        btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #354385; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
     }
 }

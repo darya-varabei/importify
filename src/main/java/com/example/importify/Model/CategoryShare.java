@@ -1,6 +1,8 @@
 package com.example.importify.Model;
 
-public class CategoryShare {
+import java.io.Serializable;
+
+public class CategoryShare implements Serializable {
     private String category;
     private double value;
 
