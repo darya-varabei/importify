@@ -20,15 +20,15 @@ public class UserView extends UserEntry{
         this.id = id;
     }
 
-    public String getDate() {
-        return lastAccessDate;
-    }
-
-    public void setDate(String lastAccessDated) {
-        this.lastAccessDate = lastAccessDate;
-    }
-
     public String getCountry() { return country; }
 
     public void setCountry(String country) { this.country = country; }
+
+    public String getLastAccessDate() {
+        return lastAccessDate;
+    }
+
+    public void setLastAccessDate(String lastAccessDate) {
+        this.lastAccessDate = lastAccessDate;
+    }
 }

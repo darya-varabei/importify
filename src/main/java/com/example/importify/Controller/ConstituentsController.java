@@ -408,7 +408,7 @@ public class ConstituentsController implements Initializable {
         System.out.println("Export table *********************************");
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
-        exportColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
+        exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
         country.setCellValueFactory(new PropertyValueFactory<>("country"));
         tableCategoryExport.setItems(data);
     }

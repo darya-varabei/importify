@@ -12,4 +12,6 @@ module com.example.importify {
     exports com.example.importify;
     exports com.example.importify.Controller;
     opens com.example.importify.Controller to javafx.fxml;
+    exports com.example.importify.Model;
+    opens com.example.importify.Model to javafx.base;
 }

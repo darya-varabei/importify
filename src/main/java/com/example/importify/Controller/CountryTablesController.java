@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
@@ -303,7 +305,17 @@ public class CountryTablesController implements Initializable {
     public void saveCountryCatTable(ActionEvent actionEvent) throws Exception {
         Writer writer = null;
         try {
-            File file = new File("D:\\CountryCategory.csv");
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
             writer = new BufferedWriter(new FileWriter(file));
             Writer finalWriter = writer;
             catData.forEach((category) -> {
@@ -326,7 +338,17 @@ public class CountryTablesController implements Initializable {
     public void saveCountryCommonTable() throws Exception {
         Writer writer = null;
         try {
-            File file = new File("D:\\CountryImportExport.csv");
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт и экспорт таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
             writer = new BufferedWriter(new FileWriter(file));
             Writer finalWriter = writer;
             data.forEach((country) -> {

@@ -108,7 +108,7 @@ public class UsersController implements Initializable {
             user.setLogin(fieldUsername.getText());
             user.setPassword(fieldPassword.getText());
             user.setCountry(cmbCountry.getValue());
-            user.setCountry(cmbRole.getValue());
+            user.setRole(cmbRole.getValue());
 
             removeUser(user.getId());
             dataList.add(user);
@@ -126,7 +126,7 @@ public class UsersController implements Initializable {
         lastAccessColumn.setCellValueFactory(new PropertyValueFactory<>("lastAccessDate"));
         countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
         roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
-        tableUsers.setItems(dataList);
+        //tableUsers.setItems(dataList);
     }
 
     @FXML

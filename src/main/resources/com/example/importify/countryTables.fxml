@@ -21,12 +21,12 @@
             </Label>
             <Pane fx:id="pnCountryCatTable" layoutX="6.0" layoutY="61.0" prefHeight="455.0" prefWidth="553.0" style="-fx-background-color: #F2F3F7;">
                <children>
-                  <TableView fx:id="commonCountryTable1" layoutX="2.0" prefHeight="377.0" prefWidth="548.0">
+                  <TableView fx:id="commonCountryTable1" layoutX="2.0" prefHeight="377.0" prefWidth="548.0"  >
                      <columns>
                         <TableColumn fx:id="year" prefWidth="137.0" text="Год" />
                         <TableColumn fx:id="categoryColumn" prefWidth="137.0" text="Категория" />
-                        <TableColumn fx:id="importC" prefWidth="137.0" text="Экспорт" />
-                        <TableColumn fx:id="export" prefWidth="137.0" text="Импорт" />
+                        <TableColumn fx:id="importC" prefWidth="137.0" text="Импорт" />
+                        <TableColumn fx:id="export" prefWidth="137.0" text="Экспорт" />
                      </columns>
                   </TableView>
                   <Button fx:id="btnBackFromCatTable" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" onAction="#backFromCatTable" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-border-color: #354385; -fx-border-radius: 10;" text="Назад">
