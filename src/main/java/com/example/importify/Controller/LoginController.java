@@ -177,6 +177,7 @@ public class LoginController implements Initializable{
         var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
 
         if (statUser != null) {
+            lblInvalidLoginEntry.setVisible(false);
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         }
@@ -203,13 +204,23 @@ public class LoginController implements Initializable{
 
             if (!txtFieldPass1.getText().equals(txtFieldPassRep.getText())) {
                 lblPasswordDoNotMatch.setVisible(true);
+                lblInvalidRegEntry.setVisible(false);
             }
-
+            lblLoginAlreadyExists.setVisible(false);
+            lblInvalidRegEntry.setVisible(false);
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
         } catch (Exception e)
         {
-            lblInvalidRegEntry.setVisible(true);
+            if(recived == "user exists") {
+                lblInvalidRegEntry.setVisible(false);
+                lblLoginAlreadyExists.setVisible(true);
+                lblLoginAlreadyExists.toFront();
+            }
+            else {
+                lblLoginAlreadyExists.setVisible(false);
+                lblInvalidRegEntry.setVisible(true);
+            }
         }
     }
 

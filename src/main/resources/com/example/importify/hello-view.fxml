@@ -90,6 +90,45 @@
                               </Label>
                            </children>
                         </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #354284 #354284;">
+                           <children>
+                              <Button fx:id="bConnect" layoutX="162.0" layoutY="344.0" mnemonicParsing="false" onAction="#connect" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: #02E079#02E079 #02E079#02E079; -fx-background-radius: 15;" text="Подключиться" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="14.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="eip" layoutX="152.0" layoutY="241.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите порт" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="60.0" layoutY="195.0" text="IP адрес:" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="eip1" layoutX="152.0" layoutY="191.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите адрес" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="61.0" layoutY="246.0" text="Порт" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="62.0" layoutY="93.0" text="Установите параметры подключения" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblInvalidConnection" layoutX="163.0" layoutY="287.0" text="Подключение не выполнено" textFill="#e23c3c" visible="false">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
                         <Pane fx:id="pnSignIn" prefHeight="310.0" prefWidth="340.0" style="-fx-background-color: #354284;">
                            <children>
                               <Button fx:id="btnSignUp" blendMode="LIGHTEN" layoutX="150.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleAuthorizationAction" style="-fx-background-color: #354284#354284;" text="Уже есть аккаунт? Авторизируйтесь" textFill="#fafafa" underline="true">
@@ -162,51 +201,7 @@
                                     <Font name="SF Compact Text Regular" size="12.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblEmailAlreadyExists" layoutX="64.0" layoutY="415.0" text="Данный  электронный адрес уже занят" textFill="#f34b4b" visible="false">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
                               <Label fx:id="lblInvalidRegEntry" layoutX="55.0" layoutY="415.0" text="Некорректный ввод" textFill="#f34b4b" visible="false">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #354284 #354284;">
-                           <children>
-                              <Button fx:id="bConnect" layoutX="162.0" layoutY="344.0" mnemonicParsing="false" onAction="#connect" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: #02E079#02E079 #02E079#02E079; -fx-background-radius: 15;" text="Подключиться" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="14.0" />
-                                 </font>
-                              </Button>
-                              <TextField fx:id="eip" layoutX="152.0" layoutY="241.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите порт" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="60.0" layoutY="195.0" text="IP адрес:" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="eip1" layoutX="152.0" layoutY="191.0" prefHeight="25.0" prefWidth="223.0" promptText="Введите адрес" style="-fx-background-radius: 15; -fx-background-color: fafafa; -fx-opacity: 0.3;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="61.0" layoutY="246.0" text="Порт" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="62.0" layoutY="93.0" text="Установите параметры подключения" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Medium" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblInvalidConnection" layoutX="163.0" layoutY="287.0" text="Некорректный ввод" textFill="#e23c3c" visible="false">
                                  <font>
                                     <Font name="SF Compact Text Regular" size="12.0" />
                                  </font>
