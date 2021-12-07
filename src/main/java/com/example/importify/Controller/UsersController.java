@@ -42,6 +42,9 @@ public class UsersController implements Initializable {
     @FXML
     private Button btnAddUsers;
 
+    @FXML private Label lblSuccess;
+    @FXML private Label lblMistake;
+
     @FXML
     private Button btnUpdateUser;
 
@@ -80,8 +83,12 @@ public class UsersController implements Initializable {
             UserView userToAdd = new UserView(username, password, id, "", country, role);
             dataList.add(userToAdd);
             Client.interactionsWithServer.sendData("newUser", userToAdd);
+            lblSuccess.setVisible(true);
+            lblMistake.setVisible(false);
         }
         else {
+            lblSuccess.setVisible(false);
+            lblMistake.setVisible(true);
         }
     }
 
@@ -90,6 +97,8 @@ public class UsersController implements Initializable {
         UserView user = tableUsers.getSelectionModel().getSelectedItem();
         removeUser(user.getId());
         Client.interactionsWithServer.sendData("deleteUser", String.valueOf(user.getId()));
+        lblSuccess.setVisible(true);
+        lblMistake.setVisible(false);
         tableUsers.refresh();
     }
 
@@ -113,6 +122,8 @@ public class UsersController implements Initializable {
             removeUser(user.getId());
             dataList.add(user);
             Client.interactionsWithServer.sendData("updateUser", user);
+            lblSuccess.setVisible(true);
+            lblMistake.setVisible(false);
         }
     }
 

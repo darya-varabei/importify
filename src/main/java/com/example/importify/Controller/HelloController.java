@@ -62,6 +62,9 @@ public class HelloController implements Initializable {
     @FXML
     private Pane pnUsers;
 
+    @FXML private Button btnHide;
+    @FXML private Button btnClose;
+
     @FXML
     public void showCountryView(ActionEvent event) {
         btnCountries.setUnderline(true);
@@ -72,11 +75,14 @@ public class HelloController implements Initializable {
         btnUsers.setStyle("-fx-background-color: 0; -fx-text-fill: #72778E; -fx-font-size: 18; -fx-font-family: 'SF Compact Text'");
 
         new ZoomIn(pnCountry).play();
+
         pnCountry.toFront();
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();
         btnSettings.toFront();
+        btnClose.toFront();
+        btnHide.toFront();
     }
 
     @FXML
@@ -94,6 +100,8 @@ public class HelloController implements Initializable {
         btnCountries.toFront();
         btnCategories.toFront();
         btnSettings.toFront();
+        btnClose.toFront();
+        btnHide.toFront();
     }
 
     @FXML
@@ -111,6 +119,8 @@ public class HelloController implements Initializable {
         btnCountries.toFront();
         btnCategories.toFront();;
         btnSettings.toFront();
+        btnClose.toFront();
+        btnHide.toFront();
     }
 
     @FXML
@@ -132,6 +142,8 @@ public class HelloController implements Initializable {
         btnCategories.toFront();
         btnSettings.toFront();
         lblUsername.toFront();
+        btnClose.toFront();
+        btnHide.toFront();
     }
 
     @Override

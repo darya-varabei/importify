@@ -89,6 +89,8 @@ public class CountryTablesController implements Initializable {
     @FXML
     private Pane pnCommonCountryTable;
 
+    @FXML private Label lblSuccess;
+
     @FXML
     private Pane pnCountryCommonTable;
 
@@ -249,8 +251,10 @@ public class CountryTablesController implements Initializable {
             CountryAdd dataAdd = new CountryAdd(txtNewCountry.getText(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
         Client.interactionsWithServer.sendData("addCountry", dataAdd);
             lblInvalidInput.setVisible(false);
+            lblSuccess.setVisible(true);
         }
         else {
+            lblSuccess.setVisible(false);
             lblInvalidInput.setVisible(true);
         }
     }
@@ -260,8 +264,10 @@ public class CountryTablesController implements Initializable {
         CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
         Client.interactionsWithServer.sendData("editCountry", data);
             lblInvalidInput.setVisible(false);
+            lblSuccess.setVisible(true);
         }
         else {
+            lblSuccess.setVisible(false);
             lblInvalidInput.setVisible(true);
         }
     }
@@ -271,10 +277,20 @@ public class CountryTablesController implements Initializable {
             CountryAdd data = new CountryAdd(cmbChooseCountryToUpdate.getValue(), cmbChooseYearToUpdate.getValue(), Double.parseDouble(txtImport.getText()), Double.parseDouble(txtExport.getText()), Double.parseDouble(txtExport.getText()) - Double.parseDouble(txtImport.getText()));
             Client.interactionsWithServer.sendData("deleteCountry", data);
             lblInvalidInput.setVisible(false);
+            lblSuccess.setVisible(true);
         }
         else {
+            lblSuccess.setVisible(false);
             lblInvalidInput.setVisible(true);
         }
+    }
+
+    public void clearData() {
+        cmbChooseCountryToUpdate.setValue("Выберите страну");
+        txtImport.clear();
+        txtImport.clear();
+        txtNewCountry.clear();
+        cmbChooseYearToUpdate.setValue(0);
     }
 
     public void showUpdateCommonData() {

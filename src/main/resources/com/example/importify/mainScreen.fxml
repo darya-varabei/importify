@@ -7,36 +7,31 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" stylesheets="@font.css" onMouseEntered="#setupAccess" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
+<AnchorPane fx:id="anchor" onMouseEntered="#setupAccess" prefHeight="790.0" prefWidth="1216.0" style="-fx-background-color: F2F3F7;" stylesheets="@font.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.HelloController">
    <children>
-      <Pane fx:id="pnConstituents" prefHeight="782.0" prefWidth="1201.0">
-         <fx:include fx:id="constituentsPane" layoutX="5" layoutY="100" source="Categories.fxml" />
+      <Pane fx:id="pnConstituents" layoutX="5.0" layoutY="100.0" prefHeight="703.0" prefWidth="1201.0">
+         <fx:include fx:id="constituentsPane" source="Categories.fxml" />
       </Pane>
-      <Pane fx:id="pnUsers" layoutY="2.0" prefHeight="782.0" prefWidth="1221.0">
-         <fx:include fx:id="usersPane" layoutX="5" layoutY="100" source="users.fxml" />
+      <Pane fx:id="pnUsers" layoutX="5.0" layoutY="100.0" prefHeight="688.0" prefWidth="1221.0">
+         <fx:include fx:id="usersPane" source="users.fxml" />
       </Pane>
-      <Pane fx:id="pnSettings" layoutY="2.0" prefHeight="782.0" prefWidth="1221.0">
-         <fx:include fx:id="settingsPane" layoutX="5" layoutY="0" source="settingsView.fxml" />
+      <Pane fx:id="pnSettings" layoutX="5.0" layoutY="100.0" prefHeight="699.0" prefWidth="1221.0">
+         <fx:include fx:id="settingsPane" source="settingsView.fxml" />
       </Pane>
-      <Pane fx:id="pnCountry">
-         <fx:include fx:id="countriesPane" layoutX="5" layoutY="100" source="countries.fxml" />
+      <Pane fx:id="pnCountry" layoutX="5.0" layoutY="100.0" prefWidth="1201.0">
+         <fx:include fx:id="countriesPane" source="countries.fxml" />
       </Pane>
-      <Button fx:id="btnHide" layoutX="1100.0" mnemonicParsing="false" onAction="#hideScene" style="-fx-background-color: 0; -fx-cursor: hand;" text="–" textFill="#354385">
-         <font>
-            <Font name="SF Compact Text Regular" size="26.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnCountries" graphicTextGap="1.0" layoutX="79.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCountryView" onMouseMoved="#movedCountryView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-cursor: hand;" text="Страны" underline="true">
+      <Button fx:id="btnCountries" graphicTextGap="1.0" layoutX="79.0" layoutY="36.0" mnemonicParsing="false" onAction="#showCountryView" onMouseExited="#exidetConstituentsView" onMouseMoved="#movedCountryView" style="-fx-background-color: 0; -fx-text-fill: #354385; -fx-cursor: hand;" text="Страны" underline="true">
          <font>
             <Font name="SF Compact Text Medium" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnCategories" graphicTextGap="1.0" layoutX="222.0" layoutY="36.0" mnemonicParsing="false" onAction="#showConstituentsView" onMouseMoved="#movedConstituentsView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Категории">
+      <Button fx:id="btnCategories" graphicTextGap="1.0" layoutX="222.0" layoutY="36.0" mnemonicParsing="false" onAction="#showConstituentsView" onMouseExited="#exidetConstituentsView" onMouseMoved="#movedConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Категории">
          <font>
             <Font name="SF Compact Text Regular" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnUsers" graphicTextGap="1.0" layoutX="381.0" layoutY="36.0" mnemonicParsing="false" onAction="#showUsersView" onMouseMoved="#movedUsersView" onMouseExited="#exidetConstituentsView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Пользователи">
+      <Button fx:id="btnUsers" graphicTextGap="1.0" layoutX="381.0" layoutY="36.0" mnemonicParsing="false" onAction="#showUsersView" onMouseExited="#exidetConstituentsView" onMouseMoved="#movedUsersView" style="-fx-background-color: 0; -fx-text-fill: #72778E; -fx-cursor: hand;" text="Пользователи">
          <font>
             <Font name="SF Compact Text Regular" size="18.0" />
          </font>
@@ -53,6 +48,11 @@
          </font>
       </Button>
       <Button fx:id="btnClose" layoutX="1150.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeScene" style="-fx-background-color: 0; -fx-cursor: hand;" text="х" textFill="#354385">
+         <font>
+            <Font name="SF Compact Text Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnHide" layoutX="1100.0" mnemonicParsing="false" onAction="#hideScene" style="-fx-background-color: 0; -fx-cursor: hand;" text="–" textFill="#354385">
          <font>
             <Font name="SF Compact Text Regular" size="26.0" />
          </font>

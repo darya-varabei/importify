@@ -8,45 +8,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#setupAccess" prefHeight="718.0" prefWidth="1217.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.SettingsController">
+<Pane fx:id="pnUsers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#setupAccess" prefHeight="647.0" prefWidth="1217.0" style="-fx-background-color: F2F3F7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.importify.Controller.SettingsController">
    <children>
-      <Label layoutX="57.0" layoutY="210.0" text="Имя пользователя">
+      <Label layoutX="58.0" layoutY="98.0" text="Имя пользователя">
          <font>
             <Font name="SF Compact Text Regular" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="57.0" layoutY="257.0" text="Роль">
+      <Label layoutX="58.0" layoutY="145.0" text="Роль">
          <font>
             <Font name="SF Compact Text Regular" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="57.0" layoutY="307.0" text="Страна">
+      <Label layoutX="58.0" layoutY="195.0" text="Страна">
          <font>
             <Font name="SF Compact Text Regular" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblUsername" layoutX="264.0" layoutY="208.0" text="\@chubasha">
+      <Label fx:id="lblUsername" layoutX="265.0" layoutY="96.0" text="\@chubasha">
          <font>
             <Font name="SF Compact Text Regular" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblUserRole" layoutX="264.0" layoutY="255.0" text="Администратор">
+      <Label fx:id="lblUserRole" layoutX="265.0" layoutY="143.0" text="Администратор">
          <font>
             <Font name="SF Compact Text Regular" size="16.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbChooseCountry" layoutX="265.0" layoutY="304.0" prefWidth="150.0" promptText="Беларусь" style="-fx-background-color: 0; -fx-border-color: 354385; -fx-border-width: 2;" />
-      <ListView fx:id="listMessages" layoutX="523.0" layoutY="127.0" prefHeight="546.0" prefWidth="650.0" />
-      <Button fx:id="btnExit" layoutX="65.0" layoutY="666.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #dc2d2d;" text="Выход из аккаунта" textFill="#fafafa">
+      <ComboBox fx:id="cmbChooseCountry" layoutX="266.0" layoutY="192.0" prefWidth="150.0" promptText="Беларусь" style="-fx-background-color: 0; -fx-border-color: 354385; -fx-border-width: 2;" />
+      <ListView fx:id="listMessages" layoutX="526.0" layoutY="59.0" prefHeight="546.0" prefWidth="650.0" />
+      <Button fx:id="btnExit" layoutX="66.0" layoutY="554.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #dc2d2d;" text="Выход из аккаунта" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnAddMessage" layoutX="65.0" layoutY="601.0" mnemonicParsing="false" onAction="#addMessage" style="-fx-background-color: #354385;" text="Добавить сообщение" textFill="#fafafa">
+      <Button fx:id="btnAddMessage" layoutX="66.0" layoutY="489.0" mnemonicParsing="false" onAction="#addMessage" style="-fx-background-color: #354385;" text="Добавить сообщение" textFill="#fafafa">
          <font>
             <Font name="SF Compact Text Regular" size="13.0" />
          </font>
       </Button>
-      <TextArea fx:id="fieldAddMessage" layoutX="54.0" layoutY="359.0" prefHeight="217.0" prefWidth="382.0" promptText="Введите описание " />
+      <TextArea fx:id="fieldAddMessage" layoutX="55.0" layoutY="247.0" prefHeight="217.0" prefWidth="382.0" promptText="Введите описание " />
    </children>
 </Pane>
