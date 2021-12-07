@@ -36,6 +36,85 @@
                <children>
                   <StackPane prefHeight="554.0" prefWidth="489.0">
                      <children>
+                        <Pane fx:id="pnSignIn" prefHeight="310.0" prefWidth="340.0" style="-fx-background-color: #354284;">
+                           <children>
+                              <Button fx:id="btnSignUp" blendMode="LIGHTEN" layoutX="150.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleAuthorizationAction" style="-fx-background-color: #354284#354284;" text="Уже есть аккаунт? Авторизируйтесь" textFill="#fafafa" underline="true">
+                                 <font>
+                                    <Font name="SF Compact Text Medium" size="10.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnCreate" layoutX="155.0" layoutY="462.0" mnemonicParsing="false" onAction="#registUser" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #02E079#02E079; -fx-background-radius: 14;" text="Создать аккаунт" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Button>
+                              <PasswordField fx:id="txtFieldPass1" layoutX="53.0" layoutY="303.0" opacity="0.2" prefHeight="26.0" prefWidth="273.0" style="-fx-background-radius: 14;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </PasswordField>
+                              <TextField fx:id="txtFieldEmail" layoutX="53.0" layoutY="169.0" opacity="0.2" prefHeight="26.0" prefWidth="275.0" style="-fx-background-radius: 14;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="lblRegistSubtitle" layoutX="53.0" layoutY="88.0" lineSpacing="1.0" prefHeight="31.0" prefWidth="430.0" text="Для регистрации в приложении необходимо ввести следующие данные" textFill="#fafafab2">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblRegistTitle" layoutX="53.0" layoutY="56.0" text="Регистрация" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPassword1" layoutX="53.0" layoutY="279.0" text="Пароль" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblLogin1" layoutX="53.0" layoutY="209.0" text="Логин" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtFieldLogin11" layoutX="53.0" layoutY="238.0" opacity="0.2" prefHeight="26.0" prefWidth="275.0" style="-fx-background-radius: 14;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="lblEmail" layoutX="53.0" layoutY="143.0" text="Электронная почта" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="txtFieldPassRep" layoutX="53.0" layoutY="373.0" opacity="0.2" prefHeight="26.0" prefWidth="273.0" style="-fx-background-radius: 14;">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="lblPasswordRep" layoutX="53.0" layoutY="349.0" text="Повторить пароль" textFill="#fafafa">
+                                 <font>
+                                    <Font name="SF Compact Text Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPasswordsDoNotMatch" layoutX="56.0" layoutY="415.0" text="Пароли не совпадают" textFill="#f34b4b" visible="false">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblLoginAlreadyExists" layoutX="65.0" layoutY="415.0" text="Данный логин уже занят" textFill="#f34b4b" visible="false">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblInvalidRegEntry" layoutX="55.0" layoutY="415.0" text="Некорректный ввод" textFill="#f34b4b" visible="false">
+                                 <font>
+                                    <Font name="SF Compact Text Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
                         <Pane fx:id="pnSignUp" prefHeight="553.0" prefWidth="486.0" style="-fx-background-color: #354284;">
                            <children>
                               <Label fx:id="lblEntryTitle" layoutX="53.0" layoutY="82.0" text="Вход в аккаунт" textFill="#fafafa">
@@ -123,85 +202,6 @@
                                  </font>
                               </Label>
                               <Label fx:id="lblInvalidConnection" layoutX="163.0" layoutY="287.0" text="Подключение не выполнено" textFill="#e23c3c" visible="false">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <Pane fx:id="pnSignIn" prefHeight="310.0" prefWidth="340.0" style="-fx-background-color: #354284;">
-                           <children>
-                              <Button fx:id="btnSignUp" blendMode="LIGHTEN" layoutX="150.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleAuthorizationAction" style="-fx-background-color: #354284#354284;" text="Уже есть аккаунт? Авторизируйтесь" textFill="#fafafa" underline="true">
-                                 <font>
-                                    <Font name="SF Compact Text Medium" size="10.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="btnCreate" layoutX="155.0" layoutY="462.0" mnemonicParsing="false" onAction="#registUser" prefHeight="27.0" prefWidth="178.0" style="-fx-background-color: #02E079#02E079; -fx-background-radius: 14;" text="Создать аккаунт" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Button>
-                              <PasswordField fx:id="txtFieldPass1" layoutX="53.0" layoutY="303.0" opacity="0.2" prefHeight="26.0" prefWidth="273.0" style="-fx-background-radius: 14;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </PasswordField>
-                              <TextField fx:id="txtFieldEmail" layoutX="53.0" layoutY="169.0" opacity="0.2" prefHeight="26.0" prefWidth="275.0" style="-fx-background-radius: 14;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </TextField>
-                              <Label fx:id="lblRegistSubtitle" layoutX="53.0" layoutY="88.0" lineSpacing="1.0" prefHeight="31.0" prefWidth="430.0" text="Для регистрации в приложении необходимо ввести следующие данные" textFill="#fafafab2">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblRegistTitle" layoutX="53.0" layoutY="56.0" text="Регистрация" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPassword1" layoutX="53.0" layoutY="279.0" text="Пароль" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Semibold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblLogin1" layoutX="53.0" layoutY="209.0" text="Логин" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Semibold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtFieldLogin11" layoutX="53.0" layoutY="238.0" opacity="0.2" prefHeight="26.0" prefWidth="275.0" style="-fx-background-radius: 14;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </TextField>
-                              <Label fx:id="lblEmail" layoutX="53.0" layoutY="143.0" text="Электронная почта" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Semibold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <PasswordField fx:id="txtFieldPassRep" layoutX="53.0" layoutY="373.0" opacity="0.2" prefHeight="26.0" prefWidth="273.0" style="-fx-background-radius: 14;">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </PasswordField>
-                              <Label fx:id="lblPasswordRep" layoutX="53.0" layoutY="349.0" text="Повторить пароль" textFill="#fafafa">
-                                 <font>
-                                    <Font name="SF Compact Text Semibold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPasswordsDoNotMatch" layoutX="56.0" layoutY="415.0" text="Пароли не совпадают" textFill="#f34b4b" visible="false">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblLoginAlreadyExists" layoutX="65.0" layoutY="415.0" text="Данный логин уже занят" textFill="#f34b4b" visible="false">
-                                 <font>
-                                    <Font name="SF Compact Text Regular" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblInvalidRegEntry" layoutX="55.0" layoutY="415.0" text="Некорректный ввод" textFill="#f34b4b" visible="false">
                                  <font>
                                     <Font name="SF Compact Text Regular" size="12.0" />
                                  </font>
