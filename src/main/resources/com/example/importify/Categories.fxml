@@ -21,7 +21,7 @@
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в импорте по категории">
                      <font>
-                        <Font name="SF Compact Text Medium" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCatWorldimportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
@@ -31,7 +31,7 @@
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSavePlot1" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSavePlot1" layoutX="307.0" onAction="#saveCatWorldimportShare" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
@@ -59,7 +59,7 @@
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Доля стран в экспорте по категории">
                      <font>
-                        <Font name="SF Compact Text Medium" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCatWorldExportShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
@@ -69,7 +69,7 @@
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSavePlot" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSavePlot" layoutX="307.0" onAction="#saveCatWorldExportShare" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
@@ -97,7 +97,7 @@
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Общемировой график экспорта">
                      <font>
-                        <Font name="SF Compact Text Medium" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCatWorldShare" layoutX="6.0" layoutY="61.0" prefHeight="473.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
@@ -107,7 +107,7 @@
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSaveCatWorldShare" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSaveCatWorldShare" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" onAction="#saveCatWorldShare" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
@@ -145,7 +145,7 @@
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Экспорт в направлении по странам">
                      <font>
-                        <Font name="SF Compact Text Medium" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCategoryExportTable" layoutX="6.0" layoutY="61.0" prefHeight="453.0" prefWidth="553.0" style="-fx-background-color: F2F3F7;">
@@ -162,7 +162,7 @@
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSaveExportTable" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSaveExportTable" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" onAction="#saveCategoryExportTable" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
@@ -188,7 +188,7 @@
                <children>
                   <Label layoutX="34.0" layoutY="26.0" prefHeight="23.0" prefWidth="398.0" style="-fx-text-fill: #354385;" text="Импорт в направлении по странам">
                      <font>
-                        <Font name="SF Compact Text Medium" size="18.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Pane fx:id="pnCatImportTableView" layoutX="6.0" layoutY="61.0" prefHeight="462.0" prefWidth="553.0" style="-fx-background-color: F2F3F7 F2F3F7;">
@@ -205,7 +205,7 @@
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSaveCatTableImport" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
+                        <Button fx:id="btnSaveCatTableImport" layoutX="307.0" layoutY="416.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" onAction="#saveCatImportTableView" style="-fx-background-color: #354385; -fx-text-fill: fafafa; -fx-background-radius: 10;" text="Сохранить">
                            <font>
                               <Font name="SF Compact Text Regular" size="13.0" />
                            </font>

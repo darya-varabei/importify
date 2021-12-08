@@ -77,6 +77,9 @@ public class HelloController implements Initializable {
         new ZoomIn(pnCountry).play();
 
         pnCountry.toFront();
+        pnCountry.setVisible(true);
+        pnConstituents.setVisible(true);
+        pnUsers.setVisible(true);
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();
@@ -96,6 +99,9 @@ public class HelloController implements Initializable {
 
         new ZoomIn(pnConstituents).play();
         pnConstituents.toFront();
+        pnCountry.setVisible(true);
+        pnConstituents.setVisible(true);
+        pnUsers.setVisible(true);
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();
@@ -115,6 +121,9 @@ public class HelloController implements Initializable {
 
         new ZoomIn(pnUsers).play();
         pnUsers.toFront();
+        pnCountry.setVisible(true);
+        pnConstituents.setVisible(true);
+        pnUsers.setVisible(true);
         btnUsers.toFront();
         btnCountries.toFront();
         btnCategories.toFront();;

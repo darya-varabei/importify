@@ -18,7 +18,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.*;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -394,7 +397,6 @@ public class ConstituentsController implements Initializable {
     void setupImportTable() {
 
         ObservableList<ExportImportConstituents> data;
-        System.out.println("Import table *********************************");
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCat.getValue()));
         yearColumn.setCellValueFactory(new PropertyValueFactory<>("year"));
         countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
@@ -405,7 +407,6 @@ public class ConstituentsController implements Initializable {
     void setupExportTable() {
 
         ObservableList<ExportImportConstituents> data;
-        System.out.println("Export table *********************************");
         data = FXCollections.observableArrayList(Client.interactionsWithServer.getConstituent(cmbChooseCountry.getValue()));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
         exportColumn.setCellValueFactory(new PropertyValueFactory<>("exportValue"));
@@ -496,5 +497,179 @@ public class ConstituentsController implements Initializable {
     public void BackFromCatWorldShare(ActionEvent actionEvent) {
         new ZoomIn(pnCatWorldSharePrompt);
         pnCatWorldSharePrompt.toFront();
+    }
+
+    public void saveCatWorldimportShare(ActionEvent actionEvent) throws Exception  {
+        Writer writer = null;
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+            var catData = pltCatImportShare.getData();
+            catData.forEach((category) -> {
+                String text = category.getName() + "," + category.getPieValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
+    }
+
+    public void saveCatImportTableView(ActionEvent actionEvent) throws Exception  {
+        Writer writer = null;
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+
+            var catData = tableCategoryImport.getItems();
+            catData.forEach((category) -> {
+                String text = category.getYear() + "," + category.getCountry() + "," + category.getImportValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
+    }
+
+    public void saveCategoryExportTable(ActionEvent actionEvent) throws Exception  {
+        Writer writer = null;
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+
+            var catData = tableCategoryExport.getItems();
+            catData.forEach((category) -> {
+                String text = category.getYear() + "," + category.getCountry() + "," + category.getExportValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
+    }
+
+    public void saveCatWorldShare(ActionEvent actionEvent) throws Exception  {
+        Writer writer = null;
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+
+            var catData = pltWorldShare.getData();
+            catData.forEach((category) -> {
+                String text = category.getName() + "," + category.getNode() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
+    }
+
+    public void saveCatWorldExportShare(ActionEvent actionEvent) throws Exception  {
+        Writer writer = null;
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Сохранение");
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialFileName("Импорт по категориям таваров");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Csv files", "*.csv")
+            );
+            fileChooser.setTitle("Сохранить информацияю");
+            File file = fileChooser.showSaveDialog(stage);
+
+            writer = new BufferedWriter(new FileWriter(file));
+            Writer finalWriter = writer;
+
+            var catData = pltCatExportShare.getData();
+            catData.forEach((category) -> {
+                String text = category.getName() + "," + category.getPieValue() + "\n";
+                try {
+                    finalWriter.write(text);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            writer.flush();
+            writer.close();
+        }
     }
 }

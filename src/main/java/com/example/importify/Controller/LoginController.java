@@ -174,9 +174,10 @@ public class LoginController implements Initializable{
         serverManager.sendObject(new UserEntry(txtFieldLogin.getText(), txtFieldPass.getText(), null));
         var user = (User)serverManager.readObject();
 
-        var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
 
-        if (statUser != null) {
+        if (user != null) {
+            var statUser = User.getInstance(user.getCodeUser(), user.getUserEntry(), user.getEmail(), user.getCountry(), user.getCodeCountry(), user.getDateLastAutorization(), user.getDateLastExit());
+
             lblInvalidLoginEntry.setVisible(false);
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(secondScene);
@@ -212,7 +213,8 @@ public class LoginController implements Initializable{
             primaryStage.setScene(secondScene);
         } catch (Exception e)
         {
-            if(recived == "user exists") {
+            var str = (String)recived;
+            if(str.equals("User exists")) {
                 lblInvalidRegEntry.setVisible(false);
                 lblLoginAlreadyExists.setVisible(true);
                 lblLoginAlreadyExists.toFront();

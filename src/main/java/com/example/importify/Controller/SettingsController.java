@@ -89,7 +89,7 @@ public class SettingsController implements Initializable {
 
     @FXML
     private void getMessages() {
-        if (client.interactionsWithServer != null) {
+        if (Client.interactionsWithServer != null) {
             ObservableList<String> data;
             data = FXCollections.observableArrayList(Client.interactionsWithServer.getUserMessages());
             listMessages.setItems(data);
@@ -110,8 +110,17 @@ public class SettingsController implements Initializable {
             cmbChooseCountry.setItems(data);
         }
         if (user.getUserEntry() != null) {
-            if (user.getUserEntry().getRole() == "User") {
-               listMessages.setVisible(false);
+            if (user.getUserEntry().getRole().equals("User")) {
+                listMessages.setVisible(false);
+                fieldAddMessage.setVisible(true);
+                btnAddMessage.setVisible(true);
+            }
+            else
+            {
+                listMessages.setVisible(true);
+                fieldAddMessage.setVisible(false);
+                btnAddMessage.setVisible(false);
+                getMessages();
             }
         }
     }
